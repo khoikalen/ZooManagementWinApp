@@ -65,3 +65,4 @@ C:\Users\DANG KHOI\source\repos\ZooManagement\ZooManagementWinApp\obj\Debug\net5
 C:\Users\DANG KHOI\source\repos\ZooManagement\ZooManagementWinApp\obj\Debug\net5.0-windows\ZooManagementWinApp.pdb
 C:\Users\DANG KHOI\source\repos\ZooManagement\ZooManagementWinApp\obj\Debug\net5.0-windows\ZooManagementWinApp.genruntimeconfig.cache
 C:\Users\DANG KHOI\source\repos\ZooManagement\ZooManagementWinApp\obj\Debug\net5.0-windows\ref\ZooManagementWinApp.dll
+C:\Users\DANG KHOI\source\repos\ZooManagement\ZooManagementWinApp\obj\Debug\net5.0-windows\ZooManagementWinApp.frmStaffDetail.resources

@@ -9,9 +9,7 @@ namespace BusinessObjects
     {
         public Cage()
         {
-            AnimalSpecies = new HashSet<AnimalSpecie>();
             Animals = new HashSet<Animal>();
-            Meals = new HashSet<Meal>();
         }
 
         public int Id { get; set; }
@@ -24,8 +22,6 @@ namespace BusinessObjects
 
         public virtual Area Area { get; set; }
         public virtual staff Staff { get; set; }
-        public virtual ICollection<AnimalSpecie> AnimalSpecies { get; set; }
         public virtual ICollection<Animal> Animals { get; set; }
-        public virtual ICollection<Meal> Meals { get; set; }
     }
 }

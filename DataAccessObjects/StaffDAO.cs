@@ -32,7 +32,7 @@ namespace DataAccessObjects
             var staffs = new List<staff>();
             try
             {
-                using var db = new ZooManagement_DotNetContext();
+                using var db = new ZooManagementDotNetContext();
                 staffs = db.staff.ToList();
             }
             catch (Exception ex)
@@ -47,7 +47,7 @@ namespace DataAccessObjects
             var staff = new staff();
             try
             {
-                using var db = new ZooManagement_DotNetContext();
+                using var db = new ZooManagementDotNetContext();
                 staff = db.staff.SingleOrDefault(s => s.Id == id);
             }
             catch (Exception ex)
@@ -61,7 +61,7 @@ namespace DataAccessObjects
         {
             try
             {
-                using var db = new ZooManagement_DotNetContext();
+                using var db = new ZooManagementDotNetContext();
                 db.staff.Add(staff);
                 db.SaveChanges();
             }
@@ -75,7 +75,7 @@ namespace DataAccessObjects
         {
             try
             {
-                using var db = new ZooManagement_DotNetContext();
+                using var db = new ZooManagementDotNetContext();
                 db.staff.Update(staff);
                 db.SaveChanges();
             }
@@ -89,7 +89,7 @@ namespace DataAccessObjects
         {
             try
             {
-                using var db = new ZooManagement_DotNetContext();
+                using var db = new ZooManagementDotNetContext();
                 db.staff.Remove(GetStaffById(id));
                 db.SaveChanges();
             }

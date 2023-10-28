@@ -9,8 +9,8 @@ namespace BusinessObjects
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int? CageId { get; set; }
+        public int? AnimalId { get; set; }
 
-        public virtual Cage Cage { get; set; }
+        public virtual Animal Animal { get; set; }
     }
 }

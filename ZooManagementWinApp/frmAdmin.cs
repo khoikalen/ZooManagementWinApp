@@ -1,4 +1,5 @@
-﻿using Repositories;
+﻿using BusinessObjects;
+using Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,8 +31,16 @@ namespace ZooManagementWinApp
             var staffs = staffRepository.GetStaffs();
             try
             {
+                List<staff> staffView = new List<staff>();
+                foreach (staff staff in staffs)
+                {
+                    if (staff.Id != 1)
+                    {
+                        staffView.Add(staff);
+                    }
+                }
                 source = new BindingSource();
-                source.DataSource = staffs;
+                source.DataSource = staffView;
 
                 txtStaffID.DataBindings.Clear();
                 txtStaffFirstName.DataBindings.Clear();
@@ -56,6 +65,21 @@ namespace ZooManagementWinApp
             {
 
                 MessageBox.Show(ex.Message, "Load Staffs List");
+            }
+        }
+
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+            frmStaffDetail frmStaffDetail = new frmStaffDetail
+            {
+                Text = "Add a new Staff",
+                InsertOrUpdate = false,
+                StaffRepository = staffRepository
+            };
+            if (frmStaffDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadStaffsList();
+                source.Position = source.Count - 1;
             }
         }
     }

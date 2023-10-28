@@ -30,27 +30,28 @@
         {
             tabControl1 = new System.Windows.Forms.TabControl();
             tabStaffMangement = new System.Windows.Forms.TabPage();
-            tabPage2 = new System.Windows.Forms.TabPage();
-            dgvStaff = new System.Windows.Forms.DataGridView();
+            btnAddStaff = new System.Windows.Forms.Button();
             groupBox1 = new System.Windows.Forms.GroupBox();
-            lbStaffID = new System.Windows.Forms.Label();
-            lbStaffFirstName = new System.Windows.Forms.Label();
-            lbStaffLastName = new System.Windows.Forms.Label();
-            lbGender = new System.Windows.Forms.Label();
-            lbStartDay = new System.Windows.Forms.Label();
-            lbEmail = new System.Windows.Forms.Label();
-            lbPhoneNumber = new System.Windows.Forms.Label();
-            txtStaffID = new System.Windows.Forms.TextBox();
-            txtStaffFirstName = new System.Windows.Forms.TextBox();
-            txtStaffLastName = new System.Windows.Forms.TextBox();
-            txtGender = new System.Windows.Forms.TextBox();
-            txtStaffEmail = new System.Windows.Forms.TextBox();
-            dtpStatDay = new System.Windows.Forms.DateTimePicker();
             txtStaffPhoneNumber = new System.Windows.Forms.TextBox();
+            dtpStatDay = new System.Windows.Forms.DateTimePicker();
+            txtStaffEmail = new System.Windows.Forms.TextBox();
+            txtGender = new System.Windows.Forms.TextBox();
+            txtStaffLastName = new System.Windows.Forms.TextBox();
+            txtStaffFirstName = new System.Windows.Forms.TextBox();
+            txtStaffID = new System.Windows.Forms.TextBox();
+            lbPhoneNumber = new System.Windows.Forms.Label();
+            lbEmail = new System.Windows.Forms.Label();
+            lbStartDay = new System.Windows.Forms.Label();
+            lbGender = new System.Windows.Forms.Label();
+            lbStaffLastName = new System.Windows.Forms.Label();
+            lbStaffFirstName = new System.Windows.Forms.Label();
+            lbStaffID = new System.Windows.Forms.Label();
+            dgvStaff = new System.Windows.Forms.DataGridView();
+            tabPage2 = new System.Windows.Forms.TabPage();
             tabControl1.SuspendLayout();
             tabStaffMangement.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvStaff).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStaff).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -65,6 +66,7 @@
             // 
             // tabStaffMangement
             // 
+            tabStaffMangement.Controls.Add(btnAddStaff);
             tabStaffMangement.Controls.Add(groupBox1);
             tabStaffMangement.Controls.Add(dgvStaff);
             tabStaffMangement.Location = new System.Drawing.Point(4, 29);
@@ -75,27 +77,15 @@
             tabStaffMangement.Text = "Staff Management";
             tabStaffMangement.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // btnAddStaff
             // 
-            tabPage2.Location = new System.Drawing.Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            tabPage2.Size = new System.Drawing.Size(800, 418);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgvStaff
-            // 
-            dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStaff.Location = new System.Drawing.Point(0, 319);
-            dgvStaff.Name = "dgvStaff";
-            dgvStaff.ReadOnly = true;
-            dgvStaff.RowHeadersWidth = 51;
-            dgvStaff.RowTemplate.Height = 29;
-            dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvStaff.Size = new System.Drawing.Size(1025, 217);
-            dgvStaff.TabIndex = 0;
+            btnAddStaff.Location = new System.Drawing.Point(133, 265);
+            btnAddStaff.Name = "btnAddStaff";
+            btnAddStaff.Size = new System.Drawing.Size(94, 29);
+            btnAddStaff.TabIndex = 2;
+            btnAddStaff.Text = "Add";
+            btnAddStaff.UseVisualStyleBackColor = true;
+            btnAddStaff.Click += btnAddStaff_Click;
             // 
             // groupBox1
             // 
@@ -120,59 +110,54 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Staff Information";
             // 
-            // lbStaffID
+            // txtStaffPhoneNumber
             // 
-            lbStaffID.AutoSize = true;
-            lbStaffID.Location = new System.Drawing.Point(35, 53);
-            lbStaffID.Name = "lbStaffID";
-            lbStaffID.Size = new System.Drawing.Size(59, 20);
-            lbStaffID.TabIndex = 0;
-            lbStaffID.Text = "Staff ID";
+            txtStaffPhoneNumber.Location = new System.Drawing.Point(688, 46);
+            txtStaffPhoneNumber.Name = "txtStaffPhoneNumber";
+            txtStaffPhoneNumber.Size = new System.Drawing.Size(125, 27);
+            txtStaffPhoneNumber.TabIndex = 13;
             // 
-            // lbStaffFirstName
+            // dtpStatDay
             // 
-            lbStaffFirstName.AutoSize = true;
-            lbStaffFirstName.Location = new System.Drawing.Point(35, 98);
-            lbStaffFirstName.Name = "lbStaffFirstName";
-            lbStaffFirstName.Size = new System.Drawing.Size(77, 20);
-            lbStaffFirstName.TabIndex = 1;
-            lbStaffFirstName.Text = "First name";
+            dtpStatDay.Location = new System.Drawing.Point(373, 95);
+            dtpStatDay.Name = "dtpStatDay";
+            dtpStatDay.Size = new System.Drawing.Size(250, 27);
+            dtpStatDay.TabIndex = 12;
             // 
-            // lbStaffLastName
+            // txtStaffEmail
             // 
-            lbStaffLastName.AutoSize = true;
-            lbStaffLastName.Location = new System.Drawing.Point(35, 139);
-            lbStaffLastName.Name = "lbStaffLastName";
-            lbStaffLastName.Size = new System.Drawing.Size(76, 20);
-            lbStaffLastName.TabIndex = 2;
-            lbStaffLastName.Text = "Last name";
+            txtStaffEmail.Location = new System.Drawing.Point(373, 136);
+            txtStaffEmail.Name = "txtStaffEmail";
+            txtStaffEmail.Size = new System.Drawing.Size(125, 27);
+            txtStaffEmail.TabIndex = 11;
             // 
-            // lbGender
+            // txtGender
             // 
-            lbGender.AutoSize = true;
-            lbGender.Location = new System.Drawing.Point(283, 53);
-            lbGender.Name = "lbGender";
-            lbGender.Size = new System.Drawing.Size(57, 20);
-            lbGender.TabIndex = 3;
-            lbGender.Text = "Gender";
+            txtGender.Location = new System.Drawing.Point(373, 51);
+            txtGender.Name = "txtGender";
+            txtGender.Size = new System.Drawing.Size(125, 27);
+            txtGender.TabIndex = 10;
             // 
-            // lbStartDay
+            // txtStaffLastName
             // 
-            lbStartDay.AutoSize = true;
-            lbStartDay.Location = new System.Drawing.Point(283, 98);
-            lbStartDay.Name = "lbStartDay";
-            lbStartDay.Size = new System.Drawing.Size(68, 20);
-            lbStartDay.TabIndex = 4;
-            lbStartDay.Text = "Start day";
+            txtStaffLastName.Location = new System.Drawing.Point(133, 136);
+            txtStaffLastName.Name = "txtStaffLastName";
+            txtStaffLastName.Size = new System.Drawing.Size(125, 27);
+            txtStaffLastName.TabIndex = 9;
             // 
-            // lbEmail
+            // txtStaffFirstName
             // 
-            lbEmail.AutoSize = true;
-            lbEmail.Location = new System.Drawing.Point(290, 139);
-            lbEmail.Name = "lbEmail";
-            lbEmail.Size = new System.Drawing.Size(46, 20);
-            lbEmail.TabIndex = 5;
-            lbEmail.Text = "Email";
+            txtStaffFirstName.Location = new System.Drawing.Point(133, 95);
+            txtStaffFirstName.Name = "txtStaffFirstName";
+            txtStaffFirstName.Size = new System.Drawing.Size(125, 27);
+            txtStaffFirstName.TabIndex = 8;
+            // 
+            // txtStaffID
+            // 
+            txtStaffID.Location = new System.Drawing.Point(133, 51);
+            txtStaffID.Name = "txtStaffID";
+            txtStaffID.Size = new System.Drawing.Size(125, 27);
+            txtStaffID.TabIndex = 7;
             // 
             // lbPhoneNumber
             // 
@@ -183,54 +168,81 @@
             lbPhoneNumber.TabIndex = 6;
             lbPhoneNumber.Text = "Phone number";
             // 
-            // txtStaffID
+            // lbEmail
             // 
-            txtStaffID.Location = new System.Drawing.Point(133, 51);
-            txtStaffID.Name = "txtStaffID";
-            txtStaffID.Size = new System.Drawing.Size(125, 27);
-            txtStaffID.TabIndex = 7;
+            lbEmail.AutoSize = true;
+            lbEmail.Location = new System.Drawing.Point(290, 139);
+            lbEmail.Name = "lbEmail";
+            lbEmail.Size = new System.Drawing.Size(46, 20);
+            lbEmail.TabIndex = 5;
+            lbEmail.Text = "Email";
             // 
-            // txtStaffFirstName
+            // lbStartDay
             // 
-            txtStaffFirstName.Location = new System.Drawing.Point(133, 95);
-            txtStaffFirstName.Name = "txtStaffFirstName";
-            txtStaffFirstName.Size = new System.Drawing.Size(125, 27);
-            txtStaffFirstName.TabIndex = 8;
+            lbStartDay.AutoSize = true;
+            lbStartDay.Location = new System.Drawing.Point(283, 98);
+            lbStartDay.Name = "lbStartDay";
+            lbStartDay.Size = new System.Drawing.Size(68, 20);
+            lbStartDay.TabIndex = 4;
+            lbStartDay.Text = "Start day";
             // 
-            // txtStaffLastName
+            // lbGender
             // 
-            txtStaffLastName.Location = new System.Drawing.Point(133, 136);
-            txtStaffLastName.Name = "txtStaffLastName";
-            txtStaffLastName.Size = new System.Drawing.Size(125, 27);
-            txtStaffLastName.TabIndex = 9;
+            lbGender.AutoSize = true;
+            lbGender.Location = new System.Drawing.Point(283, 53);
+            lbGender.Name = "lbGender";
+            lbGender.Size = new System.Drawing.Size(57, 20);
+            lbGender.TabIndex = 3;
+            lbGender.Text = "Gender";
             // 
-            // txtGender
+            // lbStaffLastName
             // 
-            txtGender.Location = new System.Drawing.Point(373, 51);
-            txtGender.Name = "txtGender";
-            txtGender.Size = new System.Drawing.Size(125, 27);
-            txtGender.TabIndex = 10;
+            lbStaffLastName.AutoSize = true;
+            lbStaffLastName.Location = new System.Drawing.Point(35, 139);
+            lbStaffLastName.Name = "lbStaffLastName";
+            lbStaffLastName.Size = new System.Drawing.Size(76, 20);
+            lbStaffLastName.TabIndex = 2;
+            lbStaffLastName.Text = "Last name";
             // 
-            // txtStaffEmail
+            // lbStaffFirstName
             // 
-            txtStaffEmail.Location = new System.Drawing.Point(373, 136);
-            txtStaffEmail.Name = "txtStaffEmail";
-            txtStaffEmail.Size = new System.Drawing.Size(125, 27);
-            txtStaffEmail.TabIndex = 11;
+            lbStaffFirstName.AutoSize = true;
+            lbStaffFirstName.Location = new System.Drawing.Point(35, 98);
+            lbStaffFirstName.Name = "lbStaffFirstName";
+            lbStaffFirstName.Size = new System.Drawing.Size(77, 20);
+            lbStaffFirstName.TabIndex = 1;
+            lbStaffFirstName.Text = "First name";
             // 
-            // dtpStatDay
+            // lbStaffID
             // 
-            dtpStatDay.Location = new System.Drawing.Point(373, 95);
-            dtpStatDay.Name = "dtpStatDay";
-            dtpStatDay.Size = new System.Drawing.Size(250, 27);
-            dtpStatDay.TabIndex = 12;
+            lbStaffID.AutoSize = true;
+            lbStaffID.Location = new System.Drawing.Point(35, 53);
+            lbStaffID.Name = "lbStaffID";
+            lbStaffID.Size = new System.Drawing.Size(59, 20);
+            lbStaffID.TabIndex = 0;
+            lbStaffID.Text = "Staff ID";
             // 
-            // txtStaffPhoneNumber
+            // dgvStaff
             // 
-            txtStaffPhoneNumber.Location = new System.Drawing.Point(688, 46);
-            txtStaffPhoneNumber.Name = "txtStaffPhoneNumber";
-            txtStaffPhoneNumber.Size = new System.Drawing.Size(125, 27);
-            txtStaffPhoneNumber.TabIndex = 13;
+            dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStaff.Location = new System.Drawing.Point(0, 319);
+            dgvStaff.Name = "dgvStaff";
+            dgvStaff.ReadOnly = true;
+            dgvStaff.RowHeadersWidth = 51;
+            dgvStaff.RowTemplate.Height = 29;
+            dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvStaff.Size = new System.Drawing.Size(1025, 217);
+            dgvStaff.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new System.Drawing.Point(4, 29);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            tabPage2.Size = new System.Drawing.Size(1021, 528);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // frmAdmin
             // 
@@ -244,9 +256,9 @@
             Load += frmAdmin_Load;
             tabControl1.ResumeLayout(false);
             tabStaffMangement.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvStaff).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStaff).EndInit();
             ResumeLayout(false);
         }
 
@@ -271,5 +283,6 @@
         private System.Windows.Forms.TextBox txtStaffFirstName;
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Label lbPhoneNumber;
+        private System.Windows.Forms.Button btnAddStaff;
     }
 }
