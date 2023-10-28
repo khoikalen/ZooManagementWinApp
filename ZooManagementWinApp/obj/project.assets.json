@@ -6217,23 +6217,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DANG KHOI\\.nuget\\packages\\": {},
+    "C:\\Users\\kanat\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\ZooManagementWinApp\\ZooManagementWinApp.csproj",
+      "projectUniqueName": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj",
       "projectName": "ZooManagementWinApp",
-      "projectPath": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\ZooManagementWinApp\\ZooManagementWinApp.csproj",
-      "packagesPath": "C:\\Users\\DANG KHOI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\ZooManagementWinApp\\obj\\",
+      "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj",
+      "packagesPath": "C:\\Users\\kanat\\.nuget\\packages\\",
+      "outputPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\ZooManagementWinApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\DANG KHOI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kanat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6249,8 +6249,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\Repositories\\Repositories.csproj": {
-              "projectPath": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\Repositories\\Repositories.csproj"
+            "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\Repositories\\Repositories.csproj": {
+              "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\Repositories\\Repositories.csproj"
             }
           }
         }
