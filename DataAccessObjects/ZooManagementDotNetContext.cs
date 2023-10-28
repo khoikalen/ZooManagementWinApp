@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using BusinessObjects;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using BusinessObjects.Models;
 #nullable disable
 
 namespace DataAccessObjects

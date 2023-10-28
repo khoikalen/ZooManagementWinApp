@@ -1,4 +1,4 @@
-﻿using BusinessObjects.Models;
+﻿using BusinessObjects.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public interface ICageRepository
+    public interface ILogRepository
     {
-        IEnumerable<Cage> GetCages();
+        List<HealthLogResponse> GetLog(String email);
     }
 }
