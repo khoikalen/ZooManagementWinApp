@@ -44,5 +44,10 @@ namespace ZooManagementWinApp
                 throw new Exception(ex.Message);
             }
         }
+
+        private void frmAnimalDetail_Load(object sender, EventArgs e)
+        {
+            txtAnimalGender.SelectedIndex = 0;
+        }
     }
 }

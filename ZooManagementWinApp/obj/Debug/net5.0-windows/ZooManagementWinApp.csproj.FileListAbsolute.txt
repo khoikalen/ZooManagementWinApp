@@ -136,3 +136,4 @@ E:\ZooManagementSystemDotNet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\n
 E:\ZooManagementSystemDotNet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\net5.0-windows\ref\ZooManagementWinApp.dll
 E:\ZooManagementSystemDotNet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\net5.0-windows\ZooManagementWinApp.frmAnimal.resources
 E:\ZooManagementSystemDotNet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\net5.0-windows\ZooManagementWinApp.frmAnimalDetail.resources
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\net5.0-windows\ZooManagementWinApp.frmStaff.resources
