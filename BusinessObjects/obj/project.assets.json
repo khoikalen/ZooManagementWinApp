@@ -6266,23 +6266,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kanat\\.nuget\\packages\\": {},
+    "C:\\Users\\DANG KHOI\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj",
+      "projectUniqueName": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\BusinessObjects\\BusinessObjects.csproj",
       "projectName": "BusinessObjects",
-      "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj",
-      "packagesPath": "C:\\Users\\kanat\\.nuget\\packages\\",
-      "outputPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\obj\\",
+      "projectPath": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\BusinessObjects\\BusinessObjects.csproj",
+      "packagesPath": "C:\\Users\\DANG KHOI\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\BusinessObjects\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kanat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DANG KHOI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

@@ -32,3 +32,20 @@ C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repo
 C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\refint\Repositories.dll
 C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repositories.pdb
 C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\ref\Repositories.dll
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\Repositories.deps.json
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\Repositories.dll
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\Repositories.pdb
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\BusinessObjects.dll
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\DataAccessObjects.dll
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\DataAccessObjects.pdb
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\BusinessObjects.pdb
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\Repositories.csproj.AssemblyReference.cache
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfoInputs.cache
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfo.cs
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\Repositories.csproj.CoreCompileInputs.cache
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\Repositories.csproj.CopyComplete
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\Repositories.dll
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\refint\Repositories.dll
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\Repositories.pdb
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\Repositories\obj\Debug\net5.0\ref\Repositories.dll

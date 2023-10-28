@@ -39,6 +39,7 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+<<<<<<< HEAD
         public String LoginAccount(String email, String password)
         {
             try
@@ -49,6 +50,18 @@ namespace DataAccessObjects
                     return loginAccount.Role;
                 }
 
+=======
+        
+        public void DeleteAccountByEmail(string email) 
+        {
+            var account = new Account();    
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                account = db.Accounts.FirstOrDefault(x => x.Email == email);
+                db.Accounts.Remove(account);
+                db.SaveChanges();
+>>>>>>> ea31d9ed9fffea341de8c81a428cbe2af4c75edb
             }
             catch (Exception ex)
             {

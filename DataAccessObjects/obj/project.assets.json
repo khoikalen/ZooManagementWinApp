@@ -6181,23 +6181,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kanat\\.nuget\\packages\\": {},
+    "C:\\Users\\DANG KHOI\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj",
+      "projectUniqueName": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\DataAccessObjects\\DataAccessObjects.csproj",
       "projectName": "DataAccessObjects",
-      "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj",
-      "packagesPath": "C:\\Users\\kanat\\.nuget\\packages\\",
-      "outputPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\DataAccessObjects\\obj\\",
+      "projectPath": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\DataAccessObjects\\DataAccessObjects.csproj",
+      "packagesPath": "C:\\Users\\DANG KHOI\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\DataAccessObjects\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kanat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DANG KHOI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6213,8 +6213,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj": {
-              "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj"
+            "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "C:\\Users\\DANG KHOI\\source\\repos\\ZooManagement\\BusinessObjects\\BusinessObjects.csproj"
             }
           }
         }
