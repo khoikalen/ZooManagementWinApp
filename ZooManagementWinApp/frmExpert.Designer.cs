@@ -179,8 +179,10 @@
             dgvViewLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvViewLog.Location = new System.Drawing.Point(0, 266);
             dgvViewLog.Name = "dgvViewLog";
+            dgvViewLog.ReadOnly = true;
             dgvViewLog.RowHeadersWidth = 62;
             dgvViewLog.RowTemplate.Height = 33;
+            dgvViewLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             dgvViewLog.Size = new System.Drawing.Size(1037, 380);
             dgvViewLog.TabIndex = 0;
             // 
