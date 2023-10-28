@@ -35,17 +35,17 @@
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
-            textBox1 = new System.Windows.Forms.TextBox();
-            textBox2 = new System.Windows.Forms.TextBox();
-            textBox3 = new System.Windows.Forms.TextBox();
-            textBox4 = new System.Windows.Forms.TextBox();
-            textBox5 = new System.Windows.Forms.TextBox();
-            textBox6 = new System.Windows.Forms.TextBox();
-            dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            txtStaffID = new System.Windows.Forms.TextBox();
+            txtStaffFirstname = new System.Windows.Forms.TextBox();
+            txtStaffLastName = new System.Windows.Forms.TextBox();
+            txtStaffEmail = new System.Windows.Forms.TextBox();
+            txtStaffPhonenumber = new System.Windows.Forms.TextBox();
+            txtStaffStartDay = new System.Windows.Forms.DateTimePicker();
             groupBox1 = new System.Windows.Forms.GroupBox();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
+            dgvStaffList = new System.Windows.Forms.DataGridView();
+            txtStaffGender = new System.Windows.Forms.TextBox();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStaffList).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -111,69 +111,62 @@
             label7.TabIndex = 6;
             label7.Text = "Phone number";
             // 
-            // textBox1
+            // txtStaffID
             // 
-            textBox1.Location = new System.Drawing.Point(89, 22);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(197, 23);
-            textBox1.TabIndex = 7;
+            txtStaffID.Location = new System.Drawing.Point(89, 22);
+            txtStaffID.Name = "txtStaffID";
+            txtStaffID.Size = new System.Drawing.Size(197, 23);
+            txtStaffID.TabIndex = 7;
             // 
-            // textBox2
+            // txtStaffFirstname
             // 
-            textBox2.Location = new System.Drawing.Point(89, 60);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new System.Drawing.Size(197, 23);
-            textBox2.TabIndex = 8;
+            txtStaffFirstname.Location = new System.Drawing.Point(89, 60);
+            txtStaffFirstname.Name = "txtStaffFirstname";
+            txtStaffFirstname.Size = new System.Drawing.Size(197, 23);
+            txtStaffFirstname.TabIndex = 8;
             // 
-            // textBox3
+            // txtStaffLastName
             // 
-            textBox3.Location = new System.Drawing.Point(89, 98);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new System.Drawing.Size(197, 23);
-            textBox3.TabIndex = 9;
+            txtStaffLastName.Location = new System.Drawing.Point(89, 98);
+            txtStaffLastName.Name = "txtStaffLastName";
+            txtStaffLastName.Size = new System.Drawing.Size(197, 23);
+            txtStaffLastName.TabIndex = 9;
             // 
-            // textBox4
+            // txtStaffEmail
             // 
-            textBox4.Location = new System.Drawing.Point(89, 141);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new System.Drawing.Size(197, 23);
-            textBox4.TabIndex = 10;
+            txtStaffEmail.Location = new System.Drawing.Point(458, 60);
+            txtStaffEmail.Name = "txtStaffEmail";
+            txtStaffEmail.Size = new System.Drawing.Size(200, 23);
+            txtStaffEmail.TabIndex = 11;
             // 
-            // textBox5
+            // txtStaffPhonenumber
             // 
-            textBox5.Location = new System.Drawing.Point(458, 60);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new System.Drawing.Size(200, 23);
-            textBox5.TabIndex = 11;
+            txtStaffPhonenumber.Location = new System.Drawing.Point(458, 98);
+            txtStaffPhonenumber.Name = "txtStaffPhonenumber";
+            txtStaffPhonenumber.Size = new System.Drawing.Size(200, 23);
+            txtStaffPhonenumber.TabIndex = 12;
             // 
-            // textBox6
+            // txtStaffStartDay
             // 
-            textBox6.Location = new System.Drawing.Point(458, 98);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new System.Drawing.Size(200, 23);
-            textBox6.TabIndex = 12;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new System.Drawing.Point(458, 24);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            dateTimePicker1.TabIndex = 13;
+            txtStaffStartDay.Location = new System.Drawing.Point(458, 24);
+            txtStaffStartDay.Name = "txtStaffStartDay";
+            txtStaffStartDay.Size = new System.Drawing.Size(200, 23);
+            txtStaffStartDay.TabIndex = 13;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(textBox6);
+            groupBox1.Controls.Add(txtStaffID);
+            groupBox1.Controls.Add(txtStaffPhonenumber);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(dateTimePicker1);
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(txtStaffStartDay);
+            groupBox1.Controls.Add(txtStaffEmail);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(txtStaffFirstname);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(txtStaffGender);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(txtStaffLastName);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new System.Drawing.Point(46, 25);
@@ -183,27 +176,36 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Staff information";
             // 
-            // dataGridView1
+            // dgvStaffList
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new System.Drawing.Point(12, 277);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new System.Drawing.Size(776, 161);
-            dataGridView1.TabIndex = 15;
+            dgvStaffList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStaffList.Location = new System.Drawing.Point(12, 277);
+            dgvStaffList.Name = "dgvStaffList";
+            dgvStaffList.ReadOnly = true;
+            dgvStaffList.RowTemplate.Height = 25;
+            dgvStaffList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvStaffList.Size = new System.Drawing.Size(776, 161);
+            dgvStaffList.TabIndex = 15;
+            // 
+            // txtStaffGender
+            // 
+            txtStaffGender.Location = new System.Drawing.Point(89, 141);
+            txtStaffGender.Name = "txtStaffGender";
+            txtStaffGender.Size = new System.Drawing.Size(197, 23);
+            txtStaffGender.TabIndex = 10;
             // 
             // frmStaff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvStaffList);
             Controls.Add(groupBox1);
             Name = "frmStaff";
             Text = "frmStaff";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStaffList).EndInit();
             ResumeLayout(false);
         }
 
@@ -216,14 +218,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtStaffID;
+        private System.Windows.Forms.TextBox txtStaffFirstname;
+        private System.Windows.Forms.TextBox txtStaffLastName;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtStaffEmail;
+        private System.Windows.Forms.TextBox txtStaffPhonenumber;
+        private System.Windows.Forms.DateTimePicker txtStaffStartDay;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvStaffList;
+        private System.Windows.Forms.TextBox txtStaffGender;
     }
 }
