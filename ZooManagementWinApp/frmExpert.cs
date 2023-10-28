@@ -34,7 +34,7 @@ namespace ZooManagementWinApp
             try
             {
                 source = new BindingSource();
-                source.DataSource = log;    
+                source.DataSource = log;
 
                 txtType.DataBindings.Clear();
                 txtShortDescription.DataBindings.Clear();
@@ -43,15 +43,15 @@ namespace ZooManagementWinApp
                 dtpDatetime.DataBindings.Clear();
                 dgvViewLog.DataBindings.Clear();
 
-                txtSpecies.DataBindings.Add("Text",source, "Species");
-                txtAnimalName.DataBindings.Add("Text",source, "AnimalName");
-                txtShortDescription.DataBindings.Add("Text",source, "ShortDescription");
-                txtType.DataBindings.Add("Text",source, "Type");
-                dtpDatetime.DataBindings.Add("Text",source, "DateTime");
+                txtSpecies.DataBindings.Add("Text", source, "Species");
+                txtAnimalName.DataBindings.Add("Text", source, "AnimalName");
+                txtShortDescription.DataBindings.Add("Text", source, "ShortDescription");
+                txtType.DataBindings.Add("Text", source, "Type");
+                dtpDatetime.DataBindings.Add("Text", source, "DateTime");
 
                 dgvViewLog.DataSource = null;
-                dgvViewLog.DataSource= source;
-                
+                dgvViewLog.DataSource = source;
+
 
             }
             catch (Exception ex)
