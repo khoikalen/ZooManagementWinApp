@@ -11,5 +11,8 @@ namespace Repositories
     public class AccountRepository : IAccountRepository
     {
         public void InsertAccount(Account account) => AccountDAO.Instance.InsertAccount(account);
+
+        public string LoginAccount(string email, string password) => AccountDAO.Instance.LoginAccount(email, password);
+       
     }
 }

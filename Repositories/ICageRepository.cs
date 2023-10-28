@@ -10,5 +10,6 @@ namespace Repositories
     public interface ICageRepository
     {
         IEnumerable<Cage> GetCages();
+        List<Cage> GetCagesByStaffEmail(String staffEmail);
     }
 }
