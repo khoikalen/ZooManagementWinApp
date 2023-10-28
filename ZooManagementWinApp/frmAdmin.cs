@@ -82,5 +82,63 @@ namespace ZooManagementWinApp
                 source.Position = source.Count - 1;
             }
         }
+
+        private void dgvStaff_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmStaffDetail f = new frmStaffDetail
+            {
+                Text = "Update a staff",
+                InsertOrUpdate = true,
+                StaffInfo = GetStaffObject(),
+                StaffRepository = staffRepository
+            };
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                LoadStaffsList();
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private staff GetStaffObject()
+        {
+            staff staff = null;
+            try
+            {
+                staff = new staff
+                {
+                    Id = int.Parse(txtStaffID.Text),
+                    FirstName = txtStaffFirstName.Text,
+                    LastName = txtStaffLastName.Text,
+                    Gender = txtGender.Text,
+                    StartDay = DateTime.Parse(dtpStatDay.Text),
+                    Email = txtStaffEmail.Text,
+                    PhoneNumber = txtStaffPhoneNumber.Text
+                };
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error at get staff object");
+            }
+            return staff;
+        }
+
+        private void btnDeleteStaff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var staff = GetStaffObject();
+                var confirm = MessageBox.Show("Are you sure to delete this staff?", "Confirm Delete!", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    staffRepository.DeleteStaffs(staff.Id);
+                }
+                LoadStaffsList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete a staff");
+            }
+        }
     }
 }

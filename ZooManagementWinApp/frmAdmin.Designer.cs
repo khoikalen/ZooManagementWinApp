@@ -48,6 +48,7 @@
             lbStaffID = new System.Windows.Forms.Label();
             dgvStaff = new System.Windows.Forms.DataGridView();
             tabPage2 = new System.Windows.Forms.TabPage();
+            btnDeleteStaff = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabStaffMangement.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -66,6 +67,7 @@
             // 
             // tabStaffMangement
             // 
+            tabStaffMangement.Controls.Add(btnDeleteStaff);
             tabStaffMangement.Controls.Add(btnAddStaff);
             tabStaffMangement.Controls.Add(groupBox1);
             tabStaffMangement.Controls.Add(dgvStaff);
@@ -233,6 +235,7 @@
             dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             dgvStaff.Size = new System.Drawing.Size(1025, 217);
             dgvStaff.TabIndex = 0;
+            dgvStaff.CellDoubleClick += dgvStaff_CellDoubleClick;
             // 
             // tabPage2
             // 
@@ -243,6 +246,16 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteStaff
+            // 
+            btnDeleteStaff.Location = new System.Drawing.Point(271, 265);
+            btnDeleteStaff.Name = "btnDeleteStaff";
+            btnDeleteStaff.Size = new System.Drawing.Size(94, 29);
+            btnDeleteStaff.TabIndex = 3;
+            btnDeleteStaff.Text = "Delete";
+            btnDeleteStaff.UseVisualStyleBackColor = true;
+            btnDeleteStaff.Click += btnDeleteStaff_Click;
             // 
             // frmAdmin
             // 
@@ -284,5 +297,6 @@
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Label lbPhoneNumber;
         private System.Windows.Forms.Button btnAddStaff;
+        private System.Windows.Forms.Button btnDeleteStaff;
     }
 }
