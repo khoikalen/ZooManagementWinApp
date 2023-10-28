@@ -39,7 +39,6 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
-<<<<<<< HEAD
         public String LoginAccount(String email, String password)
         {
             try
@@ -49,9 +48,11 @@ namespace DataAccessObjects
                     var loginAccount = context.Accounts.FirstOrDefault(c => c.Email.Equals(email) && c.Password.Equals(password));
                     return loginAccount.Role;
                 }
-
-=======
-        
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            }
         public void DeleteAccountByEmail(string email) 
         {
             var account = new Account();    
@@ -61,7 +62,6 @@ namespace DataAccessObjects
                 account = db.Accounts.FirstOrDefault(x => x.Email == email);
                 db.Accounts.Remove(account);
                 db.SaveChanges();
->>>>>>> ea31d9ed9fffea341de8c81a428cbe2af4c75edb
             }
             catch (Exception ex)
             {
