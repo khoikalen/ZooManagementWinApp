@@ -1,4 +1,4 @@
-﻿using BusinessObjects;
+﻿using BusinessObjects.Models;
 using Repositories;
 using System;
 using System.Collections.Generic;
