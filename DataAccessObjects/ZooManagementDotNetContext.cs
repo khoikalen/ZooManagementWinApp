@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using BusinessObjects;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 #nullable disable
 
 namespace DataAccessObjects
@@ -30,12 +32,18 @@ namespace DataAccessObjects
         public virtual DbSet<SoldTicket> SoldTickets { get; set; }
         public virtual DbSet<staff> staff { get; set; }
 
+        private string GetConnectionString()
+        {
+            IConfiguration configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json", true, true).Build();
+            return configuration["ConnectionStrings:DefaultConnectionString"];
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=ZooManagementDotNet; Uid=sa; Pwd=12345");
+                optionsBuilder.UseSqlServer(GetConnectionString());
             }
         }
 

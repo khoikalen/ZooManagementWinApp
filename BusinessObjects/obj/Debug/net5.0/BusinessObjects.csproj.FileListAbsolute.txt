@@ -13,3 +13,18 @@ C:\Users\DANG KHOI\source\repos\ZooManagement\BusinessObjects\obj\Debug\net5.0\r
 C:\Users\DANG KHOI\source\repos\ZooManagement\BusinessObjects\obj\Debug\net5.0\BusinessObjects.pdb
 C:\Users\DANG KHOI\source\repos\ZooManagement\BusinessObjects\obj\Debug\net5.0\BusinessObjects.genruntimeconfig.cache
 C:\Users\DANG KHOI\source\repos\ZooManagement\BusinessObjects\obj\Debug\net5.0\ref\BusinessObjects.dll
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\bin\Debug\net5.0\BusinessObjects.deps.json
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\bin\Debug\net5.0\BusinessObjects.runtimeconfig.json
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\bin\Debug\net5.0\BusinessObjects.runtimeconfig.dev.json
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\bin\Debug\net5.0\BusinessObjects.dll
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\bin\Debug\net5.0\BusinessObjects.pdb
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\BusinessObjects.csproj.AssemblyReference.cache
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\BusinessObjects.AssemblyInfoInputs.cache
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\BusinessObjects.AssemblyInfo.cs
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\BusinessObjects.csproj.CoreCompileInputs.cache
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\BusinessObjects.dll
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\refint\BusinessObjects.dll
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\BusinessObjects.pdb
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\BusinessObjects.genruntimeconfig.cache
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\BusinessObjects\obj\Debug\net5.0\ref\BusinessObjects.dll

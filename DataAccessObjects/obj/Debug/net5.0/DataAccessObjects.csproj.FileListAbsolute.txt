@@ -13,3 +13,18 @@ C:\Users\DANG KHOI\source\repos\ZooManagement\DataAccessObjects\obj\Debug\net5.0
 C:\Users\DANG KHOI\source\repos\ZooManagement\DataAccessObjects\obj\Debug\net5.0\refint\DataAccessObjects.dll
 C:\Users\DANG KHOI\source\repos\ZooManagement\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.pdb
 C:\Users\DANG KHOI\source\repos\ZooManagement\DataAccessObjects\obj\Debug\net5.0\ref\DataAccessObjects.dll
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\bin\Debug\net5.0\DataAccessObjects.deps.json
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\bin\Debug\net5.0\DataAccessObjects.dll
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\bin\Debug\net5.0\DataAccessObjects.pdb
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\bin\Debug\net5.0\BusinessObjects.dll
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\bin\Debug\net5.0\BusinessObjects.pdb
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.csproj.AssemblyReference.cache
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.GeneratedMSBuildEditorConfig.editorconfig
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.AssemblyInfoInputs.cache
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.AssemblyInfo.cs
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.csproj.CoreCompileInputs.cache
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.csproj.CopyComplete
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.dll
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\refint\DataAccessObjects.dll
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\DataAccessObjects.pdb
+E:\ZooManagementSystemDotNet\ZooManagementWinApp\DataAccessObjects\obj\Debug\net5.0\ref\DataAccessObjects.dll
