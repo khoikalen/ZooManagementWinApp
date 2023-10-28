@@ -1,9 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\kanat\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\kanat\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\hoqua\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\hoqua\\.nuget\\packages",
+      "D:\\VisualStudio\\Shared\\NuGetPackages"
     ]
   }
 }

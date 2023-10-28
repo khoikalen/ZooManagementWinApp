@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{1E553DE1-4F62-4123-B706-4BC9AA5FE63C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{1E553DE1-4F62-4123-B706-4BC9AA5FE63C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessObjects", "DataAccessObjects\DataAccessObjects.csproj", "{E1A76C2D-0488-4DFA-8EB2-D352C163007C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessObjects", "DataAccessObjects\DataAccessObjects.csproj", "{E1A76C2D-0488-4DFA-8EB2-D352C163007C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{A29C091E-F0D2-4468-A100-19CA6E61F62E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{A29C091E-F0D2-4468-A100-19CA6E61F62E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooManagementWinApp", "ZooManagementWinApp\ZooManagementWinApp.csproj", "{F91AC350-8B69-42D2-A85D-8C3529FC1E33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZooManagementWinApp", "ZooManagementWinApp\ZooManagementWinApp.csproj", "{F91AC350-8B69-42D2-A85D-8C3529FC1E33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj": {}
+    "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj": {}
   },
   "projects": {
-    "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj": {
+    "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj",
-        "packagesPath": "C:\\Users\\kanat\\.nuget\\packages\\",
-        "outputPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\obj\\",
+        "projectPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj",
+        "packagesPath": "C:\\Users\\hoqua\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\VisualStudio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kanat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hoqua\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -76,24 +76,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj": {
+    "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj",
+        "projectUniqueName": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj",
         "projectName": "DataAccessObjects",
-        "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj",
-        "packagesPath": "C:\\Users\\kanat\\.nuget\\packages\\",
-        "outputPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\DataAccessObjects\\obj\\",
+        "projectPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj",
+        "packagesPath": "C:\\Users\\hoqua\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\DataAccessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\VisualStudio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kanat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hoqua\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -109,8 +109,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj"
+              "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }
@@ -140,24 +140,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\Repositories\\Repositories.csproj": {
+    "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\Repositories\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\Repositories\\Repositories.csproj",
-        "packagesPath": "C:\\Users\\kanat\\.nuget\\packages\\",
-        "outputPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\Repositories\\obj\\",
+        "projectPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\Repositories\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\hoqua\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\VisualStudio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kanat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hoqua\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -173,8 +173,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj": {
-                "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj"
+              "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj": {
+                "projectPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\DataAccessObjects\\DataAccessObjects.csproj"
               }
             }
           }
@@ -204,24 +204,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj": {
+    "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj",
+        "projectUniqueName": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj",
         "projectName": "ZooManagementWinApp",
-        "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj",
-        "packagesPath": "C:\\Users\\kanat\\.nuget\\packages\\",
-        "outputPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\ZooManagementWinApp\\obj\\",
+        "projectPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\ZooManagementWinApp\\ZooManagementWinApp.csproj",
+        "packagesPath": "C:\\Users\\hoqua\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\ZooManagementWinApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\VisualStudio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kanat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hoqua\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -237,8 +237,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\Repositories\\Repositories.csproj": {
-                "projectPath": "E:\\ZooManagementSystemDotNet\\ZooManagementWinApp\\Repositories\\Repositories.csproj"
+              "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\Repositories\\Repositories.csproj": {
+                "projectPath": "D:\\PRN211\\ZooManagementDotnet\\ZooManagementWinApp\\Repositories\\Repositories.csproj"
               }
             }
           }
@@ -271,7 +271,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
