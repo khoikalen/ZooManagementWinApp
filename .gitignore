@@ -408,4 +408,7 @@ obj/
 /node_modules
 /wwwroot/node_modules
 
+# Appsettings json file
+ZooManagementWinApp/appsettings.json
+
 # End of https://www.toptal.com/developers/gitignore/api/csharp,dotnetcore

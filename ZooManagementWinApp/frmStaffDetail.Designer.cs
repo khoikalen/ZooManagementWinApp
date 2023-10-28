@@ -40,18 +40,18 @@
             txtStaffID = new System.Windows.Forms.TextBox();
             txtFirstName = new System.Windows.Forms.TextBox();
             txtLastName = new System.Windows.Forms.TextBox();
-            txtGender = new System.Windows.Forms.TextBox();
             txtEmail = new System.Windows.Forms.TextBox();
             txtPhoneNumber = new System.Windows.Forms.TextBox();
             txtPassword = new System.Windows.Forms.TextBox();
             btnSave = new System.Windows.Forms.Button();
             btnCancel = new System.Windows.Forms.Button();
+            cboGender = new System.Windows.Forms.ComboBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(55, 58);
+            label1.Location = new System.Drawing.Point(49, 97);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(59, 20);
             label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(55, 128);
+            label2.Location = new System.Drawing.Point(49, 167);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(80, 20);
             label2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(55, 195);
+            label3.Location = new System.Drawing.Point(49, 234);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(79, 20);
             label3.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             // dtpStartDay
             // 
-            dtpStartDay.Location = new System.Drawing.Point(509, 51);
+            dtpStartDay.Location = new System.Drawing.Point(503, 90);
             dtpStartDay.Name = "dtpStartDay";
             dtpStartDay.Size = new System.Drawing.Size(250, 27);
             dtpStartDay.TabIndex = 3;
@@ -85,7 +85,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(55, 252);
+            label4.Location = new System.Drawing.Point(49, 291);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(57, 20);
             label4.TabIndex = 4;
@@ -94,7 +94,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(395, 56);
+            label5.Location = new System.Drawing.Point(389, 95);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(70, 20);
             label5.TabIndex = 5;
@@ -103,7 +103,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(395, 126);
+            label6.Location = new System.Drawing.Point(389, 165);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(46, 20);
             label6.TabIndex = 6;
@@ -112,7 +112,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(395, 193);
+            label7.Location = new System.Drawing.Point(389, 232);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(108, 20);
             label7.TabIndex = 7;
@@ -121,7 +121,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(395, 250);
+            label8.Location = new System.Drawing.Point(389, 291);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(70, 20);
             label8.TabIndex = 8;
@@ -129,49 +129,42 @@
             // 
             // txtStaffID
             // 
-            txtStaffID.Location = new System.Drawing.Point(164, 55);
+            txtStaffID.Location = new System.Drawing.Point(158, 94);
             txtStaffID.Name = "txtStaffID";
             txtStaffID.Size = new System.Drawing.Size(183, 27);
             txtStaffID.TabIndex = 9;
             // 
             // txtFirstName
             // 
-            txtFirstName.Location = new System.Drawing.Point(164, 121);
+            txtFirstName.Location = new System.Drawing.Point(158, 160);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new System.Drawing.Size(183, 27);
             txtFirstName.TabIndex = 10;
             // 
             // txtLastName
             // 
-            txtLastName.Location = new System.Drawing.Point(164, 188);
+            txtLastName.Location = new System.Drawing.Point(158, 227);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new System.Drawing.Size(183, 27);
             txtLastName.TabIndex = 11;
             // 
-            // txtGender
-            // 
-            txtGender.Location = new System.Drawing.Point(164, 245);
-            txtGender.Name = "txtGender";
-            txtGender.Size = new System.Drawing.Size(183, 27);
-            txtGender.TabIndex = 12;
-            // 
             // txtEmail
             // 
-            txtEmail.Location = new System.Drawing.Point(509, 123);
+            txtEmail.Location = new System.Drawing.Point(503, 162);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new System.Drawing.Size(250, 27);
             txtEmail.TabIndex = 13;
             // 
             // txtPhoneNumber
             // 
-            txtPhoneNumber.Location = new System.Drawing.Point(509, 190);
+            txtPhoneNumber.Location = new System.Drawing.Point(503, 229);
             txtPhoneNumber.Name = "txtPhoneNumber";
             txtPhoneNumber.Size = new System.Drawing.Size(250, 27);
             txtPhoneNumber.TabIndex = 14;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new System.Drawing.Point(509, 250);
+            txtPassword.Location = new System.Drawing.Point(503, 284);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new System.Drawing.Size(250, 27);
             txtPassword.TabIndex = 15;
@@ -179,7 +172,7 @@
             // btnSave
             // 
             btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            btnSave.Location = new System.Drawing.Point(253, 335);
+            btnSave.Location = new System.Drawing.Point(247, 374);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(94, 29);
             btnSave.TabIndex = 16;
@@ -189,7 +182,8 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new System.Drawing.Point(395, 335);
+            btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            btnCancel.Location = new System.Drawing.Point(389, 374);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new System.Drawing.Size(94, 29);
             btnCancel.TabIndex = 17;
@@ -197,17 +191,26 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // cboGender
+            // 
+            cboGender.FormattingEnabled = true;
+            cboGender.Items.AddRange(new object[] { "Male", "Female", "Other" });
+            cboGender.Location = new System.Drawing.Point(158, 288);
+            cboGender.Name = "cboGender";
+            cboGender.Size = new System.Drawing.Size(183, 28);
+            cboGender.TabIndex = 18;
+            // 
             // frmStaffDetail
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(cboGender);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(txtPassword);
             Controls.Add(txtPhoneNumber);
             Controls.Add(txtEmail);
-            Controls.Add(txtGender);
             Controls.Add(txtLastName);
             Controls.Add(txtFirstName);
             Controls.Add(txtStaffID);
@@ -242,11 +245,11 @@
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ComboBox cboGender;
     }
 }

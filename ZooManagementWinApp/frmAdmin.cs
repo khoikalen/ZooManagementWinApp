@@ -15,6 +15,7 @@ namespace ZooManagementWinApp
     public partial class frmAdmin : Form
     {
         IStaffRepository staffRepository = new StaffRepository();
+        ICageRepository cageRepository = new CageRepository();
         BindingSource source;
         public frmAdmin()
         {
@@ -24,6 +25,7 @@ namespace ZooManagementWinApp
         private void frmAdmin_Load(object sender, EventArgs e)
         {
             LoadStaffsList();
+            LoadCagesList();
         }
 
         private void LoadStaffsList()
@@ -63,8 +65,41 @@ namespace ZooManagementWinApp
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Load Staffs List");
+            }
+        }
+
+        private void LoadCagesList()
+        {
+            var cages = cageRepository.GetCages();
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = cages;
+
+                txtCageID.DataBindings.Clear();
+                txtCageName.DataBindings.Clear();
+                txtCageQuantity.DataBindings.Clear();
+                txtCageStatus.DataBindings.Clear();
+                txtCageType.DataBindings.Clear();
+                txtAreaForeignID.DataBindings.Clear();
+                txtStaffForeignID.DataBindings.Clear();
+
+                txtCageID.DataBindings.Add("Text", source, "Id");
+                txtCageName.DataBindings.Add("Text", source, "Name");
+                txtCageQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
+                txtCageType.DataBindings.Add("Text", source, "CageType");
+                txtAreaForeignID.DataBindings.Add("Text", source, "AreaId");
+                txtStaffForeignID.DataBindings.Add("Text", source, "StaffId");
+
+                dgvCageManagement.DataSource = null;
+                dgvCageManagement.DataSource = source;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get all cages");
             }
         }
 
@@ -80,6 +115,64 @@ namespace ZooManagementWinApp
             {
                 LoadStaffsList();
                 source.Position = source.Count - 1;
+            }
+        }
+
+        private void dgvStaff_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmStaffDetail f = new frmStaffDetail
+            {
+                Text = "Update a staff",
+                InsertOrUpdate = true,
+                StaffInfo = GetStaffObject(),
+                StaffRepository = staffRepository
+            };
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                LoadStaffsList();
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private staff GetStaffObject()
+        {
+            staff staff = null;
+            try
+            {
+                staff = new staff
+                {
+                    Id = int.Parse(txtStaffID.Text),
+                    FirstName = txtStaffFirstName.Text,
+                    LastName = txtStaffLastName.Text,
+                    Gender = txtGender.Text,
+                    StartDay = DateTime.Parse(dtpStatDay.Text),
+                    Email = txtStaffEmail.Text,
+                    PhoneNumber = txtStaffPhoneNumber.Text
+                };
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error at get staff object");
+            }
+            return staff;
+        }
+
+        private void btnDeleteStaff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var staff = GetStaffObject();
+                var confirm = MessageBox.Show("Are you sure to delete this staff?", "Confirm Delete!", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    staffRepository.DeleteStaffs(staff.Id);
+                }
+                LoadStaffsList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete a staff");
             }
         }
     }
