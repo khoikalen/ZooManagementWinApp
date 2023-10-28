@@ -6,8 +6,8 @@
       "version": "5.0.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\DANG KHOI\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\DANG KHOI\\.nuget\\packages",
+      "C:\\Users\\kanat\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\kanat\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
