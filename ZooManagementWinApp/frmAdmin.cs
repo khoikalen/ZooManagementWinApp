@@ -15,6 +15,7 @@ namespace ZooManagementWinApp
     public partial class frmAdmin : Form
     {
         IStaffRepository staffRepository = new StaffRepository();
+        ICageRepository cageRepository = new CageRepository();
         BindingSource source;
         public frmAdmin()
         {
@@ -24,6 +25,7 @@ namespace ZooManagementWinApp
         private void frmAdmin_Load(object sender, EventArgs e)
         {
             LoadStaffsList();
+            LoadCagesList();
         }
 
         private void LoadStaffsList()
@@ -67,7 +69,39 @@ namespace ZooManagementWinApp
             }
         }
 
-        
+        private void LoadCagesList()
+        {
+            var cages = cageRepository.GetCages();
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = cages;
+
+                txtCageID.DataBindings.Clear();
+                txtCageName.DataBindings.Clear();
+                txtCageQuantity.DataBindings.Clear();
+                txtCageStatus.DataBindings.Clear();
+                txtCageType.DataBindings.Clear();
+                txtAreaForeignID.DataBindings.Clear();
+                txtStaffForeignID.DataBindings.Clear();
+
+                txtCageID.DataBindings.Add("Text", source, "Id");
+                txtCageName.DataBindings.Add("Text", source, "Name");
+                txtCageQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
+                txtCageType.DataBindings.Add("Text", source, "CageType");
+                txtAreaForeignID.DataBindings.Add("Text", source, "AreaId");
+                txtStaffForeignID.DataBindings.Add("Text", source, "StaffId");
+
+                dgvCageManagement.DataSource = null;
+                dgvCageManagement.DataSource = source;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get all cages");
+            }
+        }
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
