@@ -36,7 +36,6 @@
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             txtAnimalName = new System.Windows.Forms.TextBox();
-            txtAnimalGender = new System.Windows.Forms.TextBox();
             txtAnimalSpecie = new System.Windows.Forms.TextBox();
             txtAnimalStatus = new System.Windows.Forms.TextBox();
             cboAnimalCage = new System.Windows.Forms.ComboBox();
@@ -44,6 +43,7 @@
             txtAnimalDEZ = new System.Windows.Forms.DateTimePicker();
             btnSave = new System.Windows.Forms.Button();
             btnCancel = new System.Windows.Forms.Button();
+            txtAnimalGender = new System.Windows.Forms.ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -116,13 +116,6 @@
             txtAnimalName.Size = new System.Drawing.Size(200, 23);
             txtAnimalName.TabIndex = 7;
             // 
-            // txtAnimalGender
-            // 
-            txtAnimalGender.Location = new System.Drawing.Point(137, 189);
-            txtAnimalGender.Name = "txtAnimalGender";
-            txtAnimalGender.Size = new System.Drawing.Size(200, 23);
-            txtAnimalGender.TabIndex = 8;
-            // 
             // txtAnimalSpecie
             // 
             txtAnimalSpecie.Location = new System.Drawing.Point(474, 20);
@@ -180,11 +173,22 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // txtAnimalGender
+            // 
+            txtAnimalGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            txtAnimalGender.FormattingEnabled = true;
+            txtAnimalGender.Items.AddRange(new object[] { "Female", "Male" });
+            txtAnimalGender.Location = new System.Drawing.Point(137, 189);
+            txtAnimalGender.Name = "txtAnimalGender";
+            txtAnimalGender.Size = new System.Drawing.Size(200, 23);
+            txtAnimalGender.TabIndex = 16;
+            // 
             // frmAnimalDetail
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(703, 273);
+            Controls.Add(txtAnimalGender);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(txtAnimalDEZ);
@@ -192,7 +196,6 @@
             Controls.Add(cboAnimalCage);
             Controls.Add(txtAnimalStatus);
             Controls.Add(txtAnimalSpecie);
-            Controls.Add(txtAnimalGender);
             Controls.Add(txtAnimalName);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -204,6 +207,7 @@
             Name = "frmAnimalDetail";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmAnimalDetail";
+            Load += frmAnimalDetail_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -218,7 +222,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtAnimalName;
-        private System.Windows.Forms.TextBox txtAnimalGender;
         private System.Windows.Forms.TextBox txtAnimalSpecie;
         private System.Windows.Forms.TextBox txtAnimalStatus;
         private System.Windows.Forms.ComboBox cboAnimalCage;
@@ -226,5 +229,6 @@
         private System.Windows.Forms.DateTimePicker txtAnimalDEZ;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ComboBox txtAnimalGender;
     }
 }
