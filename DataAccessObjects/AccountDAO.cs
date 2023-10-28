@@ -39,5 +39,21 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+        
+        public void DeleteAccountByEmail(string email) 
+        {
+            var account = new Account();    
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                account = db.Accounts.FirstOrDefault(x => x.Email == email);
+                db.Accounts.Remove(account);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

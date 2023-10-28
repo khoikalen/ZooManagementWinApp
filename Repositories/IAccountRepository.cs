@@ -10,5 +10,6 @@ namespace Repositories
     public interface IAccountRepository
     {
         void InsertAccount(Account account);
+        void DeleteAccountByEmail(string email);
     }
 }

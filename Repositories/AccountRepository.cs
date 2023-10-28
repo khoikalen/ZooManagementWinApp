@@ -10,6 +10,8 @@ namespace Repositories
 {
     public class AccountRepository : IAccountRepository
     {
+        public void DeleteAccountByEmail(string email) => AccountDAO.Instance.DeleteAccountByEmail(email);
+
         public void InsertAccount(Account account) => AccountDAO.Instance.InsertAccount(account);
     }
 }
