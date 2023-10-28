@@ -1,20 +1,3 @@
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repositories.csproj.AssemblyReference.cache
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfoInputs.cache
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfo.cs
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repositories.csproj.CoreCompileInputs.cache
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\bin\Debug\net5.0\Repositories.deps.json
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\bin\Debug\net5.0\Repositories.dll
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\bin\Debug\net5.0\Repositories.pdb
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\bin\Debug\net5.0\BusinessObjects.dll
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\bin\Debug\net5.0\DataAccessObjects.dll
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\bin\Debug\net5.0\DataAccessObjects.pdb
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\bin\Debug\net5.0\BusinessObjects.pdb
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repositories.csproj.CopyComplete
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repositories.dll
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\refint\Repositories.dll
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\Repositories.pdb
-C:\Users\DANG KHOI\source\repos\ZooManagement\Repositories\obj\Debug\net5.0\ref\Repositories.dll
 E:\ZooManagementSystemDotNet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\Repositories.deps.json
 E:\ZooManagementSystemDotNet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\Repositories.dll
 E:\ZooManagementSystemDotNet\ZooManagementWinApp\Repositories\bin\Debug\net5.0\Repositories.pdb
