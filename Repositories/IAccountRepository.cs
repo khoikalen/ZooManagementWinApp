@@ -10,6 +10,7 @@ namespace Repositories
     public interface IAccountRepository
     {
         void InsertAccount(Account account);
+        String LoginAccount(String email, String password);
         void DeleteAccountByEmail(string email);
     }
 }

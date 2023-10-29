@@ -39,7 +39,20 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
-        
+        public String LoginAccount(String email, String password)
+        {
+            try
+            {
+                using (var context = new ZooManagementDotNetContext())
+                {
+                    var loginAccount = context.Accounts.FirstOrDefault(c => c.Email.Equals(email) && c.Password.Equals(password));
+                    return loginAccount.Role;
+                }
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            }
         public void DeleteAccountByEmail(string email) 
         {
             var account = new Account();    
