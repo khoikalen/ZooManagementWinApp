@@ -214,3 +214,4 @@ D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\
 D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\net5.0-windows\ZooManagementWinApp.pdb
 D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\net5.0-windows\ZooManagementWinApp.genruntimeconfig.cache
 D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\net5.0-windows\ref\ZooManagementWinApp.dll
+D:\PRN211\ZooManagementDotnet\ZooManagementWinApp\ZooManagementWinApp\obj\Debug\net5.0-windows\ZooManagementWinApp.frmFoodStorageDetails.resources
