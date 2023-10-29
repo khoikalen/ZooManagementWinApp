@@ -17,8 +17,8 @@ namespace BusinessObjects.Models
         public int? Quantity { get; set; }
         public string CageStatus { get; set; }
         public string CageType { get; set; }
-        public int? AreaId { get; set; }
-        public int? StaffId { get; set; }
+        public int AreaId { get; set; }
+        public int StaffId { get; set; }
 
         public virtual Area Area { get; set; }
         public virtual staff Staff { get; set; }

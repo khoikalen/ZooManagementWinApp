@@ -79,14 +79,14 @@ namespace ZooManagementWinApp
                 source = new BindingSource();
                 source.DataSource = cages;
 
-                txtCageID.DataBindings.Clear();
+                txtCagePrimaryID.DataBindings.Clear();
                 txtCageName.DataBindings.Clear();
                 txtCageQuantity.DataBindings.Clear();
                 txtCageStatus.DataBindings.Clear();
                 txtAreaForeignID.DataBindings.Clear();
                 txtStaffForeignID.DataBindings.Clear();
 
-                txtCageID.DataBindings.Add("Text", source, "Id");
+                txtCagePrimaryID.DataBindings.Add("Text", source, "Id");
                 txtCageName.DataBindings.Add("Text", source, "Name");
                 txtCageQuantity.DataBindings.Add("Text", source, "Quantity");
                 txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
@@ -170,7 +170,7 @@ namespace ZooManagementWinApp
             {
                 cage = new Cage
                 {
-                    Id = int.Parse(txtCageID.Text),
+                    Id = int.Parse(txtCagePrimaryID.Text),
                     Name = txtCageName.Text,
                     Quantity = int.Parse(txtCageQuantity.Text),
                     CageStatus = txtCageStatus.Text,
@@ -214,7 +214,7 @@ namespace ZooManagementWinApp
             };
             if (frmCageDetail.ShowDialog() == DialogResult.OK)
             {
-                LoadStaffsList();
+                LoadCagesList();
                 source.Position = source.Count - 1;
             }
         }
@@ -230,8 +230,33 @@ namespace ZooManagementWinApp
             };
             if (frmCageDetail.ShowDialog() == DialogResult.OK)
             {
-                LoadStaffsList();
+                LoadCagesList();
                 source.Position = source.Count - 1;
+            }
+        }
+
+        private void btnDeleteCage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var cage = GetCageObject();
+                if (cage.Quantity == 0)
+                {
+                    var confirm = MessageBox.Show("Are you sure to delete this cage?", "Confirm Delete!", MessageBoxButtons.YesNo);
+                    if (confirm == DialogResult.Yes)
+                    {
+                        cageRepository.DeleteCage(cage.Id);
+                    }
+                    LoadCagesList();
+                }
+                else
+                {
+                    MessageBox.Show("There are still animals in cage");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete a cage");
             }
         }
     }

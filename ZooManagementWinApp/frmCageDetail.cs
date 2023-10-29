@@ -33,16 +33,18 @@ namespace ZooManagementWinApp
             cboStaffId.SelectedIndex = 0;
             cboAreaId.SelectedIndex = 0;
             cboCageStatus.SelectedIndex = 0;
+            txtCageQuantity.Text = "0";
+            txtCageQuantity.Enabled = false;
 
             txtCageID.Enabled = false;
             if (InsertOrUpdate == true)
             {
-                txtCageID.Text = CageInfo.StaffId.ToString();
+                txtCageID.Text = CageInfo.Id.ToString();
                 txtCageName.Text = CageInfo.Name;
                 txtCageQuantity.Text = CageInfo.Quantity.ToString();
                 cboCageStatus.Text = CageInfo.CageStatus;
-                cboAreaId.SelectedIndex = (int)CageInfo.AreaId -1;
-                cboStaffId.SelectedIndex = (int)CageInfo.StaffId -1;
+                cboAreaId.SelectedIndex = CageInfo.AreaId - 1;
+                cboStaffId.SelectedIndex = CageInfo.StaffId -2;
             }
         }
 
@@ -51,8 +53,8 @@ namespace ZooManagementWinApp
             try
             {
                 var cage = new Cage();
-                if ( InsertOrUpdate == false ) 
-                { 
+                if (InsertOrUpdate == false)
+                {
                     cage = new Cage
                     {
                         Name = txtCageName.Text,
@@ -63,7 +65,7 @@ namespace ZooManagementWinApp
                         StaffId = int.Parse(cboStaffId.SelectedValue.ToString()),
                     };
                     CageRepository.InsertCage(cage);
-                } 
+                }
                 else
                 {
                     cage = new Cage
@@ -114,8 +116,8 @@ namespace ZooManagementWinApp
                     }
                 }
                 cboStaffId.DataSource = staffView;
-                cboStaffId.ValueMember= "Id";
-                cboStaffId.DisplayMember= "Email";
+                cboStaffId.ValueMember = "Id";
+                cboStaffId.DisplayMember = "Email";
             }
             catch (Exception ex)
             {
@@ -124,5 +126,18 @@ namespace ZooManagementWinApp
         }
 
         private void btnCancel_Click(object sender, EventArgs e) => Close();
+
+        private void cboCageStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCageStatus.SelectedIndex == 1)
+            {
+                txtCageName.Text = "Empty Cage";
+                txtCageName.Enabled = false;
+            } else
+            {
+                txtCageName.Clear();
+                txtCageName.Enabled = true;
+            }
+        }
     }
 }
