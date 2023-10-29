@@ -49,6 +49,26 @@
             lbStaffID = new System.Windows.Forms.Label();
             dgvStaff = new System.Windows.Forms.DataGridView();
             tabExpertManagement = new System.Windows.Forms.TabPage();
+            btnDeleteExpert = new System.Windows.Forms.Button();
+            btnAddExpert = new System.Windows.Forms.Button();
+            dgvExpertManagement = new System.Windows.Forms.DataGridView();
+            groupBox3 = new System.Windows.Forms.GroupBox();
+            txtExpertAreaID = new System.Windows.Forms.TextBox();
+            label8 = new System.Windows.Forms.Label();
+            txtExpertPhoneNumber = new System.Windows.Forms.TextBox();
+            dtpExpertStartDay = new System.Windows.Forms.DateTimePicker();
+            txtExpertEmail = new System.Windows.Forms.TextBox();
+            txtGenderExpert = new System.Windows.Forms.TextBox();
+            txtExpertLastName = new System.Windows.Forms.TextBox();
+            txtExpertFirstName = new System.Windows.Forms.TextBox();
+            txtExpertID = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
             tabCageManagement = new System.Windows.Forms.TabPage();
             btnDeleteCage = new System.Windows.Forms.Button();
             btnAddCage = new System.Windows.Forms.Button();
@@ -70,6 +90,9 @@
             tabStaffMangement.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStaff).BeginInit();
+            tabExpertManagement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvExpertManagement).BeginInit();
+            groupBox3.SuspendLayout();
             tabCageManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCageManagement).BeginInit();
             groupBox2.SuspendLayout();
@@ -279,6 +302,10 @@
             // 
             // tabExpertManagement
             // 
+            tabExpertManagement.Controls.Add(btnDeleteExpert);
+            tabExpertManagement.Controls.Add(btnAddExpert);
+            tabExpertManagement.Controls.Add(dgvExpertManagement);
+            tabExpertManagement.Controls.Add(groupBox3);
             tabExpertManagement.Location = new System.Drawing.Point(4, 29);
             tabExpertManagement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             tabExpertManagement.Name = "tabExpertManagement";
@@ -287,6 +314,201 @@
             tabExpertManagement.TabIndex = 1;
             tabExpertManagement.Text = "Expert Management";
             tabExpertManagement.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteExpert
+            // 
+            btnDeleteExpert.Location = new System.Drawing.Point(240, 243);
+            btnDeleteExpert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btnDeleteExpert.Name = "btnDeleteExpert";
+            btnDeleteExpert.Size = new System.Drawing.Size(94, 29);
+            btnDeleteExpert.TabIndex = 5;
+            btnDeleteExpert.Text = "Delete";
+            btnDeleteExpert.UseVisualStyleBackColor = true;
+            btnDeleteExpert.Click += btnDeleteExpert_Click;
+            // 
+            // btnAddExpert
+            // 
+            btnAddExpert.Location = new System.Drawing.Point(96, 243);
+            btnAddExpert.Name = "btnAddExpert";
+            btnAddExpert.Size = new System.Drawing.Size(94, 29);
+            btnAddExpert.TabIndex = 4;
+            btnAddExpert.Text = "Add";
+            btnAddExpert.UseVisualStyleBackColor = true;
+            btnAddExpert.Click += btnAddExpert_Click;
+            // 
+            // dgvExpertManagement
+            // 
+            dgvExpertManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvExpertManagement.Location = new System.Drawing.Point(0, 290);
+            dgvExpertManagement.Name = "dgvExpertManagement";
+            dgvExpertManagement.ReadOnly = true;
+            dgvExpertManagement.RowHeadersWidth = 51;
+            dgvExpertManagement.RowTemplate.Height = 29;
+            dgvExpertManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvExpertManagement.Size = new System.Drawing.Size(1021, 235);
+            dgvExpertManagement.TabIndex = 3;
+            dgvExpertManagement.CellDoubleClick += dgvExpertManagement_CellDoubleClick;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(txtExpertAreaID);
+            groupBox3.Controls.Add(label8);
+            groupBox3.Controls.Add(txtExpertPhoneNumber);
+            groupBox3.Controls.Add(dtpExpertStartDay);
+            groupBox3.Controls.Add(txtExpertEmail);
+            groupBox3.Controls.Add(txtGenderExpert);
+            groupBox3.Controls.Add(txtExpertLastName);
+            groupBox3.Controls.Add(txtExpertFirstName);
+            groupBox3.Controls.Add(txtExpertID);
+            groupBox3.Controls.Add(label1);
+            groupBox3.Controls.Add(label2);
+            groupBox3.Controls.Add(label3);
+            groupBox3.Controls.Add(label4);
+            groupBox3.Controls.Add(label5);
+            groupBox3.Controls.Add(label6);
+            groupBox3.Controls.Add(label7);
+            groupBox3.Location = new System.Drawing.Point(61, 26);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new System.Drawing.Size(907, 201);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Expert Information";
+            // 
+            // txtExpertAreaID
+            // 
+            txtExpertAreaID.Location = new System.Drawing.Point(628, 148);
+            txtExpertAreaID.Name = "txtExpertAreaID";
+            txtExpertAreaID.ReadOnly = true;
+            txtExpertAreaID.Size = new System.Drawing.Size(125, 27);
+            txtExpertAreaID.TabIndex = 17;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(498, 152);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(98, 20);
+            label8.TabIndex = 16;
+            label8.Text = "Area Manage";
+            // 
+            // txtExpertPhoneNumber
+            // 
+            txtExpertPhoneNumber.Location = new System.Drawing.Point(688, 45);
+            txtExpertPhoneNumber.Name = "txtExpertPhoneNumber";
+            txtExpertPhoneNumber.ReadOnly = true;
+            txtExpertPhoneNumber.Size = new System.Drawing.Size(125, 27);
+            txtExpertPhoneNumber.TabIndex = 13;
+            // 
+            // dtpExpertStartDay
+            // 
+            dtpExpertStartDay.Enabled = false;
+            dtpExpertStartDay.Location = new System.Drawing.Point(184, 148);
+            dtpExpertStartDay.Name = "dtpExpertStartDay";
+            dtpExpertStartDay.Size = new System.Drawing.Size(250, 27);
+            dtpExpertStartDay.TabIndex = 12;
+            // 
+            // txtExpertEmail
+            // 
+            txtExpertEmail.Location = new System.Drawing.Point(688, 96);
+            txtExpertEmail.Name = "txtExpertEmail";
+            txtExpertEmail.ReadOnly = true;
+            txtExpertEmail.Size = new System.Drawing.Size(125, 27);
+            txtExpertEmail.TabIndex = 11;
+            // 
+            // txtGenderExpert
+            // 
+            txtGenderExpert.Location = new System.Drawing.Point(373, 51);
+            txtGenderExpert.Name = "txtGenderExpert";
+            txtGenderExpert.ReadOnly = true;
+            txtGenderExpert.Size = new System.Drawing.Size(125, 27);
+            txtGenderExpert.TabIndex = 10;
+            // 
+            // txtExpertLastName
+            // 
+            txtExpertLastName.Location = new System.Drawing.Point(373, 96);
+            txtExpertLastName.Name = "txtExpertLastName";
+            txtExpertLastName.ReadOnly = true;
+            txtExpertLastName.Size = new System.Drawing.Size(125, 27);
+            txtExpertLastName.TabIndex = 9;
+            // 
+            // txtExpertFirstName
+            // 
+            txtExpertFirstName.Location = new System.Drawing.Point(133, 95);
+            txtExpertFirstName.Name = "txtExpertFirstName";
+            txtExpertFirstName.ReadOnly = true;
+            txtExpertFirstName.Size = new System.Drawing.Size(125, 27);
+            txtExpertFirstName.TabIndex = 8;
+            // 
+            // txtExpertID
+            // 
+            txtExpertID.Location = new System.Drawing.Point(133, 51);
+            txtExpertID.Name = "txtExpertID";
+            txtExpertID.ReadOnly = true;
+            txtExpertID.Size = new System.Drawing.Size(125, 27);
+            txtExpertID.TabIndex = 7;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(550, 53);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(105, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Phone number";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(550, 99);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(46, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Email";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(94, 152);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(68, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Start day";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(283, 53);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(57, 20);
+            label4.TabIndex = 3;
+            label4.Text = "Gender";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(283, 99);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(76, 20);
+            label5.TabIndex = 2;
+            label5.Text = "Last name";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(35, 99);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(77, 20);
+            label6.TabIndex = 1;
+            label6.Text = "First name";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(35, 53);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(70, 20);
+            label7.TabIndex = 0;
+            label7.Text = "Expert ID";
             // 
             // tabCageManagement
             // 
@@ -484,6 +706,10 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStaff).EndInit();
+            tabExpertManagement.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvExpertManagement).EndInit();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             tabCageManagement.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCageManagement).EndInit();
             groupBox2.ResumeLayout(false);
@@ -531,5 +757,25 @@
         private System.Windows.Forms.DataGridView dgvCageManagement;
         private System.Windows.Forms.Button btnAddCage;
         private System.Windows.Forms.Button btnDeleteCage;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtExpertPhoneNumber;
+        private System.Windows.Forms.DateTimePicker dtpExpertStartDay;
+        private System.Windows.Forms.TextBox txtExpertEmail;
+        private System.Windows.Forms.TextBox txtGenderExpert;
+        private System.Windows.Forms.TextBox txtExpertLastName;
+        private System.Windows.Forms.TextBox txtExpertFirstName;
+        private System.Windows.Forms.TextBox txtExpertID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtExpertAreaID;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dgvExpertManagement;
+        private System.Windows.Forms.Button btnDeleteExpert;
+        private System.Windows.Forms.Button btnAddExpert;
     }
 }

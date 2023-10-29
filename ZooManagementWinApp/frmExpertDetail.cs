@@ -12,32 +12,50 @@ using System.Windows.Forms;
 
 namespace ZooManagementWinApp
 {
-    public partial class frmStaffDetail : Form
+    public partial class frmExpertDetail : Form
     {
-        public IStaffRepository StaffRepository { get; set; }
+        public IExpertRepository expertRepository1 { get; set; }
         public IAccountRepository AccountRepository = new AccountRepository();
+        public IAreaRepository areaRepository = new AreaRepostitory();
         public bool InsertOrUpdate { get; set; }
-        public staff StaffInfo { get; set; }
-        public frmStaffDetail()
+        public Expert ExpertInfo { get; set; }
+        public frmExpertDetail()
         {
             InitializeComponent();
         }
 
-        private void frmStaffDetail_Load(object sender, EventArgs e)
+        private void frmExpertDetail_Load(object sender, EventArgs e)
         {
-            cboGender.SelectedIndex = 0;
-            txtStaffID.Enabled = false;
+            LoadAreasList();
+            cboAreaID.SelectedIndex = 0;
+            txtExpertID.Enabled = false;
 
             if (InsertOrUpdate == true)
             {
-                txtStaffID.Text = StaffInfo.Id.ToString();
-                txtFirstName.Text = StaffInfo.FirstName;
-                txtLastName.Text = StaffInfo.LastName;
-                cboGender.Text = StaffInfo.Gender;
-                dtpStartDay.Text = StaffInfo.StartDay.ToString();
-                txtEmail.Text = StaffInfo.Email;
-                txtPhoneNumber.Text = StaffInfo.PhoneNumber;
+                txtExpertID.Text = ExpertInfo.Id.ToString();
+                txtFirstName.Text = ExpertInfo.FirstName;
+                txtLastName.Text = ExpertInfo.LastName;
+                cboGender.Text = ExpertInfo.Gender;
+                dtpStartDay.Text = ExpertInfo.StartDay.ToString();
+                txtEmail.Text = ExpertInfo.Email;
+                txtPhoneNumber.Text = ExpertInfo.PhoneNumber;
                 txtPassword.Enabled = false;
+                cboAreaID.SelectedIndex = (int)ExpertInfo.AreaId - 1;
+            }
+        }
+
+        private void LoadAreasList()
+        {
+            try
+            {
+                var areaList = areaRepository.GetAreas();
+                cboAreaID.DataSource = areaList;
+                cboAreaID.ValueMember = "Id";
+                cboAreaID.DisplayMember = "Name";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Areas List");
             }
         }
 
@@ -47,45 +65,48 @@ namespace ZooManagementWinApp
         {
             try
             {
-                var staff = new staff();
+                var expert = new Expert();
                 var account = new Account();
                 if (InsertOrUpdate == false)
                 {
-                    staff = new staff { 
+                    expert = new Expert
+                    {
                         FirstName = txtFirstName.Text,
                         LastName = txtLastName.Text,
                         Gender = cboGender.Text,
                         StartDay = DateTime.Parse(dtpStartDay.Text),
                         Email = txtEmail.Text,
                         PhoneNumber = txtPhoneNumber.Text,
+                        AreaId = int.Parse(cboAreaID.SelectedValue.ToString()),
                     };
                     account = new Account
                     {
                         Email = txtEmail.Text,
                         Password = txtPassword.Text,
-                        Role = "STAFF",
+                        Role = "EXPERT",
                     };
-                    StaffRepository.InsertStaff(staff);
+                    expertRepository1.InsertExpert(expert);
                     AccountRepository.InsertAccount(account);
                 }
                 else
                 {
-                    staff = new staff
+                    expert = new Expert
                     {
-                        Id = int.Parse(txtStaffID.Text),
+                        Id = int.Parse(txtExpertID.Text),
                         FirstName = txtFirstName.Text,
                         LastName = txtLastName.Text,
                         Gender = cboGender.Text,
                         StartDay = DateTime.Parse(dtpStartDay.Text),
                         Email = txtEmail.Text,
                         PhoneNumber = txtPhoneNumber.Text,
+                        AreaId = int.Parse(cboAreaID.SelectedValue.ToString()),
                     };
-                    StaffRepository.UpdateStaff(staff);
+                    expertRepository1.UpdateExpert(expert);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Save a staff");
+                MessageBox.Show(ex.Message, "Save an Expert");
             }
         }
     }
