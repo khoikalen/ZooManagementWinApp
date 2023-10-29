@@ -152,6 +152,7 @@
             cboCageStatus.Name = "cboCageStatus";
             cboCageStatus.Size = new System.Drawing.Size(208, 28);
             cboCageStatus.TabIndex = 14;
+            cboCageStatus.SelectedIndexChanged += cboCageStatus_SelectedIndexChanged;
             // 
             // btnSave
             // 
