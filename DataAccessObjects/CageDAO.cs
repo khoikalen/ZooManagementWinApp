@@ -43,7 +43,7 @@ namespace DataAccessObjects
             return cages;
         }
 
-<<<<<<< HEAD
+
         public Cage GetCageById(int id)
         {
             var cage = new Cage();
@@ -100,7 +100,7 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
-=======
+
         public List<Cage> GetCagesByStaffEmail(String staffEmail)
         {
             using(var context = new ZooManagementDotNetContext())
@@ -113,6 +113,6 @@ namespace DataAccessObjects
             }
         }
 
->>>>>>> b665f52de90c177e31ef6f5b7cbd0cd0827c5612
+
     }
 }
