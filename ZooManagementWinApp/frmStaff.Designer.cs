@@ -34,20 +34,19 @@
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             txtStaffID = new System.Windows.Forms.TextBox();
-            txtStaffFirstname = new System.Windows.Forms.TextBox();
+            txtStaffName = new System.Windows.Forms.TextBox();
             txtStaffEmail = new System.Windows.Forms.TextBox();
             txtStaffPhonenumber = new System.Windows.Forms.TextBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
+            btnUpdatePersonalInformation = new System.Windows.Forms.Button();
             cboStaffGender = new System.Windows.Forms.ComboBox();
             dgvCageList = new System.Windows.Forms.DataGridView();
             groupBox2 = new System.Windows.Forms.GroupBox();
             cboCageStatus = new System.Windows.Forms.ComboBox();
-            txtCageStaffID = new System.Windows.Forms.TextBox();
             txtCageAreaID = new System.Windows.Forms.TextBox();
             txtCageID = new System.Windows.Forms.TextBox();
             txtCageName = new System.Windows.Forms.TextBox();
             txtCageQuantity = new System.Windows.Forms.TextBox();
-            label12 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -105,23 +104,23 @@
             // 
             // txtStaffID
             // 
-            txtStaffID.Location = new System.Drawing.Point(317, 22);
+            txtStaffID.Location = new System.Drawing.Point(57, 22);
             txtStaffID.Name = "txtStaffID";
             txtStaffID.ReadOnly = true;
             txtStaffID.Size = new System.Drawing.Size(96, 23);
             txtStaffID.TabIndex = 7;
             // 
-            // txtStaffFirstname
+            // txtStaffName
             // 
-            txtStaffFirstname.Location = new System.Drawing.Point(57, 59);
-            txtStaffFirstname.Name = "txtStaffFirstname";
-            txtStaffFirstname.ReadOnly = true;
-            txtStaffFirstname.Size = new System.Drawing.Size(96, 23);
-            txtStaffFirstname.TabIndex = 8;
+            txtStaffName.Location = new System.Drawing.Point(57, 59);
+            txtStaffName.Name = "txtStaffName";
+            txtStaffName.ReadOnly = true;
+            txtStaffName.Size = new System.Drawing.Size(96, 23);
+            txtStaffName.TabIndex = 8;
             // 
             // txtStaffEmail
             // 
-            txtStaffEmail.Location = new System.Drawing.Point(57, 22);
+            txtStaffEmail.Location = new System.Drawing.Point(317, 30);
             txtStaffEmail.Name = "txtStaffEmail";
             txtStaffEmail.ReadOnly = true;
             txtStaffEmail.Size = new System.Drawing.Size(96, 23);
@@ -137,6 +136,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnUpdatePersonalInformation);
             groupBox1.Controls.Add(cboStaffGender);
             groupBox1.Controls.Add(txtStaffID);
             groupBox1.Controls.Add(txtStaffPhonenumber);
@@ -144,15 +144,25 @@
             groupBox1.Controls.Add(txtStaffEmail);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(txtStaffFirstname);
+            groupBox1.Controls.Add(txtStaffName);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new System.Drawing.Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(439, 142);
+            groupBox1.Size = new System.Drawing.Size(439, 175);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             groupBox1.Text = "Staff information";
+            // 
+            // btnUpdatePersonalInformation
+            // 
+            btnUpdatePersonalInformation.Location = new System.Drawing.Point(107, 142);
+            btnUpdatePersonalInformation.Name = "btnUpdatePersonalInformation";
+            btnUpdatePersonalInformation.Size = new System.Drawing.Size(200, 27);
+            btnUpdatePersonalInformation.TabIndex = 17;
+            btnUpdatePersonalInformation.Text = "Update personal information";
+            btnUpdatePersonalInformation.UseVisualStyleBackColor = true;
+            btnUpdatePersonalInformation.Click += btnUpdatePersonalInformation_Click;
             // 
             // cboStaffGender
             // 
@@ -178,18 +188,16 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(cboCageStatus);
-            groupBox2.Controls.Add(txtCageStaffID);
             groupBox2.Controls.Add(txtCageAreaID);
             groupBox2.Controls.Add(txtCageID);
             groupBox2.Controls.Add(txtCageName);
             groupBox2.Controls.Add(txtCageQuantity);
-            groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label3);
-            groupBox2.Location = new System.Drawing.Point(12, 193);
+            groupBox2.Location = new System.Drawing.Point(12, 207);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new System.Drawing.Size(439, 139);
             groupBox2.TabIndex = 16;
@@ -204,14 +212,6 @@
             cboCageStatus.Name = "cboCageStatus";
             cboCageStatus.Size = new System.Drawing.Size(100, 23);
             cboCageStatus.TabIndex = 12;
-            // 
-            // txtCageStaffID
-            // 
-            txtCageStaffID.Location = new System.Drawing.Point(313, 87);
-            txtCageStaffID.Name = "txtCageStaffID";
-            txtCageStaffID.ReadOnly = true;
-            txtCageStaffID.Size = new System.Drawing.Size(100, 23);
-            txtCageStaffID.TabIndex = 11;
             // 
             // txtCageAreaID
             // 
@@ -244,15 +244,6 @@
             txtCageQuantity.ReadOnly = true;
             txtCageQuantity.Size = new System.Drawing.Size(122, 23);
             txtCageQuantity.TabIndex = 7;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(262, 95);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(45, 15);
-            label12.TabIndex = 6;
-            label12.Text = "Staff ID";
             // 
             // label11
             // 
@@ -327,7 +318,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtStaffID;
-        private System.Windows.Forms.TextBox txtStaffFirstname;
+        private System.Windows.Forms.TextBox txtStaffName;
         private System.Windows.Forms.TextBox txtCageAreaID;
         private System.Windows.Forms.TextBox txtStaffEmail;
         private System.Windows.Forms.TextBox txtStaffPhonenumber;
@@ -335,7 +326,6 @@
         private System.Windows.Forms.DataGridView dgvCageList;
         private System.Windows.Forms.ComboBox cboStaffGender;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -343,8 +333,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCageQuantity;
         private System.Windows.Forms.ComboBox cboCageStatus;
-        private System.Windows.Forms.TextBox txtCageStaffID;
         private System.Windows.Forms.TextBox txtCageID;
         private System.Windows.Forms.TextBox txtCageName;
+        private System.Windows.Forms.Button btnUpdatePersonalInformation;
     }
 }

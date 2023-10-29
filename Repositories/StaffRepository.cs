@@ -12,8 +12,9 @@ namespace Repositories
     {
         public void DeleteStaffs(int id) => StaffDAO.Instance.DeleteStaff(id);
 
-        public staff GetStaffById(int id) => StaffDAO.Instance.GetStaffById(id);
+        public staff GetStaffByEmail(string staffEmail) => StaffDAO.Instance.GetStaffByEmail(staffEmail);
 
+        public staff GetStaffById(int staffID) => StaffDAO.Instance.GetStaffById(staffID);
         public IEnumerable<staff> GetStaffs() => StaffDAO.Instance.GetStaffs();
 
         public void InsertStaff(staff staff) => StaffDAO.Instance.InsertStaff(staff);

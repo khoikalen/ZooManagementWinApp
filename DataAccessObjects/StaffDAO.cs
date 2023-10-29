@@ -42,13 +42,28 @@ namespace DataAccessObjects
             return staffs;
         }
 
-        public staff GetStaffById(int id)
+        public staff GetStaffByEmail(String staffEmail)
         {
             var staff = new staff();
             try
             {
                 using var db = new ZooManagementDotNetContext();
-                staff = db.staff.SingleOrDefault(s => s.Id == id);
+                staff = db.staff.SingleOrDefault(s => s.Email.Equals(staffEmail));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return staff;
+        }
+
+        public staff GetStaffById(int staffID)
+        {
+            var staff = new staff();
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                staff = db.staff.SingleOrDefault(s => s.Id == staffID);
             }
             catch (Exception ex)
             {
