@@ -11,5 +11,7 @@ namespace Repositories
     public class CageRepository : ICageRepository
     {
         public IEnumerable<Cage> GetCages() => CageDAO.Instance.GetCages();
+
+        public List<Cage> GetCagesByStaffEmail(string staffEmail) => CageDAO.Instance.GetCagesByStaffEmail(staffEmail);
     }
 }
