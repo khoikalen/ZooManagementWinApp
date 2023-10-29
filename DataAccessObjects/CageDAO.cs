@@ -42,5 +42,62 @@ namespace DataAccessObjects
             }
             return cages;
         }
+
+        public Cage GetCageById(int id)
+        {
+            var cage = new Cage();
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                cage = db.Cages.SingleOrDefault(x => x.Id == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return cage;
+        }
+        
+        public void InsertCage(Cage cage)
+        {
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                db.Cages.Add(cage);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateCage(Cage cage)
+        {
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                db.Cages.Update(cage);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteCage(int id)
+        {
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                db.Cages.Remove(GetCageById(id));
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
