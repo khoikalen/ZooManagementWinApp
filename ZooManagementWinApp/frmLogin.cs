@@ -33,7 +33,12 @@ namespace ZooManagementWinApp
                 }
                 else if ("STAFF".Equals(accountRepository.LoginAccount(txtEmail.Text, txtPassword.Text)))
                 {
-                    frmStaff frmStaff = new frmStaff();
+                    frmStaff frmStaff = new frmStaff()
+                    {
+                        Text = "Staff",
+                        staffEmail = txtEmail.Text,
+                        staffPassword = txtPassword.Text
+                    };
                     frmStaff.ShowDialog();
                 }
                 else if ("EXPERT".Equals(accountRepository.LoginAccount(txtEmail.Text, txtPassword.Text)))

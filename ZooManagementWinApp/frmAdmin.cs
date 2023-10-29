@@ -125,7 +125,8 @@ namespace ZooManagementWinApp
                 Text = "Update a staff",
                 InsertOrUpdate = true,
                 StaffInfo = GetStaffObject(),
-                StaffRepository = staffRepository
+                StaffRepository = staffRepository,
+                userRole = "ADMIN"
             };
             if (f.ShowDialog() == DialogResult.OK)
             {

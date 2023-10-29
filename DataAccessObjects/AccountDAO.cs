@@ -68,5 +68,51 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+        public void UpdateAccount(Account account)
+        {
+            try
+            {
+                using (var context = new ZooManagementDotNetContext())
+                {
+                    context.Accounts.Update(account);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        public int GetAccountIDByEmail(string email)
+        {
+            try
+            {
+                using(var context = new ZooManagementDotNetContext())
+                {
+                    var account = context.Accounts.SingleOrDefault(c => c.Email.Equals(email));
+                    return account.Id;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public String GetAccountPassWordByEmail(String email)
+        {
+            try
+            {
+                using(var context = new ZooManagementDotNetContext())
+                {
+                    var account = context.Accounts.SingleOrDefault(c => c.Email.Equals(email));
+                    return account.Password;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
