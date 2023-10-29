@@ -63,6 +63,7 @@ namespace ZooManagementWinApp
 
                 dgvStaff.DataSource = null;
                 dgvStaff.DataSource = source;
+                dgvStaff.Columns["Cages"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -82,7 +83,6 @@ namespace ZooManagementWinApp
                 txtCageName.DataBindings.Clear();
                 txtCageQuantity.DataBindings.Clear();
                 txtCageStatus.DataBindings.Clear();
-                txtCageType.DataBindings.Clear();
                 txtAreaForeignID.DataBindings.Clear();
                 txtStaffForeignID.DataBindings.Clear();
 
@@ -90,12 +90,17 @@ namespace ZooManagementWinApp
                 txtCageName.DataBindings.Add("Text", source, "Name");
                 txtCageQuantity.DataBindings.Add("Text", source, "Quantity");
                 txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
-                txtCageType.DataBindings.Add("Text", source, "CageType");
                 txtAreaForeignID.DataBindings.Add("Text", source, "AreaId");
                 txtStaffForeignID.DataBindings.Add("Text", source, "StaffId");
 
+
                 dgvCageManagement.DataSource = null;
                 dgvCageManagement.DataSource = source;
+
+                dgvCageManagement.Columns["CageType"].Visible = false;
+                dgvCageManagement.Columns["Area"].Visible = false;
+                dgvCageManagement.Columns["Staff"].Visible = false;
+                dgvCageManagement.Columns["Animals"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -122,7 +127,7 @@ namespace ZooManagementWinApp
         {
             frmStaffDetail f = new frmStaffDetail
             {
-                Text = "Update a staff",
+                Text = "Update the staff",
                 InsertOrUpdate = true,
                 StaffInfo = GetStaffObject(),
                 StaffRepository = staffRepository,
@@ -159,6 +164,28 @@ namespace ZooManagementWinApp
             return staff;
         }
 
+        private Cage GetCageObject()
+        {
+            Cage cage = null;
+            try
+            {
+                cage = new Cage
+                {
+                    Id = int.Parse(txtCageID.Text),
+                    Name = txtCageName.Text,
+                    Quantity = int.Parse(txtCageQuantity.Text),
+                    CageStatus = txtCageStatus.Text,
+                    AreaId = int.Parse(txtAreaForeignID.Text),
+                    StaffId = int.Parse(txtStaffForeignID.Text),
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get Cage Object");
+            }
+            return cage;
+        }
+
         private void btnDeleteStaff_Click(object sender, EventArgs e)
         {
             try
@@ -175,6 +202,37 @@ namespace ZooManagementWinApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Delete a staff");
+            }
+        }
+
+        private void btnAddCage_Click(object sender, EventArgs e)
+        {
+            frmCageDetail frmCageDetail = new frmCageDetail
+            {
+                Text = "Add a cage",
+                InsertOrUpdate = false,
+                CageRepository = cageRepository,
+            };
+            if (frmCageDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadStaffsList();
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private void dgvCageManagement_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmCageDetail frmCageDetail = new frmCageDetail
+            {
+                Text = "Update the cage",
+                InsertOrUpdate = true,
+                CageInfo = GetCageObject(),
+                CageRepository = cageRepository
+            };
+            if (frmCageDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadStaffsList();
+                source.Position = source.Count - 1;
             }
         }
     }
