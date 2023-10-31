@@ -252,11 +252,25 @@ namespace ZooManagementWinApp
             try
             {
                 var staff = GetStaffObject();
+                var cageList = cageRepository.GetCagesByStaffEmail(staff.Email);
                 var confirm = MessageBox.Show("Are you sure to delete this staff?", "Confirm Delete!", MessageBoxButtons.YesNo);
                 if (confirm == DialogResult.Yes)
                 {
-                    staffRepository.DeleteStaffs(staff.Id);
-                    accountRepository.DeleteAccountByEmail(staff.Email);
+                    if (cageList.Count > 0)
+                    {
+                        MessageBox.Show("This staff is still responsible for managing cages \n   Please Assign cages for other staffs first");
+                        frmTradeCage frm = new frmTradeCage
+                        {
+                            Text = "Trade cage for another staff",
+                            TradeOrAssign = true,
+                            staffDeleteEmail = staff.Email,
+                        };
+                        frm.ShowDialog();
+                    } else
+                    {
+                        staffRepository.DeleteStaffs(staff.Id);
+                        accountRepository.DeleteAccountByEmail(staff.Email);
+                    }
                 }
                 LoadStaffsList();
             }
@@ -369,6 +383,16 @@ namespace ZooManagementWinApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Delete an expert");
+            }
+        }
+
+        private void btnAssign_Click(object sender, EventArgs e)
+        {
+            frmTradeCage frmTradeCage = new frmTradeCage();
+            if (frmTradeCage.ShowDialog() == DialogResult.OK)
+            {
+                LoadCagesList();
+                source.Position = source.Count - 1;
             }
         }
     }

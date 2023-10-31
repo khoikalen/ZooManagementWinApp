@@ -15,7 +15,8 @@ namespace Repositories
         public int GetAccountIDByEmail(string email) => AccountDAO.Instance.GetAccountIDByEmail(email);
 
         public string GetAccountPassWordByEmail(string email) => AccountDAO.Instance.GetAccountPassWordByEmail(email);
-      
+
+        public IEnumerable<Account> GetAccounts() => AccountDAO.Instance.GetAccounts();
 
         public void InsertAccount(Account account) => AccountDAO.Instance.InsertAccount(account);
 

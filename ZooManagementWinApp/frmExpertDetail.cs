@@ -3,6 +3,7 @@ using Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace ZooManagementWinApp
         public IExpertRepository expertRepository1 { get; set; }
         public IAccountRepository AccountRepository = new AccountRepository();
         public IAreaRepository areaRepository = new AreaRepostitory();
+        public IStaffRepository staffRepository = new StaffRepository();
         public bool InsertOrUpdate { get; set; }
         public Expert ExpertInfo { get; set; }
         public frmExpertDetail()
@@ -28,6 +30,7 @@ namespace ZooManagementWinApp
         {
             LoadAreasList();
             cboAreaID.SelectedIndex = 0;
+            cboGender.SelectedIndex = 0;
             txtExpertID.Enabled = false;
 
             if (InsertOrUpdate == true)
@@ -39,8 +42,9 @@ namespace ZooManagementWinApp
                 dtpStartDay.Text = ExpertInfo.StartDay.ToString();
                 txtEmail.Text = ExpertInfo.Email;
                 txtPhoneNumber.Text = ExpertInfo.PhoneNumber;
-                txtPassword.Enabled = false;
                 cboAreaID.SelectedIndex = (int)ExpertInfo.AreaId - 1;
+                txtEmail.Enabled = false;
+                txtPassword.Enabled = false;
             }
         }
 
@@ -85,8 +89,35 @@ namespace ZooManagementWinApp
                         Password = txtPassword.Text,
                         Role = "EXPERT",
                     };
-                    expertRepository1.InsertExpert(expert);
-                    AccountRepository.InsertAccount(account);
+                    ValidationContext context = new ValidationContext(expert);
+                    List<ValidationResult> results = new List<ValidationResult>();
+                    if (!Validator.TryValidateObject(expert, context, results))
+                    {
+                        foreach (ValidationResult result in results)
+                        {
+                            MessageBox.Show(result.ErrorMessage, "Message");
+                            return;
+                        }
+                    }
+                    var expertList = expertRepository1.GetExperts();
+                    var staffList = staffRepository.GetStaffs();
+                    if ((expertList.SingleOrDefault(e => e.Email == expert.Email) == null) && (staffList.SingleOrDefault(s => s.Email == expert.Email) == null))
+                    {
+                        if ((expertList.SingleOrDefault(e => e.PhoneNumber == expert.PhoneNumber) == null) && staffList.SingleOrDefault(s => s.PhoneNumber == expert.PhoneNumber) == null)
+                        {
+                            expertRepository1.InsertExpert(expert);
+                            AccountRepository.InsertAccount(account);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Phone number is already existed!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email is already existed!");
+                    }
+
                 }
                 else
                 {
@@ -101,7 +132,38 @@ namespace ZooManagementWinApp
                         PhoneNumber = txtPhoneNumber.Text,
                         AreaId = int.Parse(cboAreaID.SelectedValue.ToString()),
                     };
-                    expertRepository1.UpdateExpert(expert);
+                    ValidationContext context = new ValidationContext(expert);
+                    List<ValidationResult> results = new List<ValidationResult>();
+                    if (!Validator.TryValidateObject(expert, context, results))
+                    {
+                        foreach (ValidationResult result in results)
+                        {
+                            MessageBox.Show(result.ErrorMessage, "Message");
+                            return;
+                        }
+                    }
+                    var expertList = expertRepository1.GetExperts();
+                    var staffList = staffRepository.GetStaffs();
+                    var accountList = AccountRepository.GetAccounts();
+                    accountList = accountList.Where(a => a.Email != expert.Email);
+                    if (accountList.SingleOrDefault(a => a.Email == expert.Email) == null)
+                    {
+                        var expertPhoneNumber = ExpertInfo.PhoneNumber;
+                        expertList = expertList.Where(e => e.PhoneNumber != expertPhoneNumber).ToList();
+                        staffList = staffList.Where(s => s.PhoneNumber != expertPhoneNumber).ToList();
+                        if ((expertList.SingleOrDefault(e => e.PhoneNumber == expert.PhoneNumber) == null) && staffList.SingleOrDefault(s => s.PhoneNumber == expert.PhoneNumber) == null)
+                        {
+                            expertRepository1.UpdateExpert(expert);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Phone number is already existed!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email is already existed!");
+                    }
                 }
             }
             catch (Exception ex)

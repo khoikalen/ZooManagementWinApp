@@ -86,6 +86,7 @@
             lbCageQuantity = new System.Windows.Forms.Label();
             lbCageName = new System.Windows.Forms.Label();
             lbCageId = new System.Windows.Forms.Label();
+            btnAssign = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabStaffMangement.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -512,6 +513,7 @@
             // 
             // tabCageManagement
             // 
+            tabCageManagement.Controls.Add(btnAssign);
             tabCageManagement.Controls.Add(btnDeleteCage);
             tabCageManagement.Controls.Add(btnAddCage);
             tabCageManagement.Controls.Add(dgvCageManagement);
@@ -691,6 +693,16 @@
             lbCageId.TabIndex = 0;
             lbCageId.Text = "Cage ID";
             // 
+            // btnAssign
+            // 
+            btnAssign.Location = new System.Drawing.Point(335, 250);
+            btnAssign.Name = "btnAssign";
+            btnAssign.Size = new System.Drawing.Size(166, 29);
+            btnAssign.TabIndex = 4;
+            btnAssign.Text = "Assign Cage for Staff";
+            btnAssign.UseVisualStyleBackColor = true;
+            btnAssign.Click += btnAssign_Click;
+            // 
             // frmAdmin
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -777,5 +789,6 @@
         private System.Windows.Forms.DataGridView dgvExpertManagement;
         private System.Windows.Forms.Button btnDeleteExpert;
         private System.Windows.Forms.Button btnAddExpert;
+        private System.Windows.Forms.Button btnAssign;
     }
 }
