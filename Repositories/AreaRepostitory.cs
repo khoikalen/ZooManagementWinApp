@@ -10,6 +10,9 @@ namespace Repositories
 {
     public class AreaRepostitory : IAreaRepository
     {
+        public Area GetAreaByID(int areaID) => AreaDAO.Instance.GetAreaByID(areaID);
+       
+
         public IEnumerable<Area> GetAreas() => AreaDAO.Instance.GetAreas();
     }
 }

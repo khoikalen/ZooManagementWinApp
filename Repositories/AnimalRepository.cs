@@ -10,20 +10,24 @@ namespace Repositories
 {
     public class AnimalRepository : IAnimalRepository
     {
-        public void CreateNewAnimal(Animal animal) => AnimalDAO.Instance.CreateNewAnimal(animal);
-       
+        public int AnimalQuantityInCage(int cageID) => AnimalDAO.Instance.AnimalQuantityInCage(cageID);
 
-        public void DeleteAnimal(int animalID) => AnimalDAO.Instance.DeleteAnimal(animalID);
+        public void CreateNewAnimal(Animal animal) => AnimalDAO.Instance.CreateNewAnimal(animal);
+
+        public void DeleteAnimal(Animal animal) => AnimalDAO.Instance.DeleteAnimal(animal);
 
         public IEnumerable<Animal> GetAllAnimals() => AnimalDAO.Instance.GetAllAnimals();
        
-        public Animal SearchAnimalByCageID(int cageID) => AnimalDAO.Instance.SearchAnimalByCageID(cageID);
-        
+        public List<Animal> GetAnimalByCageID(int cageID) => AnimalDAO.Instance.GetAnimalByCageID(cageID);
+
+        public string GetAnimalSpecie(int cageID) => AnimalDAO.Instance.GetAnimalSpecie(cageID);
+
 
         public Animal SearchAnimalByID(int animalID) => AnimalDAO.Instance.SearchAnimalByID(animalID);
        
 
         public void UpdateAnimalInformation(Animal animal) => AnimalDAO.Instance.UpdateAnimalInformation(animal);
-       
+
+        public void UpdateAnimalStatusToDead(int animalID) => AnimalDAO.Instance.UpdateAnimalStatusToDead(animalID);
     }
 }

@@ -113,6 +113,17 @@ namespace DataAccessObjects
             }
         }
 
+        public List<Cage> GetNullCagesByStaffEmail(String staffEmail)
+        {
+            using(var context = new ZooManagementDotNetContext())
+            {
+                var cages = from cage in context.Cages
+                            join staff in context.staff on cage.StaffId equals staff.Id
+                            where staff.Email.Equals(staffEmail) & cage.CageStatus.Equals("Empty")
+                            select cage;
+                return cages.ToList();
+            }
+        }
 
     }
 }

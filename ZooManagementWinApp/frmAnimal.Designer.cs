@@ -47,6 +47,8 @@
             dgvAnimalList = new System.Windows.Forms.DataGridView();
             groupBox1 = new System.Windows.Forms.GroupBox();
             btnAdd = new System.Windows.Forms.Button();
+            btnDelete = new System.Windows.Forms.Button();
+            btnMoveCage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)dgvAnimalList).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -198,6 +200,7 @@
             dgvAnimalList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             dgvAnimalList.Size = new System.Drawing.Size(841, 196);
             dgvAnimalList.TabIndex = 16;
+            dgvAnimalList.CellDoubleClick += dgvAnimalList_CellDoubleClick;
             // 
             // groupBox1
             // 
@@ -226,8 +229,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
-            btnAdd.Location = new System.Drawing.Point(173, 253);
+            btnAdd.Location = new System.Drawing.Point(214, 253);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new System.Drawing.Size(75, 23);
             btnAdd.TabIndex = 18;
@@ -235,11 +237,33 @@
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
             // 
+            // btnDelete
+            // 
+            btnDelete.Location = new System.Drawing.Point(381, 253);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new System.Drawing.Size(75, 23);
+            btnDelete.TabIndex = 19;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnMoveCage
+            // 
+            btnMoveCage.Location = new System.Drawing.Point(560, 253);
+            btnMoveCage.Name = "btnMoveCage";
+            btnMoveCage.Size = new System.Drawing.Size(84, 23);
+            btnMoveCage.TabIndex = 20;
+            btnMoveCage.Text = "Move animal";
+            btnMoveCage.UseVisualStyleBackColor = true;
+            btnMoveCage.Click += btnMoveCage_Click;
+            // 
             // frmAnimal
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(864, 501);
+            Controls.Add(btnMoveCage);
+            Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             Controls.Add(groupBox1);
             Controls.Add(dgvAnimalList);
@@ -274,5 +298,7 @@
         private System.Windows.Forms.DataGridView dgvAnimalList;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnMoveCage;
     }
 }

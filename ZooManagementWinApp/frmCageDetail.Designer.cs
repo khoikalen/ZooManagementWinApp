@@ -48,118 +48,125 @@
             // lbCageID
             // 
             lbCageID.AutoSize = true;
-            lbCageID.Location = new System.Drawing.Point(74, 64);
+            lbCageID.Location = new System.Drawing.Point(18, 23);
             lbCageID.Name = "lbCageID";
-            lbCageID.Size = new System.Drawing.Size(62, 20);
+            lbCageID.Size = new System.Drawing.Size(48, 15);
             lbCageID.TabIndex = 0;
             lbCageID.Text = "Cage ID";
             // 
             // lbCageName
             // 
             lbCageName.AutoSize = true;
-            lbCageName.Location = new System.Drawing.Point(74, 123);
+            lbCageName.Location = new System.Drawing.Point(18, 67);
             lbCageName.Name = "lbCageName";
-            lbCageName.Size = new System.Drawing.Size(87, 20);
+            lbCageName.Size = new System.Drawing.Size(69, 15);
             lbCageName.TabIndex = 1;
             lbCageName.Text = "Cage Name";
             // 
             // lbCageQuantity
             // 
             lbCageQuantity.AutoSize = true;
-            lbCageQuantity.Location = new System.Drawing.Point(74, 187);
+            lbCageQuantity.Location = new System.Drawing.Point(18, 115);
             lbCageQuantity.Name = "lbCageQuantity";
-            lbCageQuantity.Size = new System.Drawing.Size(103, 20);
+            lbCageQuantity.Size = new System.Drawing.Size(83, 15);
             lbCageQuantity.TabIndex = 2;
             lbCageQuantity.Text = "Cage Quantity";
             // 
             // lbCageStatus
             // 
             lbCageStatus.AutoSize = true;
-            lbCageStatus.Location = new System.Drawing.Point(412, 64);
+            lbCageStatus.Location = new System.Drawing.Point(313, 23);
             lbCageStatus.Name = "lbCageStatus";
-            lbCageStatus.Size = new System.Drawing.Size(87, 20);
+            lbCageStatus.Size = new System.Drawing.Size(69, 15);
             lbCageStatus.TabIndex = 3;
             lbCageStatus.Text = "Cage Status";
             // 
             // lbCageType
             // 
             lbCageType.AutoSize = true;
-            lbCageType.Location = new System.Drawing.Point(412, 64);
+            lbCageType.Location = new System.Drawing.Point(313, 23);
             lbCageType.Name = "lbCageType";
-            lbCageType.Size = new System.Drawing.Size(0, 20);
+            lbCageType.Size = new System.Drawing.Size(0, 15);
             lbCageType.TabIndex = 4;
             // 
             // lbAreaId
             // 
             lbAreaId.AutoSize = true;
-            lbAreaId.Location = new System.Drawing.Point(412, 123);
+            lbAreaId.Location = new System.Drawing.Point(313, 67);
             lbAreaId.Name = "lbAreaId";
-            lbAreaId.Size = new System.Drawing.Size(40, 20);
+            lbAreaId.Size = new System.Drawing.Size(31, 15);
             lbAreaId.TabIndex = 5;
             lbAreaId.Text = "Area";
             // 
             // lbStaffId
             // 
             lbStaffId.AutoSize = true;
-            lbStaffId.Location = new System.Drawing.Point(412, 187);
+            lbStaffId.Location = new System.Drawing.Point(313, 115);
             lbStaffId.Name = "lbStaffId";
-            lbStaffId.Size = new System.Drawing.Size(40, 20);
+            lbStaffId.Size = new System.Drawing.Size(31, 15);
             lbStaffId.TabIndex = 6;
             lbStaffId.Text = "Staff";
             // 
             // txtCageID
             // 
-            txtCageID.Location = new System.Drawing.Point(192, 61);
+            txtCageID.Location = new System.Drawing.Point(121, 21);
+            txtCageID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtCageID.Name = "txtCageID";
-            txtCageID.Size = new System.Drawing.Size(175, 27);
+            txtCageID.Size = new System.Drawing.Size(154, 23);
             txtCageID.TabIndex = 7;
             // 
             // txtCageName
             // 
-            txtCageName.Location = new System.Drawing.Point(192, 120);
+            txtCageName.Location = new System.Drawing.Point(121, 65);
+            txtCageName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtCageName.Name = "txtCageName";
-            txtCageName.Size = new System.Drawing.Size(175, 27);
+            txtCageName.Size = new System.Drawing.Size(154, 23);
             txtCageName.TabIndex = 8;
             // 
             // txtCageQuantity
             // 
-            txtCageQuantity.Location = new System.Drawing.Point(192, 184);
+            txtCageQuantity.Location = new System.Drawing.Point(121, 113);
+            txtCageQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             txtCageQuantity.Name = "txtCageQuantity";
-            txtCageQuantity.Size = new System.Drawing.Size(175, 27);
+            txtCageQuantity.Size = new System.Drawing.Size(154, 23);
             txtCageQuantity.TabIndex = 9;
             // 
             // cboAreaId
             // 
             cboAreaId.FormattingEnabled = true;
-            cboAreaId.Location = new System.Drawing.Point(522, 120);
+            cboAreaId.Location = new System.Drawing.Point(410, 65);
+            cboAreaId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             cboAreaId.Name = "cboAreaId";
-            cboAreaId.Size = new System.Drawing.Size(208, 28);
+            cboAreaId.Size = new System.Drawing.Size(182, 23);
             cboAreaId.TabIndex = 12;
             // 
             // cboStaffId
             // 
             cboStaffId.FormattingEnabled = true;
-            cboStaffId.Location = new System.Drawing.Point(522, 184);
+            cboStaffId.Location = new System.Drawing.Point(410, 113);
+            cboStaffId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             cboStaffId.Name = "cboStaffId";
-            cboStaffId.Size = new System.Drawing.Size(208, 28);
+            cboStaffId.Size = new System.Drawing.Size(182, 23);
             cboStaffId.TabIndex = 13;
             // 
             // cboCageStatus
             // 
             cboCageStatus.FormattingEnabled = true;
             cboCageStatus.Items.AddRange(new object[] { "Owned", "Empty" });
-            cboCageStatus.Location = new System.Drawing.Point(522, 61);
+            cboCageStatus.Location = new System.Drawing.Point(410, 21);
+            cboCageStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             cboCageStatus.Name = "cboCageStatus";
-            cboCageStatus.Size = new System.Drawing.Size(208, 28);
+            cboCageStatus.Size = new System.Drawing.Size(182, 23);
             cboCageStatus.TabIndex = 14;
             cboCageStatus.SelectedIndexChanged += cboCageStatus_SelectedIndexChanged;
             // 
             // btnSave
             // 
             btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            btnSave.Location = new System.Drawing.Point(273, 288);
+            btnSave.Location = new System.Drawing.Point(209, 160);
+            btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(94, 29);
+            btnSave.Size = new System.Drawing.Size(82, 22);
             btnSave.TabIndex = 15;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -167,9 +174,10 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new System.Drawing.Point(405, 288);
+            btnCancel.Location = new System.Drawing.Point(326, 160);
+            btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new System.Drawing.Size(94, 29);
+            btnCancel.Size = new System.Drawing.Size(82, 22);
             btnCancel.TabIndex = 16;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -177,9 +185,9 @@
             // 
             // frmCageDetail
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(800, 389);
+            ClientSize = new System.Drawing.Size(626, 193);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(cboCageStatus);
@@ -195,7 +203,9 @@
             Controls.Add(lbCageQuantity);
             Controls.Add(lbCageName);
             Controls.Add(lbCageID);
+            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             Name = "frmCageDetail";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmCageDetail";
             Load += frmCageDetail_Load;
             ResumeLayout(false);

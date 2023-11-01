@@ -23,5 +23,6 @@ namespace Repositories
 
         public List<Cage> GetCagesByStaffEmail(string staffEmail) => CageDAO.Instance.GetCagesByStaffEmail(staffEmail);
 
+        public List<Cage> GetNullCagesByStaffEmail(string staffEmail) => CageDAO.Instance.GetNullCagesByStaffEmail(staffEmail);
     }
 }
