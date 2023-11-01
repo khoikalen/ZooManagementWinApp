@@ -1,9 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\hoqua\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\hoqua\\.nuget\\packages",
-      "D:\\VisualStudio\\Shared\\NuGetPackages"
-    ]
-  }
-}

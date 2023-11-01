@@ -67,10 +67,41 @@ namespace DataAccessObjects
 
                 throw;
             }
-            return listHealthLog;
+            return listHealthLog.OrderByDescending(a=>a.DateTime).ToList();
         }
 
 
+        public void CreateLog(AnimalLog log )
+        {
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                db.AnimalLogs.Add(log);
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<AnimalLog> ViewLog(int animalId)
+        {
+            var list = new List<AnimalLog>();
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                list = db.AnimalLogs.Where(a=>a.AnimalId==animalId).ToList();   
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return list;
+        }
 
     }
 

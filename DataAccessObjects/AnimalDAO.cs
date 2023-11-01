@@ -63,6 +63,13 @@ namespace DataAccessObjects
                 return context.Animals.SingleOrDefault(c => c.Id == (cageID));
             }
         }
+        public List<Animal> SearchListAnimalByCageID(int cageID)
+        {
+            using (var context = new ZooManagementDotNetContext())
+            {
+                return context.Animals.Where(a=>a.CageId==cageID).ToList();
+            }
+        }
         public void CreateNewAnimal(Animal animal)
         {
             using(var context = new ZooManagementDotNetContext())

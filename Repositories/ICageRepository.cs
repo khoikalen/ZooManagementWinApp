@@ -11,5 +11,7 @@ namespace Repositories
     {
         IEnumerable<Cage> GetCages();
         List<Cage> GetCagesByStaffEmail(String staffEmail);
+        List<Cage> GetCagesByExpertEmail(String expertEmail);
+
     }
 }

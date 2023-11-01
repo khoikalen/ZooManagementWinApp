@@ -15,5 +15,7 @@ namespace Repositories
         Animal SearchAnimalByCageID(int cageID);
         void CreateNewAnimal(Animal animal);
         IEnumerable<Animal> GetAllAnimals();
+
+        IEnumerable<Animal> GetAllAnimalsByCageID(int cageID);
     }
 }

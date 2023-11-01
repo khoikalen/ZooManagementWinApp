@@ -55,5 +55,23 @@ namespace DataAccessObjects
             }
         }
 
+
+        public List<Cage> GetCagesByExpertEmail(String expertEmail)
+        {
+            var cage = new List<Cage>();
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                Expert expert = db.Experts.SingleOrDefault(a=> a.Email == expertEmail);
+                cage = db.Cages.Where(a => a.AreaId == expert.AreaId).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return cage;
+        }
+
     }
 }
