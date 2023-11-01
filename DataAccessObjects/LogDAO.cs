@@ -71,7 +71,7 @@ namespace DataAccessObjects
         }
 
 
-        public void CreateLog(AnimalLog log)
+        public void CreateLog(AnimalLog log )
         {
             try
             {
