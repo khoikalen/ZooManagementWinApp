@@ -14,6 +14,8 @@ namespace Repositories
 
           
         public void DeleteFood(int id) => FoodStorageDAO.Instance.DeleteFood(id);
+        public FoodStorage GetFoodInStorageById(int id) => FoodStorageDAO.Instance.GetFoodInStorageById(id);
+
 
         public IEnumerable<FoodStorage> GetAllFoodStorage() => FoodStorageDAO.Instance.GetFoodStorage();
 

@@ -32,9 +32,18 @@ namespace DataAccessObjects
                 context.Animals.Find()
             }
         }*/
-        public void DeleteAnimal(int animalID)
+
+        public void DeleteAnimal(Animal animal)
         {
-            using(var context = new ZooManagementDotNetContext())
+            using (var context = new ZooManagementDotNetContext())
+            {
+                context.Animals.Remove(animal);
+                context.SaveChanges();
+            }
+        }
+        public void UpdateAnimalStatusToDead(int animalID)
+        {
+            using (var context = new ZooManagementDotNetContext())
             {
                 Animal animal = context.Animals.FirstOrDefault(c => c.Id == animalID);
                 animal.Status = "Dead";
@@ -56,11 +65,27 @@ namespace DataAccessObjects
                 return context.Animals.SingleOrDefault(c => c.Id == animalID);
             }
         }
-        public Animal SearchAnimalByCageID(int cageID)
+        public List<Animal> GetAnimalByCageID(int cageID)
         {
             using(var context = new ZooManagementDotNetContext())
             {
-                return context.Animals.SingleOrDefault(c => c.Id == (cageID));
+                var animalList = context.Animals.Where(c => c.CageId == cageID);
+                return animalList.ToList();
+            }
+        }
+        public String GetAnimalSpecie(int cageID)
+        {
+            using(var context = new ZooManagementDotNetContext())
+            {
+                var animalSpecie = context.Animals.FirstOrDefault(c => c.CageId.Equals(cageID));
+                return animalSpecie.Specie;
+            }
+        }
+        public List<Animal> SearchListAnimalByCageID(int cageID)
+        {
+            using (var context = new ZooManagementDotNetContext())
+            {
+                return context.Animals.Where(a=>a.CageId==cageID).ToList();
             }
         }
         public void CreateNewAnimal(Animal animal)
@@ -77,6 +102,13 @@ namespace DataAccessObjects
             {
                 List<Animal> animals = context.Animals.ToList();
                 return animals;
+            }
+        }
+        public int AnimalQuantityInCage(int cageID)
+        {
+            using(var context = new ZooManagementDotNetContext())
+            {
+                return context.Animals.Count(c =>  c.CageId == cageID);
             }
         }
     }

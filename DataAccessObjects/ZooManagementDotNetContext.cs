@@ -68,6 +68,7 @@ namespace DataAccessObjects
                 entity.Property(e => e.Role)
                     .HasMaxLength(50)
                     .HasColumnName("role");
+
             });
 
             modelBuilder.Entity<Animal>(entity =>
@@ -240,7 +241,7 @@ namespace DataAccessObjects
 
             modelBuilder.Entity<FoodInMeal>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(a => new {a.MealId,a.FoodId});
 
                 entity.ToTable("food_in_meal");
 

@@ -17,8 +17,9 @@ namespace ZooManagementWinApp
         ICageRepository cageRepository = new CageRepository();
         IStaffRepository staffRepository = new StaffRepository();
         IAccountRepository accountRepository = new AccountRepository();
+        IAnimalRepository animalRepository = new AnimalRepository();
         public String staffEmail { get; set; }
-        public String staffPassword {  get; set; }
+        public String staffPassword { get; set; }
         BindingSource source;
         public frmStaff()
         {
@@ -27,7 +28,12 @@ namespace ZooManagementWinApp
         private void LoadData()
         {
             source = new BindingSource();
-            source.DataSource = cageRepository.GetCagesByStaffEmail(staffEmail);
+            var cageList = cageRepository.GetCagesByStaffEmail(staffEmail);
+            foreach (var cage in cageList)
+            {
+                cage.Quantity = animalRepository.AnimalQuantityInCage(cage.Id);
+            }
+            source.DataSource = cageList;
             var staffInfo = staffRepository.GetStaffByEmail(staffEmail);
 
             txtStaffEmail.Text = staffInfo.Email;
@@ -55,10 +61,7 @@ namespace ZooManagementWinApp
             dgvCageList.Columns["staff"].Visible = false;
             dgvCageList.Columns["Animals"].Visible = false;
         }
-        private void LoadStaffName()
-        {
 
-        }
         private void frmStaff_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -74,10 +77,27 @@ namespace ZooManagementWinApp
                 userRole = "STAFF",
                 staffPassword = accountRepository.GetAccountPassWordByEmail(staffEmail),
             };
-            if(frmStaffDetail.ShowDialog() == DialogResult.OK)
+            if (frmStaffDetail.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
             }
         }
+
+        private void btnViewCage_Click(object sender, EventArgs e)
+        {
+            frmAnimal frmAnimal = new frmAnimal()
+            {
+                cageInformation = cageRepository.GetCageById(int.Parse(txtCageID.Text)),
+                staffInformation = staffRepository.GetStaffByEmail(staffEmail),
+            };
+            this.Hide();
+            if (frmAnimal.ShowDialog() == DialogResult.Cancel)
+            {
+                LoadData();
+                this.Show();
+            }
+        }
+
+
     }
 }

@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public interface IAreaRepository
+    public interface IFoodInMealRepository
     {
-        IEnumerable<Area> GetAreas();
-        Area GetAreaByID(int areaID);
+
+        public void AddInMeal(FoodInMeal foodInMeal);
+        public void DelInMeal(int foodId);
     }
 }

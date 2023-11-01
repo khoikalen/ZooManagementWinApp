@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public interface IAreaRepository
+    public interface IMealRepository
     {
-        IEnumerable<Area> GetAreas();
-        Area GetAreaByID(int areaID);
+        public void Add(Meal meal);
+        public Meal GetMealByAnimalId(int animalId);
     }
 }

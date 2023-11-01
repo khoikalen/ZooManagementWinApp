@@ -41,5 +41,12 @@ namespace DataAccessObjects
             }
             return areas;
         }
+        public Area GetAreaByID(int areaID)
+        {
+            using(var context = new ZooManagementDotNetContext())
+            {
+                return context.Areas.SingleOrDefault(c => c.Id.Equals(areaID));
+            }
+        }
     }
 }

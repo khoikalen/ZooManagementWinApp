@@ -9,11 +9,16 @@ namespace Repositories
 {
     public interface IAnimalRepository
     {
-        void DeleteAnimal(int animalID);
+        void DeleteAnimal(Animal animal);
+        void UpdateAnimalStatusToDead(int animalID);
         void UpdateAnimalInformation(Animal animal);
         Animal SearchAnimalByID(int animalID);
-        Animal SearchAnimalByCageID(int cageID);
+        List<Animal> GetAnimalByCageID(int cageID);
         void CreateNewAnimal(Animal animal);
         IEnumerable<Animal> GetAllAnimals();
+        public String GetAnimalSpecie(int cageID);
+        int AnimalQuantityInCage(int cageID);
+
+        IEnumerable<Animal> GetAllAnimalsByCageID(int cageID);
     }
 }

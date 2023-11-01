@@ -44,6 +44,8 @@ namespace ZooManagementWinApp
                 {
                     
                     txtPassword.Enabled = false;
+                    txtPassword.PasswordChar = '*';
+                    txtPassword.Text = AccountRepository.GetAccountPassWordByEmail(StaffInfo.Email);
                 }
                 txtStaffID.Text = StaffInfo.Id.ToString();
                 txtFirstName.Text = StaffInfo.FirstName;
@@ -126,11 +128,17 @@ namespace ZooManagementWinApp
                     };
                     account = new Account
                     {
-                        Id = AccountRepository.GetAccountIDByEmail(txtEmail.Text),
+                        Id = AccountRepository.GetAccountIDByEmail(StaffInfo.Email),
                         Email = txtEmail.Text,
                         Password = txtPassword.Text,
                         Role = "STAFF"
                     };
+                    
+
+                    AccountRepository.UpdateAccount(account);
+                    StaffRepository.UpdateStaff(staff);
+                    staffPassword = account.Password;
+                    MessageBox.Show("Updated successfully");
                     ValidationContext context = new ValidationContext(staff);
                     List<ValidationResult> results = new List<ValidationResult>();
                     if (!Validator.TryValidateObject(staff, context, results))
