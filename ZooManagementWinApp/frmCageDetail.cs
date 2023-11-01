@@ -119,9 +119,12 @@ namespace ZooManagementWinApp
                         UpdateAnimalCage(cage.Id);
                         cage.Quantity = animalRepository.AnimalQuantityInCage(cage.Id);
                         CageRepository.UpdateCage(cage);
-                    } else if(selectedCage.Quantity != 0) {
+                    }
+                    else if (selectedCage.Quantity != 0)
+                    {
                         var animal = animalRepository.GetAnimalByCageID(selectedCage.Id);
-                        if(animalInformation.Specie.Equals(animal.First().Specie)){
+                        if (animalInformation.Specie.Equals(animal.First().Specie))
+                        {
                             cage = new Cage
                             {
                                 Id = int.Parse(txtCageID.Text),
@@ -185,19 +188,21 @@ namespace ZooManagementWinApp
                     }
                     if (cage.CageStatus == "Empty")
                     {
-                        
+
                         if (cage.Quantity > 0)
                         {
                             MessageBox.Show("There are still animal in cage, can not change to empty cage");
-                        } else
+                        }
+                        else
                         {
                             CageRepository.UpdateCage(cage);
                         }
-                    }   else
+                    }
+                    else
                     {
                         CageRepository.UpdateCage(cage);
                     }
-                    
+
                 }
             }
             catch (Exception ex)

@@ -65,13 +65,12 @@ namespace ZooManagementWinApp
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            frmCageDetail frmCageDetail = new frmCageDetail()
+            frmCageDetailMovingAnimal frmCageDetailMovingAnimal = new frmCageDetailMovingAnimal()
             {
-                IsMoveCage = true,
-                CageInfo = cageRepository.GetCageById(int.Parse(txtCagePrimaryID.Text)),
+                cageInformation = cageRepository.GetCageById(int.Parse(txtCagePrimaryID.Text)),
                 animalInformation = animalInformation,
             };
-            if (frmCageDetail.ShowDialog() == DialogResult.OK)
+            if (frmCageDetailMovingAnimal.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
                 this.Close();
