@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="frmCageDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmExpertDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmFoodDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -19,7 +10,19 @@
     <Compile Update="frmAnimalDetail.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmCage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmCageDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmExpert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmExpertDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmFoodDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmFoodInMeal.cs">

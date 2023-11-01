@@ -17,6 +17,7 @@ namespace Repositories
         void InsertCage(Cage cage);
 
         List<Cage> GetCagesByStaffEmail(String staffEmail);
+        List<Cage> GetNullCagesByStaffEmail(String staffEmail);
         List<Cage> GetCagesByExpertEmail(String expertEmail);
 
     }

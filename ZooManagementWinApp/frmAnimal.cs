@@ -1,4 +1,5 @@
-﻿using Repositories;
+﻿using BusinessObjects.Models;
+using Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,9 @@ namespace ZooManagementWinApp
     public partial class frmAnimal : Form
     {
         IAnimalRepository animalRepository = new AnimalRepository();
+        ICageRepository cageRepository = new CageRepository();
+        public staff staffInformation { get; set; }
+        public Cage cageInformation { get; set; }
         BindingSource source;
         public frmAnimal()
         {
@@ -24,7 +28,7 @@ namespace ZooManagementWinApp
             try
             {
                 source = new BindingSource();
-                source.DataSource = animalRepository.GetAllAnimals();
+                source.DataSource = animalRepository.GetAnimalByCageID(cageInformation.Id);
 
                 txtAnimalDEZ.DataBindings.Clear();
                 txtAnimalDOB.DataBindings.Clear();
@@ -41,15 +45,19 @@ namespace ZooManagementWinApp
                 txtAnimalName.DataBindings.Add("Text", source, "Name");
                 txtAnimalSpecie.DataBindings.Add("Text", source, "Specie");
                 txtAnimalStatus.DataBindings.Add("Text", source, "Status");
-                cboAnimalCage.DataBindings.Add("Text", source, "CageId");
+                cboAnimalCage.Text = cageInformation.Name;
 
                 dgvAnimalList.DataSource = null;
                 dgvAnimalList.DataSource = source;
+                dgvAnimalList.Columns["Cage"].Visible = false;
+                dgvAnimalList.Columns["AnimalLogs"].Visible = false;
+                dgvAnimalList.Columns["Meals"].Visible = false;
+
             }
             catch (Exception ex)
             {
 
-                throw new Exception("");
+                throw new Exception(ex.Message);
             }
 
 
@@ -57,16 +65,77 @@ namespace ZooManagementWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAnimalDetail frmAnimalDetail = new frmAnimalDetail();
-            if (frmAnimalDetail.ShowDialog() == DialogResult.OK)
+            frmAnimalDetail frmAnimalDetail = new frmAnimalDetail()
             {
+                Text = "Add new Animal to the cage",
+                cageInformation = cageInformation,
+                InsertOrUpdate = true,
+            };
+            frmAnimalDetail.ShowDialog();
+            LoadData();
 
-            }
         }
 
         private void frmAnimal_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+        private Animal GetAnimalObject()
+        {
+            return animalRepository.SearchAnimalByID(int.Parse(txtAnimalID.Text));
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var animal = GetAnimalObject();
+                var confirm = MessageBox.Show("Are you sure to delete this animal?", "Confirm Delete!", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    animalRepository.DeleteAnimal(GetAnimalObject());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete a staff");
+            }
+            LoadData();
+        }
+
+        private void dgvAnimalList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmAnimalDetail frmAnimalDetail = new frmAnimalDetail()
+            {
+                Text = "Update Animal Information",
+                InsertOrUpdate = false,
+                animalInformation = GetAnimalObject(),
+                cageInformation = cageInformation
+            };
+            if (txtAnimalID != null && txtAnimalID.Text != "0")
+            {
+                if (frmAnimalDetail.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Can not update null value!");
+            }
+        }
+
+        private void btnMoveCage_Click(object sender, EventArgs e)
+        {
+            frmCage frmCage = new frmCage()
+            {
+                animalInformation = GetAnimalObject(),
+                staffInformation = staffInformation
+            };
+            if(frmCage.ShowDialog() == DialogResult.OK)
+            {
+                LoadData();
+            }
         }
     }
 }

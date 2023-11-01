@@ -10,5 +10,6 @@ namespace Repositories
     public interface IAreaRepository
     {
         IEnumerable<Area> GetAreas();
+        Area GetAreaByID(int areaID);
     }
 }
