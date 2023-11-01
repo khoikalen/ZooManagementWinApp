@@ -17,11 +17,16 @@ namespace Repositories
         public void DeleteAnimal(Animal animal) => AnimalDAO.Instance.DeleteAnimal(animal);
 
         public IEnumerable<Animal> GetAllAnimals() => AnimalDAO.Instance.GetAllAnimals();
+
+        public IEnumerable<Animal> GetAllAnimalsByCageID(int cageID) => AnimalDAO.Instance.SearchListAnimalByCageID(cageID);
        
         public List<Animal> GetAnimalByCageID(int cageID) => AnimalDAO.Instance.GetAnimalByCageID(cageID);
 
         public string GetAnimalSpecie(int cageID) => AnimalDAO.Instance.GetAnimalSpecie(cageID);
 
+
+        public List<Animal> SearchAnimalByCageID(int cageID) => AnimalDAO.Instance.SearchListAnimalByCageID(cageID);
+        
 
         public Animal SearchAnimalByID(int animalID) => AnimalDAO.Instance.SearchAnimalByID(animalID);
        

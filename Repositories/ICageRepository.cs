@@ -18,5 +18,7 @@ namespace Repositories
 
         List<Cage> GetCagesByStaffEmail(String staffEmail);
         List<Cage> GetNullCagesByStaffEmail(String staffEmail);
+        List<Cage> GetCagesByExpertEmail(String expertEmail);
+
     }
 }

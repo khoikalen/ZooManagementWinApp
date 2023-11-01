@@ -10,6 +10,8 @@ namespace Repositories
     public interface IFoodStorageRepository
     {
         public IEnumerable<FoodStorage> GetFoodStorageByType(string type);
+        public FoodStorage GetFoodInStorageById(int id);
+
         public void InsertFood(FoodStorage food);
         public void UpdateFood(FoodStorage food);
         public void DeleteFood(int id); 

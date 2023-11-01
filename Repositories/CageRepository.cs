@@ -16,6 +16,8 @@ namespace Repositories
 
         public IEnumerable<Cage> GetCages() => CageDAO.Instance.GetCages();
 
+        public List<Cage> GetCagesByExpertEmail(string expertEmail) => CageDAO.Instance.GetCagesByExpertEmail(expertEmail);
+    
 
         public void InsertCage(Cage cage) => CageDAO.Instance.InsertCage(cage);
 

@@ -49,7 +49,6 @@ namespace ZooManagementWinApp
                             return;
                         }
                     }
-
                     FoodStorageRepository.InsertFood(food);
 
                 }
@@ -81,7 +80,7 @@ namespace ZooManagementWinApp
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Food is existed");
             }
         }
 

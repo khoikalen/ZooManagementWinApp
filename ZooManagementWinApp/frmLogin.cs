@@ -43,7 +43,10 @@ namespace ZooManagementWinApp
                 }
                 else if ("EXPERT".Equals(accountRepository.LoginAccount(txtEmail.Text, txtPassword.Text)))
                 {
-                    frmExpert frmExpert = new frmExpert();
+                    frmExpert frmExpert = new frmExpert()
+                    {
+                        email = txtEmail.Text,
+                    };
                     frmExpert.ShowDialog();
                 }
             }

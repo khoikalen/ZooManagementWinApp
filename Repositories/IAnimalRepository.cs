@@ -18,5 +18,7 @@ namespace Repositories
         IEnumerable<Animal> GetAllAnimals();
         public String GetAnimalSpecie(int cageID);
         int AnimalQuantityInCage(int cageID);
+
+        IEnumerable<Animal> GetAllAnimalsByCageID(int cageID);
     }
 }

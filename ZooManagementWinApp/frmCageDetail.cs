@@ -3,6 +3,7 @@ using Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -148,6 +149,16 @@ namespace ZooManagementWinApp
                         AreaId = int.Parse(cboAreaId.SelectedValue.ToString()),
                         StaffId = int.Parse(cboStaffId.SelectedValue.ToString()),
                     };
+                    ValidationContext context = new ValidationContext(cage);
+                    List<ValidationResult> results = new List<ValidationResult>();
+                    if (!Validator.TryValidateObject(cage, context, results))
+                    {
+                        foreach (ValidationResult result in results)
+                        {
+                            MessageBox.Show(result.ErrorMessage, "Message");
+                            return;
+                        }
+                    }
                     CageRepository.InsertCage(cage);
                 }
                 else
@@ -162,7 +173,31 @@ namespace ZooManagementWinApp
                         AreaId = int.Parse(cboAreaId.SelectedValue.ToString()),
                         StaffId = int.Parse(cboStaffId.SelectedValue.ToString()),
                     };
-                    CageRepository.UpdateCage(cage);
+                    ValidationContext context = new ValidationContext(cage);
+                    List<ValidationResult> results = new List<ValidationResult>();
+                    if (!Validator.TryValidateObject(cage, context, results))
+                    {
+                        foreach (ValidationResult result in results)
+                        {
+                            MessageBox.Show(result.ErrorMessage, "Message");
+                            return;
+                        }
+                    }
+                    if (cage.CageStatus == "Empty")
+                    {
+                        
+                        if (cage.Quantity > 0)
+                        {
+                            MessageBox.Show("There are still animal in cage, can not change to empty cage");
+                        } else
+                        {
+                            CageRepository.UpdateCage(cage);
+                        }
+                    }   else
+                    {
+                        CageRepository.UpdateCage(cage);
+                    }
+                    
                 }
             }
             catch (Exception ex)

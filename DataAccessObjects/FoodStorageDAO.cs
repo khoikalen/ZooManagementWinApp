@@ -44,7 +44,21 @@ namespace DataAccessObjects
             }
             return listFood;
         }
+        public FoodStorage GetFoodInStorageById(int id)
+        {
+            var food = new FoodStorage();
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                food = db.FoodStorages.SingleOrDefault(a => a.Id == id);
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            return food;
+        }
 
 
         public void AddNewFood(FoodStorage food)
@@ -52,12 +66,17 @@ namespace DataAccessObjects
             try
             {
                 using var db = new ZooManagementDotNetContext();
+                var check = db.FoodStorages.SingleOrDefault(a => a.Name == food.Name);
+                if(check != null) 
+                {
+                    throw new Exception();
+                }
                 db.FoodStorages.Add(food);
                 db.SaveChanges();
             }
             catch (Exception)
             {
-                throw;
+                throw new Exception();
             }
         }
 

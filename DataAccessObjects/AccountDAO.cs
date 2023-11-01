@@ -26,6 +26,20 @@ namespace DataAccessObjects
                 }
             }
         }
+        public List<Account> GetAccounts()
+        {
+            var accounts = new List<Account>();
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                accounts = db.Accounts.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return accounts;
+        }
         public void InsertAccount(Account account)
         {
             try
@@ -68,6 +82,9 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+
+
+        
         public void UpdateAccount(Account account)
         {
             try
