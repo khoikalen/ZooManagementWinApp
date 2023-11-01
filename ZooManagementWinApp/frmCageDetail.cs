@@ -98,12 +98,12 @@ namespace ZooManagementWinApp
         private void btnSave_Click(object sender, EventArgs e)
         {
             var cage = new Cage();
-            var selectedCage = GetCageObject();
             CageRepository = new CageRepository();
             try
             {
                 if (IsMoveCage)
                 {
+                    var selectedCage = GetCageObject();
                     if (selectedCage.Quantity == 0)
                     {
                         cage = new Cage

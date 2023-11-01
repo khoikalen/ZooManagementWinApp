@@ -12,6 +12,9 @@ namespace Repositories
     {
         public void DeleteExpert(int id) => ExpertDAO.Instance.DeleteExpert(id);
 
+        public Expert GetExpertByEmail(string email) => ExpertDAO.Instance.GetExpertByEmail(email);
+      
+
         public Expert GetExpertByID(int id) => ExpertDAO.Instance.GetExpertById(id);
 
         public IEnumerable<Expert> GetExperts() => ExpertDAO.Instance.GetExperts();

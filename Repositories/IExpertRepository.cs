@@ -9,6 +9,8 @@ namespace Repositories
 {
     public interface IExpertRepository
     {
+        Expert GetExpertByEmail(String email);
+
         IEnumerable<Expert> GetExperts();
         Expert GetExpertByID(int id);
         void DeleteExpert(int id);

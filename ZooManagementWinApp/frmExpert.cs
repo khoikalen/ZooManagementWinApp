@@ -23,7 +23,7 @@ namespace ZooManagementWinApp
         ICageRepository cageRepository = new CageRepository();
         IMealRepository mealRepository = new MealRepository();
         IFoodRepository foodRepository = new FoodRepository();
-
+        IExpertRepository expertRepository = new ExpertRepository();
         BindingSource source;
         public String email { get; set; }
         public static int animalId;
@@ -37,6 +37,7 @@ namespace ZooManagementWinApp
             LoadHealLog();
             LoadFoodStorage();
             LoadAnimal();
+            LoadExpertInformation();
         }
 
         private void LoadHealLog()
@@ -304,7 +305,7 @@ namespace ZooManagementWinApp
         {
             Animal animal = GetAnimalObject();
             var mealExist = mealRepository.GetMealByAnimalId(animal.Id);
-            if(mealExist != null)
+            if (mealExist != null)
             {
                 MessageBox.Show("Meal was created");
             }
@@ -318,7 +319,7 @@ namespace ZooManagementWinApp
                 mealRepository.Add(meal);
                 MessageBox.Show("Create Meal Successfully");
             }
-            
+
         }
 
 
@@ -381,6 +382,46 @@ namespace ZooManagementWinApp
             }
 
 
+        }
+
+        public void LoadExpertInformation()
+        {
+
+            var expert = expertRepository.GetExpertByEmail(email);
+            String name = expert.FirstName + " " + expert.LastName;
+            cboExpertGender.SelectedIndex = 0;
+            try
+            {
+                txtExpertID.Text = expert.Id.ToString();
+                txtExpertName.Text = name;
+                txtExpertEmail.Text = expert.Email;
+                txtExpertPhonenumber.Text = expert.PhoneNumber;
+                cboExpertGender.Text = expert.Gender;
+               
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+
+        }
+
+        private void btnUpdatePersonalInformation_Click(object sender, EventArgs e)
+        {
+            frmExpertDetail frmStaffDetail = new frmExpertDetail()
+            {
+                Text = "Update personal information",
+                InsertOrUpdate = true,
+                ExpertInfo = expertRepository.GetExpertByEmail(email),
+                expertRepository1 = expertRepository,
+            };
+            if (frmStaffDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadExpertInformation();
+            }
         }
     }
 }

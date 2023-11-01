@@ -42,6 +42,22 @@ namespace DataAccessObjects
             return experts;
         }
 
+        public Expert GetExpertByEmail(String email)
+        {
+            var expert = new Expert();
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                expert = db.Experts.SingleOrDefault(a=> a.Email==email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return expert;
+        }
+
+
         public Expert GetExpertById(int id)
         {
             var expert = new Expert();
