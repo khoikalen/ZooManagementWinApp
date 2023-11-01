@@ -17,11 +17,7 @@ namespace ZooManagementWinApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new frmLogin());
-=======
-            Application.Run(new frmAdmin());
->>>>>>> 4cc1e79d88277d7bf274d2208cf382a8007c5ee9
         }
     }
 }

@@ -82,11 +82,6 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
-<<<<<<< HEAD
-
-
-        
-=======
         public void UpdateAccount(Account account)
         {
             try
@@ -133,6 +128,5 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
->>>>>>> 4cc1e79d88277d7bf274d2208cf382a8007c5ee9
     }
 }
