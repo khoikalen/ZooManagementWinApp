@@ -12,5 +12,9 @@ namespace Repositories
         void InsertAccount(Account account);
         String LoginAccount(String email, String password);
         void DeleteAccountByEmail(string email);
+        void UpdateAccount(Account account);
+        int GetAccountIDByEmail(string email);
+        String GetAccountPassWordByEmail(String email);
+        IEnumerable<Account> GetAccounts();
     }
 }

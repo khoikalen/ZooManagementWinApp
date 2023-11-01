@@ -49,28 +49,51 @@
             lbStaffID = new System.Windows.Forms.Label();
             dgvStaff = new System.Windows.Forms.DataGridView();
             tabExpertManagement = new System.Windows.Forms.TabPage();
+            btnDeleteExpert = new System.Windows.Forms.Button();
+            btnAddExpert = new System.Windows.Forms.Button();
+            dgvExpertManagement = new System.Windows.Forms.DataGridView();
+            groupBox3 = new System.Windows.Forms.GroupBox();
+            txtExpertAreaID = new System.Windows.Forms.TextBox();
+            label8 = new System.Windows.Forms.Label();
+            txtExpertPhoneNumber = new System.Windows.Forms.TextBox();
+            dtpExpertStartDay = new System.Windows.Forms.DateTimePicker();
+            txtExpertEmail = new System.Windows.Forms.TextBox();
+            txtGenderExpert = new System.Windows.Forms.TextBox();
+            txtExpertLastName = new System.Windows.Forms.TextBox();
+            txtExpertFirstName = new System.Windows.Forms.TextBox();
+            txtExpertID = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
             tabCageManagement = new System.Windows.Forms.TabPage();
+            btnDeleteCage = new System.Windows.Forms.Button();
+            btnAddCage = new System.Windows.Forms.Button();
             dgvCageManagement = new System.Windows.Forms.DataGridView();
             groupBox2 = new System.Windows.Forms.GroupBox();
             txtStaffForeignID = new System.Windows.Forms.TextBox();
             txtAreaForeignID = new System.Windows.Forms.TextBox();
-            txtCageType = new System.Windows.Forms.TextBox();
             txtCageStatus = new System.Windows.Forms.TextBox();
             txtCageQuantity = new System.Windows.Forms.TextBox();
             txtCageName = new System.Windows.Forms.TextBox();
-            txtCageID = new System.Windows.Forms.TextBox();
+            txtCagePrimaryID = new System.Windows.Forms.TextBox();
             lbStaffForeignID = new System.Windows.Forms.Label();
             lbAreaForeignID = new System.Windows.Forms.Label();
-            lbCageType = new System.Windows.Forms.Label();
             lbCageStatus = new System.Windows.Forms.Label();
             lbCageQuantity = new System.Windows.Forms.Label();
             lbCageName = new System.Windows.Forms.Label();
             lbCageId = new System.Windows.Forms.Label();
-            button1 = new System.Windows.Forms.Button();
+            btnAssign = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabStaffMangement.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStaff).BeginInit();
+            tabExpertManagement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvExpertManagement).BeginInit();
+            groupBox3.SuspendLayout();
             tabCageManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCageManagement).BeginInit();
             groupBox2.SuspendLayout();
@@ -140,7 +163,7 @@
             groupBox1.Controls.Add(lbStaffID);
             groupBox1.Location = new System.Drawing.Point(46, 45);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(907, 215);
+            groupBox1.Size = new System.Drawing.Size(907, 201);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Staff Information";
@@ -149,20 +172,23 @@
             // 
             txtStaffPhoneNumber.Location = new System.Drawing.Point(688, 45);
             txtStaffPhoneNumber.Name = "txtStaffPhoneNumber";
+            txtStaffPhoneNumber.ReadOnly = true;
             txtStaffPhoneNumber.Size = new System.Drawing.Size(125, 27);
             txtStaffPhoneNumber.TabIndex = 13;
             // 
             // dtpStatDay
             // 
-            dtpStatDay.Location = new System.Drawing.Point(373, 95);
+            dtpStatDay.Enabled = false;
+            dtpStatDay.Location = new System.Drawing.Point(362, 142);
             dtpStatDay.Name = "dtpStatDay";
             dtpStatDay.Size = new System.Drawing.Size(250, 27);
             dtpStatDay.TabIndex = 12;
             // 
             // txtStaffEmail
             // 
-            txtStaffEmail.Location = new System.Drawing.Point(373, 136);
+            txtStaffEmail.Location = new System.Drawing.Point(688, 96);
             txtStaffEmail.Name = "txtStaffEmail";
+            txtStaffEmail.ReadOnly = true;
             txtStaffEmail.Size = new System.Drawing.Size(125, 27);
             txtStaffEmail.TabIndex = 11;
             // 
@@ -170,13 +196,15 @@
             // 
             txtGender.Location = new System.Drawing.Point(373, 51);
             txtGender.Name = "txtGender";
+            txtGender.ReadOnly = true;
             txtGender.Size = new System.Drawing.Size(125, 27);
             txtGender.TabIndex = 10;
             // 
             // txtStaffLastName
             // 
-            txtStaffLastName.Location = new System.Drawing.Point(133, 136);
+            txtStaffLastName.Location = new System.Drawing.Point(373, 96);
             txtStaffLastName.Name = "txtStaffLastName";
+            txtStaffLastName.ReadOnly = true;
             txtStaffLastName.Size = new System.Drawing.Size(125, 27);
             txtStaffLastName.TabIndex = 9;
             // 
@@ -184,6 +212,7 @@
             // 
             txtStaffFirstName.Location = new System.Drawing.Point(133, 95);
             txtStaffFirstName.Name = "txtStaffFirstName";
+            txtStaffFirstName.ReadOnly = true;
             txtStaffFirstName.Size = new System.Drawing.Size(125, 27);
             txtStaffFirstName.TabIndex = 8;
             // 
@@ -191,6 +220,7 @@
             // 
             txtStaffID.Location = new System.Drawing.Point(133, 51);
             txtStaffID.Name = "txtStaffID";
+            txtStaffID.ReadOnly = true;
             txtStaffID.Size = new System.Drawing.Size(125, 27);
             txtStaffID.TabIndex = 7;
             // 
@@ -206,7 +236,7 @@
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Location = new System.Drawing.Point(290, 139);
+            lbEmail.Location = new System.Drawing.Point(550, 99);
             lbEmail.Name = "lbEmail";
             lbEmail.Size = new System.Drawing.Size(46, 20);
             lbEmail.TabIndex = 5;
@@ -215,7 +245,7 @@
             // lbStartDay
             // 
             lbStartDay.AutoSize = true;
-            lbStartDay.Location = new System.Drawing.Point(283, 99);
+            lbStartDay.Location = new System.Drawing.Point(272, 146);
             lbStartDay.Name = "lbStartDay";
             lbStartDay.Size = new System.Drawing.Size(68, 20);
             lbStartDay.TabIndex = 4;
@@ -233,7 +263,7 @@
             // lbStaffLastName
             // 
             lbStaffLastName.AutoSize = true;
-            lbStaffLastName.Location = new System.Drawing.Point(35, 139);
+            lbStaffLastName.Location = new System.Drawing.Point(283, 99);
             lbStaffLastName.Name = "lbStaffLastName";
             lbStaffLastName.Size = new System.Drawing.Size(76, 20);
             lbStaffLastName.TabIndex = 2;
@@ -259,6 +289,7 @@
             // 
             // dgvStaff
             // 
+            dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvStaff.Location = new System.Drawing.Point(0, 319);
             dgvStaff.Name = "dgvStaff";
@@ -272,6 +303,10 @@
             // 
             // tabExpertManagement
             // 
+            tabExpertManagement.Controls.Add(btnDeleteExpert);
+            tabExpertManagement.Controls.Add(btnAddExpert);
+            tabExpertManagement.Controls.Add(dgvExpertManagement);
+            tabExpertManagement.Controls.Add(groupBox3);
             tabExpertManagement.Location = new System.Drawing.Point(4, 29);
             tabExpertManagement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             tabExpertManagement.Name = "tabExpertManagement";
@@ -281,9 +316,206 @@
             tabExpertManagement.Text = "Expert Management";
             tabExpertManagement.UseVisualStyleBackColor = true;
             // 
+            // btnDeleteExpert
+            // 
+            btnDeleteExpert.Location = new System.Drawing.Point(240, 243);
+            btnDeleteExpert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btnDeleteExpert.Name = "btnDeleteExpert";
+            btnDeleteExpert.Size = new System.Drawing.Size(94, 29);
+            btnDeleteExpert.TabIndex = 5;
+            btnDeleteExpert.Text = "Delete";
+            btnDeleteExpert.UseVisualStyleBackColor = true;
+            btnDeleteExpert.Click += btnDeleteExpert_Click;
+            // 
+            // btnAddExpert
+            // 
+            btnAddExpert.Location = new System.Drawing.Point(96, 243);
+            btnAddExpert.Name = "btnAddExpert";
+            btnAddExpert.Size = new System.Drawing.Size(94, 29);
+            btnAddExpert.TabIndex = 4;
+            btnAddExpert.Text = "Add";
+            btnAddExpert.UseVisualStyleBackColor = true;
+            btnAddExpert.Click += btnAddExpert_Click;
+            // 
+            // dgvExpertManagement
+            // 
+            dgvExpertManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvExpertManagement.Location = new System.Drawing.Point(0, 290);
+            dgvExpertManagement.Name = "dgvExpertManagement";
+            dgvExpertManagement.ReadOnly = true;
+            dgvExpertManagement.RowHeadersWidth = 51;
+            dgvExpertManagement.RowTemplate.Height = 29;
+            dgvExpertManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvExpertManagement.Size = new System.Drawing.Size(1021, 235);
+            dgvExpertManagement.TabIndex = 3;
+            dgvExpertManagement.CellDoubleClick += dgvExpertManagement_CellDoubleClick;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(txtExpertAreaID);
+            groupBox3.Controls.Add(label8);
+            groupBox3.Controls.Add(txtExpertPhoneNumber);
+            groupBox3.Controls.Add(dtpExpertStartDay);
+            groupBox3.Controls.Add(txtExpertEmail);
+            groupBox3.Controls.Add(txtGenderExpert);
+            groupBox3.Controls.Add(txtExpertLastName);
+            groupBox3.Controls.Add(txtExpertFirstName);
+            groupBox3.Controls.Add(txtExpertID);
+            groupBox3.Controls.Add(label1);
+            groupBox3.Controls.Add(label2);
+            groupBox3.Controls.Add(label3);
+            groupBox3.Controls.Add(label4);
+            groupBox3.Controls.Add(label5);
+            groupBox3.Controls.Add(label6);
+            groupBox3.Controls.Add(label7);
+            groupBox3.Location = new System.Drawing.Point(61, 26);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new System.Drawing.Size(907, 201);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Expert Information";
+            // 
+            // txtExpertAreaID
+            // 
+            txtExpertAreaID.Location = new System.Drawing.Point(628, 148);
+            txtExpertAreaID.Name = "txtExpertAreaID";
+            txtExpertAreaID.ReadOnly = true;
+            txtExpertAreaID.Size = new System.Drawing.Size(125, 27);
+            txtExpertAreaID.TabIndex = 17;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(498, 152);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(98, 20);
+            label8.TabIndex = 16;
+            label8.Text = "Area Manage";
+            // 
+            // txtExpertPhoneNumber
+            // 
+            txtExpertPhoneNumber.Location = new System.Drawing.Point(688, 45);
+            txtExpertPhoneNumber.Name = "txtExpertPhoneNumber";
+            txtExpertPhoneNumber.ReadOnly = true;
+            txtExpertPhoneNumber.Size = new System.Drawing.Size(125, 27);
+            txtExpertPhoneNumber.TabIndex = 13;
+            // 
+            // dtpExpertStartDay
+            // 
+            dtpExpertStartDay.Enabled = false;
+            dtpExpertStartDay.Location = new System.Drawing.Point(184, 148);
+            dtpExpertStartDay.Name = "dtpExpertStartDay";
+            dtpExpertStartDay.Size = new System.Drawing.Size(250, 27);
+            dtpExpertStartDay.TabIndex = 12;
+            // 
+            // txtExpertEmail
+            // 
+            txtExpertEmail.Location = new System.Drawing.Point(688, 96);
+            txtExpertEmail.Name = "txtExpertEmail";
+            txtExpertEmail.ReadOnly = true;
+            txtExpertEmail.Size = new System.Drawing.Size(125, 27);
+            txtExpertEmail.TabIndex = 11;
+            // 
+            // txtGenderExpert
+            // 
+            txtGenderExpert.Location = new System.Drawing.Point(373, 51);
+            txtGenderExpert.Name = "txtGenderExpert";
+            txtGenderExpert.ReadOnly = true;
+            txtGenderExpert.Size = new System.Drawing.Size(125, 27);
+            txtGenderExpert.TabIndex = 10;
+            // 
+            // txtExpertLastName
+            // 
+            txtExpertLastName.Location = new System.Drawing.Point(373, 96);
+            txtExpertLastName.Name = "txtExpertLastName";
+            txtExpertLastName.ReadOnly = true;
+            txtExpertLastName.Size = new System.Drawing.Size(125, 27);
+            txtExpertLastName.TabIndex = 9;
+            // 
+            // txtExpertFirstName
+            // 
+            txtExpertFirstName.Location = new System.Drawing.Point(133, 95);
+            txtExpertFirstName.Name = "txtExpertFirstName";
+            txtExpertFirstName.ReadOnly = true;
+            txtExpertFirstName.Size = new System.Drawing.Size(125, 27);
+            txtExpertFirstName.TabIndex = 8;
+            // 
+            // txtExpertID
+            // 
+            txtExpertID.Location = new System.Drawing.Point(133, 51);
+            txtExpertID.Name = "txtExpertID";
+            txtExpertID.ReadOnly = true;
+            txtExpertID.Size = new System.Drawing.Size(125, 27);
+            txtExpertID.TabIndex = 7;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(550, 53);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(105, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Phone number";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(550, 99);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(46, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Email";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(94, 152);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(68, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Start day";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(283, 53);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(57, 20);
+            label4.TabIndex = 3;
+            label4.Text = "Gender";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(283, 99);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(76, 20);
+            label5.TabIndex = 2;
+            label5.Text = "Last name";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(35, 99);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(77, 20);
+            label6.TabIndex = 1;
+            label6.Text = "First name";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(35, 53);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(70, 20);
+            label7.TabIndex = 0;
+            label7.Text = "Expert ID";
+            // 
             // tabCageManagement
             // 
-            tabCageManagement.Controls.Add(button1);
+            tabCageManagement.Controls.Add(btnAssign);
+            tabCageManagement.Controls.Add(btnDeleteCage);
+            tabCageManagement.Controls.Add(btnAddCage);
             tabCageManagement.Controls.Add(dgvCageManagement);
             tabCageManagement.Controls.Add(groupBox2);
             tabCageManagement.Location = new System.Drawing.Point(4, 29);
@@ -295,31 +527,51 @@
             tabCageManagement.Text = "Cage Management";
             tabCageManagement.UseVisualStyleBackColor = true;
             // 
+            // btnDeleteCage
+            // 
+            btnDeleteCage.Location = new System.Drawing.Point(204, 250);
+            btnDeleteCage.Name = "btnDeleteCage";
+            btnDeleteCage.Size = new System.Drawing.Size(94, 29);
+            btnDeleteCage.TabIndex = 3;
+            btnDeleteCage.Text = "Delete";
+            btnDeleteCage.UseVisualStyleBackColor = true;
+            btnDeleteCage.Click += btnDeleteCage_Click;
+            // 
+            // btnAddCage
+            // 
+            btnAddCage.Location = new System.Drawing.Point(57, 250);
+            btnAddCage.Name = "btnAddCage";
+            btnAddCage.Size = new System.Drawing.Size(94, 29);
+            btnAddCage.TabIndex = 2;
+            btnAddCage.Text = "Add";
+            btnAddCage.UseVisualStyleBackColor = true;
+            btnAddCage.Click += btnAddCage_Click;
+            // 
             // dgvCageManagement
             // 
+            dgvCageManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgvCageManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCageManagement.Location = new System.Drawing.Point(-4, 352);
+            dgvCageManagement.Location = new System.Drawing.Point(0, 308);
             dgvCageManagement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             dgvCageManagement.Name = "dgvCageManagement";
             dgvCageManagement.ReadOnly = true;
             dgvCageManagement.RowHeadersWidth = 51;
             dgvCageManagement.RowTemplate.Height = 29;
             dgvCageManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvCageManagement.Size = new System.Drawing.Size(1030, 305);
+            dgvCageManagement.Size = new System.Drawing.Size(1030, 224);
             dgvCageManagement.TabIndex = 1;
+            dgvCageManagement.CellDoubleClick += dgvCageManagement_CellDoubleClick;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(txtStaffForeignID);
             groupBox2.Controls.Add(txtAreaForeignID);
-            groupBox2.Controls.Add(txtCageType);
             groupBox2.Controls.Add(txtCageStatus);
             groupBox2.Controls.Add(txtCageQuantity);
             groupBox2.Controls.Add(txtCageName);
-            groupBox2.Controls.Add(txtCageID);
+            groupBox2.Controls.Add(txtCagePrimaryID);
             groupBox2.Controls.Add(lbStaffForeignID);
             groupBox2.Controls.Add(lbAreaForeignID);
-            groupBox2.Controls.Add(lbCageType);
             groupBox2.Controls.Add(lbCageStatus);
             groupBox2.Controls.Add(lbCageQuantity);
             groupBox2.Controls.Add(lbCageName);
@@ -328,66 +580,64 @@
             groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            groupBox2.Size = new System.Drawing.Size(949, 259);
+            groupBox2.Size = new System.Drawing.Size(949, 199);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             groupBox2.Text = "Cage Management";
             // 
             // txtStaffForeignID
             // 
-            txtStaffForeignID.Location = new System.Drawing.Point(760, 56);
+            txtStaffForeignID.Location = new System.Drawing.Point(760, 57);
             txtStaffForeignID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtStaffForeignID.Name = "txtStaffForeignID";
+            txtStaffForeignID.ReadOnly = true;
             txtStaffForeignID.Size = new System.Drawing.Size(142, 27);
             txtStaffForeignID.TabIndex = 13;
             // 
             // txtAreaForeignID
             // 
-            txtAreaForeignID.Location = new System.Drawing.Point(760, 131);
+            txtAreaForeignID.Location = new System.Drawing.Point(760, 109);
             txtAreaForeignID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtAreaForeignID.Name = "txtAreaForeignID";
+            txtAreaForeignID.ReadOnly = true;
             txtAreaForeignID.Size = new System.Drawing.Size(142, 27);
             txtAreaForeignID.TabIndex = 12;
             // 
-            // txtCageType
-            // 
-            txtCageType.Location = new System.Drawing.Point(505, 131);
-            txtCageType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            txtCageType.Name = "txtCageType";
-            txtCageType.Size = new System.Drawing.Size(142, 27);
-            txtCageType.TabIndex = 11;
-            // 
             // txtCageStatus
             // 
-            txtCageStatus.Location = new System.Drawing.Point(505, 56);
+            txtCageStatus.Location = new System.Drawing.Point(476, 57);
             txtCageStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtCageStatus.Name = "txtCageStatus";
+            txtCageStatus.ReadOnly = true;
             txtCageStatus.Size = new System.Drawing.Size(142, 27);
             txtCageStatus.TabIndex = 10;
             // 
             // txtCageQuantity
             // 
-            txtCageQuantity.Location = new System.Drawing.Point(173, 195);
+            txtCageQuantity.Location = new System.Drawing.Point(476, 109);
             txtCageQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtCageQuantity.Name = "txtCageQuantity";
+            txtCageQuantity.ReadOnly = true;
             txtCageQuantity.Size = new System.Drawing.Size(142, 27);
             txtCageQuantity.TabIndex = 9;
             // 
             // txtCageName
             // 
-            txtCageName.Location = new System.Drawing.Point(173, 125);
+            txtCageName.Location = new System.Drawing.Point(173, 109);
             txtCageName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtCageName.Name = "txtCageName";
+            txtCageName.ReadOnly = true;
             txtCageName.Size = new System.Drawing.Size(142, 27);
             txtCageName.TabIndex = 8;
             // 
-            // txtCageID
+            // txtCagePrimaryID
             // 
-            txtCageID.Location = new System.Drawing.Point(173, 51);
-            txtCageID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            txtCageID.Name = "txtCageID";
-            txtCageID.Size = new System.Drawing.Size(142, 27);
-            txtCageID.TabIndex = 7;
+            txtCagePrimaryID.Location = new System.Drawing.Point(173, 57);
+            txtCagePrimaryID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txtCagePrimaryID.Name = "txtCagePrimaryID";
+            txtCagePrimaryID.ReadOnly = true;
+            txtCagePrimaryID.Size = new System.Drawing.Size(142, 27);
+            txtCagePrimaryID.TabIndex = 7;
             // 
             // lbStaffForeignID
             // 
@@ -401,25 +651,16 @@
             // lbAreaForeignID
             // 
             lbAreaForeignID.AutoSize = true;
-            lbAreaForeignID.Location = new System.Drawing.Point(675, 135);
+            lbAreaForeignID.Location = new System.Drawing.Point(675, 112);
             lbAreaForeignID.Name = "lbAreaForeignID";
             lbAreaForeignID.Size = new System.Drawing.Size(59, 20);
             lbAreaForeignID.TabIndex = 5;
             lbAreaForeignID.Text = "Area ID";
             // 
-            // lbCageType
-            // 
-            lbCageType.AutoSize = true;
-            lbCageType.Location = new System.Drawing.Point(391, 135);
-            lbCageType.Name = "lbCageType";
-            lbCageType.Size = new System.Drawing.Size(78, 20);
-            lbCageType.TabIndex = 4;
-            lbCageType.Text = "Cage Type";
-            // 
             // lbCageStatus
             // 
             lbCageStatus.AutoSize = true;
-            lbCageStatus.Location = new System.Drawing.Point(391, 60);
+            lbCageStatus.Location = new System.Drawing.Point(349, 60);
             lbCageStatus.Name = "lbCageStatus";
             lbCageStatus.Size = new System.Drawing.Size(87, 20);
             lbCageStatus.TabIndex = 3;
@@ -428,7 +669,7 @@
             // lbCageQuantity
             // 
             lbCageQuantity.AutoSize = true;
-            lbCageQuantity.Location = new System.Drawing.Point(33, 204);
+            lbCageQuantity.Location = new System.Drawing.Point(349, 112);
             lbCageQuantity.Name = "lbCageQuantity";
             lbCageQuantity.Size = new System.Drawing.Size(103, 20);
             lbCageQuantity.TabIndex = 2;
@@ -437,7 +678,7 @@
             // lbCageName
             // 
             lbCageName.AutoSize = true;
-            lbCageName.Location = new System.Drawing.Point(33, 135);
+            lbCageName.Location = new System.Drawing.Point(33, 112);
             lbCageName.Name = "lbCageName";
             lbCageName.Size = new System.Drawing.Size(87, 20);
             lbCageName.TabIndex = 1;
@@ -446,20 +687,21 @@
             // lbCageId
             // 
             lbCageId.AutoSize = true;
-            lbCageId.Location = new System.Drawing.Point(31, 60);
+            lbCageId.Location = new System.Drawing.Point(33, 60);
             lbCageId.Name = "lbCageId";
             lbCageId.Size = new System.Drawing.Size(62, 20);
             lbCageId.TabIndex = 0;
             lbCageId.Text = "Cage ID";
             // 
-            // button1
+            // btnAssign
             // 
-            button1.Location = new System.Drawing.Point(64, 305);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(94, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
+            btnAssign.Location = new System.Drawing.Point(335, 250);
+            btnAssign.Name = "btnAssign";
+            btnAssign.Size = new System.Drawing.Size(166, 29);
+            btnAssign.TabIndex = 4;
+            btnAssign.Text = "Assign Cage for Staff";
+            btnAssign.UseVisualStyleBackColor = true;
+            btnAssign.Click += btnAssign_Click;
             // 
             // frmAdmin
             // 
@@ -476,6 +718,10 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStaff).EndInit();
+            tabExpertManagement.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvExpertManagement).EndInit();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             tabCageManagement.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCageManagement).EndInit();
             groupBox2.ResumeLayout(false);
@@ -509,7 +755,6 @@
         private System.Windows.Forms.TabPage tabCageManagement;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbCageId;
-        private System.Windows.Forms.Label lbCageType;
         private System.Windows.Forms.Label lbCageStatus;
         private System.Windows.Forms.Label lbCageQuantity;
         private System.Windows.Forms.Label lbCageName;
@@ -517,12 +762,33 @@
         private System.Windows.Forms.Label lbAreaForeignID;
         private System.Windows.Forms.TextBox txtStaffForeignID;
         private System.Windows.Forms.TextBox txtAreaForeignID;
-        private System.Windows.Forms.TextBox txtCageType;
         private System.Windows.Forms.TextBox txtCageStatus;
         private System.Windows.Forms.TextBox txtCageQuantity;
         private System.Windows.Forms.TextBox txtCageName;
-        private System.Windows.Forms.TextBox txtCageID;
+        private System.Windows.Forms.TextBox txtCagePrimaryID;
         private System.Windows.Forms.DataGridView dgvCageManagement;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddCage;
+        private System.Windows.Forms.Button btnDeleteCage;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtExpertPhoneNumber;
+        private System.Windows.Forms.DateTimePicker dtpExpertStartDay;
+        private System.Windows.Forms.TextBox txtExpertEmail;
+        private System.Windows.Forms.TextBox txtGenderExpert;
+        private System.Windows.Forms.TextBox txtExpertLastName;
+        private System.Windows.Forms.TextBox txtExpertFirstName;
+        private System.Windows.Forms.TextBox txtExpertID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtExpertAreaID;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dgvExpertManagement;
+        private System.Windows.Forms.Button btnDeleteExpert;
+        private System.Windows.Forms.Button btnAddExpert;
+        private System.Windows.Forms.Button btnAssign;
     }
 }

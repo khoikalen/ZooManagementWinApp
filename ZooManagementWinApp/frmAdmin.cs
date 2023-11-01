@@ -17,6 +17,7 @@ namespace ZooManagementWinApp
         IStaffRepository staffRepository = new StaffRepository();
         ICageRepository cageRepository = new CageRepository();
         IAccountRepository accountRepository = new AccountRepository();
+        IExpertRepository expertRepository = new ExpertRepository();
         BindingSource source;
         public frmAdmin()
         {
@@ -27,6 +28,7 @@ namespace ZooManagementWinApp
         {
             LoadStaffsList();
             LoadCagesList();
+            LoadExpertList();
         }
 
         private void LoadStaffsList()
@@ -63,10 +65,46 @@ namespace ZooManagementWinApp
 
                 dgvStaff.DataSource = null;
                 dgvStaff.DataSource = source;
+                dgvStaff.Columns["Cages"].Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Load Staffs List");
+            }
+        }
+
+        private void LoadExpertList()
+        {
+            var experts = expertRepository.GetExperts();
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = experts;
+
+                txtExpertID.DataBindings.Clear();
+                txtExpertFirstName.DataBindings.Clear();
+                txtExpertLastName.DataBindings.Clear();
+                txtGenderExpert.DataBindings.Clear();
+                dtpExpertStartDay.DataBindings.Clear();
+                txtExpertEmail.DataBindings.Clear();
+                txtExpertPhoneNumber.DataBindings.Clear();
+                txtExpertAreaID.DataBindings.Clear();
+
+                txtExpertID.DataBindings.Add("Text", source, "Id");
+                txtExpertFirstName.DataBindings.Add("Text", source, "FirstName");
+                txtExpertLastName.DataBindings.Add("Text", source, "LastName");
+                txtGenderExpert.DataBindings.Add("Text", source, "Gender");
+                dtpExpertStartDay.DataBindings.Add("Text", source, "StartDay");
+                txtExpertEmail.DataBindings.Add("Text", source, "Email");
+                txtExpertPhoneNumber.DataBindings.Add("Text", source, "PhoneNumber");
+                txtExpertAreaID.DataBindings.Add("Text", source, "AreaId");
+
+                dgvExpertManagement.DataSource = null;
+                dgvExpertManagement.DataSource = source;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Experts List");
             }
         }
 
@@ -78,24 +116,28 @@ namespace ZooManagementWinApp
                 source = new BindingSource();
                 source.DataSource = cages;
 
-                txtCageID.DataBindings.Clear();
+                txtCagePrimaryID.DataBindings.Clear();
                 txtCageName.DataBindings.Clear();
                 txtCageQuantity.DataBindings.Clear();
                 txtCageStatus.DataBindings.Clear();
-                txtCageType.DataBindings.Clear();
                 txtAreaForeignID.DataBindings.Clear();
                 txtStaffForeignID.DataBindings.Clear();
 
-                txtCageID.DataBindings.Add("Text", source, "Id");
+                txtCagePrimaryID.DataBindings.Add("Text", source, "Id");
                 txtCageName.DataBindings.Add("Text", source, "Name");
                 txtCageQuantity.DataBindings.Add("Text", source, "Quantity");
                 txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
-                txtCageType.DataBindings.Add("Text", source, "CageType");
                 txtAreaForeignID.DataBindings.Add("Text", source, "AreaId");
                 txtStaffForeignID.DataBindings.Add("Text", source, "StaffId");
 
+
                 dgvCageManagement.DataSource = null;
                 dgvCageManagement.DataSource = source;
+
+                dgvCageManagement.Columns["CageType"].Visible = false;
+                dgvCageManagement.Columns["Area"].Visible = false;
+                dgvCageManagement.Columns["Staff"].Visible = false;
+                dgvCageManagement.Columns["Animals"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -122,10 +164,11 @@ namespace ZooManagementWinApp
         {
             frmStaffDetail f = new frmStaffDetail
             {
-                Text = "Update a staff",
+                Text = "Update the staff",
                 InsertOrUpdate = true,
                 StaffInfo = GetStaffObject(),
-                StaffRepository = staffRepository
+                StaffRepository = staffRepository,
+                userRole = "ADMIN"
             };
             if (f.ShowDialog() == DialogResult.OK)
             {
@@ -158,22 +201,198 @@ namespace ZooManagementWinApp
             return staff;
         }
 
+        private Expert GetExpertObject()
+        {
+            Expert expert = null;
+            try
+            {
+                expert = new Expert
+                {
+                    Id = int.Parse(txtExpertID.Text),
+                    FirstName = txtExpertFirstName.Text,
+                    LastName = txtExpertLastName.Text,
+                    Gender = txtGenderExpert.Text,
+                    StartDay = DateTime.Parse(dtpExpertStartDay.Text),
+                    Email = txtExpertEmail.Text,
+                    PhoneNumber = txtExpertPhoneNumber.Text,
+                    AreaId = int.Parse(txtExpertAreaID.Text)
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error at get expert object");
+            }
+            return expert;
+        }
+
+        private Cage GetCageObject()
+        {
+            Cage cage = null;
+            try
+            {
+                cage = new Cage
+                {
+                    Id = int.Parse(txtCagePrimaryID.Text),
+                    Name = txtCageName.Text,
+                    Quantity = int.Parse(txtCageQuantity.Text),
+                    CageStatus = txtCageStatus.Text,
+                    AreaId = int.Parse(txtAreaForeignID.Text),
+                    StaffId = int.Parse(txtStaffForeignID.Text),
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get Cage Object");
+            }
+            return cage;
+        }
+
         private void btnDeleteStaff_Click(object sender, EventArgs e)
         {
             try
             {
                 var staff = GetStaffObject();
+                var cageList = cageRepository.GetCagesByStaffEmail(staff.Email);
                 var confirm = MessageBox.Show("Are you sure to delete this staff?", "Confirm Delete!", MessageBoxButtons.YesNo);
                 if (confirm == DialogResult.Yes)
                 {
-                    staffRepository.DeleteStaffs(staff.Id);
-                    accountRepository.DeleteAccountByEmail(staff.Email);
+                    if (cageList.Count > 0)
+                    {
+                        MessageBox.Show("This staff is still responsible for managing cages \n   Please Assign cages for other staffs first");
+                        frmTradeCage frm = new frmTradeCage
+                        {
+                            Text = "Trade cage for another staff",
+                            TradeOrAssign = true,
+                            staffDeleteEmail = staff.Email,
+                        };
+                        frm.ShowDialog();
+                    } else
+                    {
+                        staffRepository.DeleteStaffs(staff.Id);
+                        accountRepository.DeleteAccountByEmail(staff.Email);
+                    }
                 }
                 LoadStaffsList();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Delete a staff");
+            }
+        }
+
+        private void btnAddCage_Click(object sender, EventArgs e)
+        {
+            frmCageDetail frmCageDetail = new frmCageDetail
+            {
+                Text = "Add a cage",
+                InsertOrUpdate = false,
+                CageRepository = cageRepository,
+            };
+            if (frmCageDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadCagesList();
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private void dgvCageManagement_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmCageDetail frmCageDetail = new frmCageDetail
+            {
+                Text = "Update the cage",
+                InsertOrUpdate = true,
+                CageInfo = GetCageObject(),
+                CageRepository = cageRepository
+            };
+            if (frmCageDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadCagesList();
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private void btnDeleteCage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var cage = GetCageObject();
+                if (cage.Quantity == 0)
+                {
+                    var confirm = MessageBox.Show("Are you sure to delete this cage?", "Confirm Delete!", MessageBoxButtons.YesNo);
+                    if (confirm == DialogResult.Yes)
+                    {
+                        cageRepository.DeleteCage(cage.Id);
+                    }
+                    LoadCagesList();
+                }
+                else
+                {
+                    MessageBox.Show("There are still animals in cage");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete a cage");
+            }
+        }
+
+        private void btnAddExpert_Click(object sender, EventArgs e)
+        {
+            frmExpertDetail frmExpertDetail = new frmExpertDetail
+            {
+                Text = "Add an expert",
+                InsertOrUpdate = false,
+                expertRepository1 = expertRepository
+            };
+            if (frmExpertDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadExpertList();
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private void dgvExpertManagement_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmExpertDetail frmExpertDetail = new frmExpertDetail
+            {
+                Text = "Update the expert",
+                InsertOrUpdate = true,
+                ExpertInfo = GetExpertObject(),
+                expertRepository1 = expertRepository,
+            };
+            if (frmExpertDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadExpertList();
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private void btnDeleteExpert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var expert = GetExpertObject();
+                var confirm = MessageBox.Show("Are you sure to delete this expert?", "Confirm Delete!", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    expertRepository.DeleteExpert(expert.Id);
+                    accountRepository.DeleteAccountByEmail(expert.Email);
+                }
+                LoadExpertList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete an expert");
+            }
+        }
+
+        private void btnAssign_Click(object sender, EventArgs e)
+        {
+            frmTradeCage frmTradeCage = new frmTradeCage();
+            if (frmTradeCage.ShowDialog() == DialogResult.OK)
+            {
+                LoadCagesList();
+                source.Position = source.Count - 1;
             }
         }
     }

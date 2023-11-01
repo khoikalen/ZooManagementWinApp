@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessObjects
 {
-    public class StaffDAO
+    public class ExpertDAO
     {
-        private static StaffDAO instance = null;
+        private static ExpertDAO instance = null;
         private static readonly object instanceLock = new object();
-        private StaffDAO() { }
-        public static StaffDAO Instance
+        private ExpertDAO() { }
+        public static ExpertDAO Instance
         {
             get
             {
@@ -20,92 +20,77 @@ namespace DataAccessObjects
                 {
                     if (instance == null)
                     {
-                        instance = new StaffDAO();
+                        instance = new ExpertDAO();
                     }
                     return instance;
                 }
             }
         }
 
-        public List<staff> GetStaffs()
+        public List<Expert> GetExperts()
         {
-            var staffs = new List<staff>();
+            var experts = new List<Expert>();
             try
             {
                 using var db = new ZooManagementDotNetContext();
-                staffs = db.staff.ToList();
+                experts = db.Experts.ToList();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return staffs;
+            return experts;
         }
 
-        public staff GetStaffByEmail(String staffEmail)
+        public Expert GetExpertById(int id)
         {
-            var staff = new staff();
+            var expert = new Expert();
             try
             {
                 using var db = new ZooManagementDotNetContext();
-                staff = db.staff.SingleOrDefault(s => s.Email.Equals(staffEmail));
+                expert = db.Experts.SingleOrDefault(e => e.Id == id);
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 throw new Exception(ex.Message);
             }
-            return staff;
+            return expert;
         }
 
-        public staff GetStaffById(int staffID)
-        {
-            var staff = new staff();
-            try
-            {
-                using var db = new ZooManagementDotNetContext();
-                staff = db.staff.SingleOrDefault(s => s.Id == staffID);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return staff;
-        }
-
-        public void InsertStaff(staff staff)
+        public void InsertExpert(Expert expert)
         {
             try
             {
                 using var db = new ZooManagementDotNetContext();
-                db.staff.Add(staff);
+                db.Experts.Add(expert);
                 db.SaveChanges();
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
         }
-        public void UpdateStaff(staff staff)
+
+        public void UpdateExpert(Expert expert)
         {
             try
             {
                 using var db = new ZooManagementDotNetContext();
-                db.staff.Update(staff);
+                db.Experts.Update(expert);
                 db.SaveChanges();
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
         }
-        public void DeleteStaff(int id)
+
+        public void DeleteExpert(int id)
         {
             try
             {
                 using var db = new ZooManagementDotNetContext();
-                db.staff.Remove(GetStaffById(id));
+                db.Experts.Remove(GetExpertById(id));
                 db.SaveChanges();
             }
             catch (Exception ex)

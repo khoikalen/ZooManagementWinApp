@@ -26,6 +26,20 @@ namespace DataAccessObjects
                 }
             }
         }
+        public List<Account> GetAccounts()
+        {
+            var accounts = new List<Account>();
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                accounts = db.Accounts.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return accounts;
+        }
         public void InsertAccount(Account account)
         {
             try
@@ -68,8 +82,57 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+<<<<<<< HEAD
 
 
         
+=======
+        public void UpdateAccount(Account account)
+        {
+            try
+            {
+                using (var context = new ZooManagementDotNetContext())
+                {
+                    context.Accounts.Update(account);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        public int GetAccountIDByEmail(string email)
+        {
+            try
+            {
+                using(var context = new ZooManagementDotNetContext())
+                {
+                    var account = context.Accounts.SingleOrDefault(c => c.Email.Equals(email));
+                    return account.Id;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public String GetAccountPassWordByEmail(String email)
+        {
+            try
+            {
+                using(var context = new ZooManagementDotNetContext())
+                {
+                    var account = context.Accounts.SingleOrDefault(c => c.Email.Equals(email));
+                    return account.Password;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+>>>>>>> 4cc1e79d88277d7bf274d2208cf382a8007c5ee9
     }
 }
