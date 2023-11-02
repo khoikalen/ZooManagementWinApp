@@ -157,6 +157,7 @@
             // 
             // btnSave
             // 
+            btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             btnSave.Location = new System.Drawing.Point(130, 175);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(75, 23);
@@ -187,6 +188,7 @@
             Name = "frmCageDetailMovingAnimal";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmCageDetailMovingAnimal";
+            Load += frmCageDetailMovingAnimal_Load;
             ResumeLayout(false);
             PerformLayout();
         }

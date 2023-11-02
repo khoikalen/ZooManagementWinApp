@@ -143,6 +143,7 @@
             // 
             // btnSelect
             // 
+            btnSelect.DialogResult = System.Windows.Forms.DialogResult.OK;
             btnSelect.Location = new System.Drawing.Point(208, 299);
             btnSelect.Name = "btnSelect";
             btnSelect.Size = new System.Drawing.Size(75, 23);

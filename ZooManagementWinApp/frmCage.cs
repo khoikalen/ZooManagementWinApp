@@ -20,7 +20,7 @@ namespace ZooManagementWinApp
         public Animal animalInformation { get; set; }
         public staff staffInformation { get; set; }
         BindingSource source;
-       
+
         private void LoadData()
         {
             source = new BindingSource();
@@ -30,7 +30,6 @@ namespace ZooManagementWinApp
                 cage.Quantity = animalRepository.AnimalQuantityInCage(cage.Id);
             }
             source.DataSource = cageList;
-
             source.DataSource = cageRepository.GetCagesByStaffEmail(staffInformation.Email);
 
             txtCagePrimaryID.DataBindings.Clear();
@@ -44,7 +43,7 @@ namespace ZooManagementWinApp
             txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
 
             dgvCageManagement.DataSource = null;
-            dgvCageManagement.DataSource = source;
+            dgvCageManagement.DataSource = source;s
             dgvCageManagement.Columns["CageType"].Visible = false;
             dgvCageManagement.Columns["Area"].Visible = false;
             dgvCageManagement.Columns["Staff"].Visible = false;

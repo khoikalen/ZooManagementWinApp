@@ -47,7 +47,15 @@ namespace ZooManagementWinApp
             }
         }
         private void btnCancel_Click(object sender, EventArgs e) => this.Close();
-
+        private void UpdateCageQuantity()
+        {
+            var cageList = cageRepository.GetCages();
+            foreach (var cage in cageList)
+            {
+                cage.Quantity = animalRepository.AnimalQuantityInCage(cage.Id);
+                cageRepository.UpdateCage(cage);
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -65,6 +73,7 @@ namespace ZooManagementWinApp
                         CageId = cageInformation.Id,
                     };
                     animalRepository.CreateNewAnimal(animal);
+                    UpdateCageQuantity();
                 }
                 else
                 {
@@ -80,6 +89,7 @@ namespace ZooManagementWinApp
                         CageId = cageInformation.Id,
                     };
                     animalRepository.UpdateAnimalInformation(animal);
+                    UpdateCageQuantity();
                 }
             }
             catch (Exception ex)
