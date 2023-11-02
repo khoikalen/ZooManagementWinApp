@@ -19,7 +19,7 @@ namespace ZooManagementWinApp
         IAccountRepository accountRepository = new AccountRepository();
         IAnimalRepository animalRepository = new AnimalRepository();
         public String staffEmail { get; set; }
-        public String staffPassword { get; set; }
+        public String staffPassword {  get; set; }
         BindingSource source;
         public frmStaff()
         {
@@ -77,7 +77,7 @@ namespace ZooManagementWinApp
                 userRole = "STAFF",
                 staffPassword = accountRepository.GetAccountPassWordByEmail(staffEmail),
             };
-            if (frmStaffDetail.ShowDialog() == DialogResult.OK)
+            if(frmStaffDetail.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
             }
