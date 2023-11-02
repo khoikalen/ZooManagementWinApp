@@ -43,7 +43,7 @@ namespace ZooManagementWinApp
             txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
 
             dgvCageManagement.DataSource = null;
-            dgvCageManagement.DataSource = source;s
+            dgvCageManagement.DataSource = source;
             dgvCageManagement.Columns["CageType"].Visible = false;
             dgvCageManagement.Columns["Area"].Visible = false;
             dgvCageManagement.Columns["Staff"].Visible = false;
