@@ -41,55 +41,61 @@
             // dgvCage
             // 
             dgvCage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCage.Location = new System.Drawing.Point(1, 237);
+            dgvCage.Location = new System.Drawing.Point(1, 178);
+            dgvCage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             dgvCage.Name = "dgvCage";
             dgvCage.ReadOnly = true;
             dgvCage.RowHeadersWidth = 51;
             dgvCage.RowTemplate.Height = 29;
             dgvCage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvCage.Size = new System.Drawing.Size(666, 201);
+            dgvCage.Size = new System.Drawing.Size(583, 151);
             dgvCage.TabIndex = 0;
             // 
             // cboCage
             // 
+            cboCage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboCage.FormattingEnabled = true;
-            cboCage.Location = new System.Drawing.Point(273, 40);
+            cboCage.Location = new System.Drawing.Point(239, 30);
+            cboCage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             cboCage.Name = "cboCage";
-            cboCage.Size = new System.Drawing.Size(212, 28);
+            cboCage.Size = new System.Drawing.Size(186, 23);
             cboCage.TabIndex = 1;
             // 
             // lbCage
             // 
             lbCage.AutoSize = true;
-            lbCage.Location = new System.Drawing.Point(139, 43);
+            lbCage.Location = new System.Drawing.Point(122, 32);
             lbCage.Name = "lbCage";
-            lbCage.Size = new System.Drawing.Size(43, 20);
+            lbCage.Size = new System.Drawing.Size(34, 15);
             lbCage.TabIndex = 2;
             lbCage.Text = "Cage";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(139, 120);
+            label1.Location = new System.Drawing.Point(122, 90);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(108, 20);
+            label1.Size = new System.Drawing.Size(86, 15);
             label1.TabIndex = 3;
             label1.Text = "Assign for staff";
             // 
             // cboStaff
             // 
+            cboStaff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboStaff.FormattingEnabled = true;
-            cboStaff.Location = new System.Drawing.Point(273, 112);
+            cboStaff.Location = new System.Drawing.Point(239, 84);
+            cboStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             cboStaff.Name = "cboStaff";
-            cboStaff.Size = new System.Drawing.Size(212, 28);
+            cboStaff.Size = new System.Drawing.Size(186, 23);
             cboStaff.TabIndex = 4;
             // 
             // btnSave
             // 
             btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            btnSave.Location = new System.Drawing.Point(215, 187);
+            btnSave.Location = new System.Drawing.Point(188, 140);
+            btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(94, 29);
+            btnSave.Size = new System.Drawing.Size(82, 22);
             btnSave.TabIndex = 5;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -98,9 +104,10 @@
             // btnCancel
             // 
             btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            btnCancel.Location = new System.Drawing.Point(364, 187);
+            btnCancel.Location = new System.Drawing.Point(318, 140);
+            btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new System.Drawing.Size(94, 29);
+            btnCancel.Size = new System.Drawing.Size(82, 22);
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -108,9 +115,9 @@
             // 
             // frmTradeCage
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(670, 450);
+            ClientSize = new System.Drawing.Size(586, 338);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(cboStaff);
@@ -118,6 +125,7 @@
             Controls.Add(lbCage);
             Controls.Add(cboCage);
             Controls.Add(dgvCage);
+            Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             Name = "frmTradeCage";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmTradeCage";

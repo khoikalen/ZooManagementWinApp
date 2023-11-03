@@ -18,6 +18,8 @@ namespace ZooManagementWinApp
         IStaffRepository staffRepository = new StaffRepository();
         IAccountRepository accountRepository = new AccountRepository();
         IAnimalRepository animalRepository = new AnimalRepository();
+        IFoodRepository foodRepository = new FoodRepository();
+        IMealRepository mealRepository = new MealRepository();
         public String staffEmail { get; set; }
         public String staffPassword { get; set; }
         BindingSource source;
@@ -85,19 +87,65 @@ namespace ZooManagementWinApp
 
         private void btnViewCage_Click(object sender, EventArgs e)
         {
-            frmAnimal frmAnimal = new frmAnimal()
+            var selectedCage = cageRepository.GetCageById(int.Parse(txtCageID.Text));
+            if (selectedCage.Quantity > 0)
             {
-                cageInformation = cageRepository.GetCageById(int.Parse(txtCageID.Text)),
-                staffInformation = staffRepository.GetStaffByEmail(staffEmail),
-            };
-            this.Hide();
-            if (frmAnimal.ShowDialog() == DialogResult.Cancel)
+
+                frmAnimal frmAnimal = new frmAnimal()
+                {
+                    cageInformation = cageRepository.GetCageById(int.Parse(txtCageID.Text)),
+                    staffInformation = staffRepository.GetStaffByEmail(staffEmail),
+                };
+                this.Hide();
+                if (frmAnimal.ShowDialog() == DialogResult.Cancel)
+                {
+                    LoadData();
+                    this.Show();
+                }
+            }
+            else
             {
-                LoadData();
-                this.Show();
+                MessageBox.Show("There are no animals in this cage !");
             }
         }
 
+        private void btnViewCageMeal_Click(object sender, EventArgs e)
+        {
+            List<Animal> animals = new List<Animal>();
+            List<Meal> meals = new List<Meal>();
+            List<Food> foods = new List<Food>();
+            int index = 0;
+            animals = animalRepository.GetAnimalByCageID(int.Parse(txtCageID.Text));
+            foreach (Animal animal in animals)
+            {
+                var meal = mealRepository.GetMealByAnimalId(animal.Id);
+                if (meal == null)
+                {
+                    MessageBox.Show("Meal " + animal.Name + " has not been created");
+                    return;
+                }
+                meals.Add(meal);
+            }
+            foreach (Meal meal in meals)
+            {
+                foods.AddRange(foodRepository.GetFoodByMealId(meal.Id));
+            }
+            var groupItems = foods.GroupBy(food => food.Name)
+                .Select(group =>
+                {
+                    var firstItem = group.First();
+                    firstItem.Weight = group.Sum(item => item.Weight);
+                    return firstItem;
+                }).ToList();
+            frmFoodInMeal frm = new frmFoodInMeal()
+            {
+                viewCageOrAnimal = true,
+                staffOrExpert = true,
+                foodViewByCage = groupItems,
 
+            };
+            frm.ShowDialog();
+
+        }
     }
 }

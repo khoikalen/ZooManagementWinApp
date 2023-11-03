@@ -42,7 +42,7 @@ namespace ZooManagementWinApp
             catch (Exception)
             {
 
-                throw; 
+                throw;
             }
         }
 
@@ -63,17 +63,17 @@ namespace ZooManagementWinApp
                         Boolean check = false;
                         var mealCheck = mealRepository.GetMealByAnimalId(AnimalId);
                         List<Food> foodCheck = foodRepository.GetFoodByMealId(mealCheck.Id);
-                        foreach(var f in foodCheck)
+                        foreach (var f in foodCheck)
                         {
-                            
-                            if(cbFoodName.Text == f.Name)
+
+                            if (cbFoodName.Text == f.Name)
                             {
                                 id = f.Id;
                                 weight = (double)f.Weight;
                                 check = true;
                             }
                         }
-                        if(check == true)
+                        if (check == true)
                         {
                             var food = new Food()
                             {
@@ -85,40 +85,40 @@ namespace ZooManagementWinApp
                         }
                         else
                         {
-                        var food = new Food
-                        {
-                            Name = cbFoodName.Text,
-                            Weight = double.Parse(txtQuantity.Text),
-                        };
-                        ValidationContext context = new ValidationContext(food);
-                        IList<ValidationResult> errors = new List<ValidationResult>();
-                        if (!Validator.TryValidateObject(food, context, errors))
-                        {
-                            foreach (ValidationResult result in errors)
+                            var food = new Food
                             {
-                                MessageBox.Show(result.ErrorMessage, "Can not be left blank");
-                                return;
-                            }
-                        }
-                        foodRepository.InsertFood(food);
-                        Meal meals = mealRepository.GetMealByAnimalId(AnimalId);
-                        var meal = new Meal();
-                        if (meals == null)
-                        {
-                            meal = new Meal
-                            {
-                                Name = "Meal",
-                                AnimalId = AnimalId,
+                                Name = cbFoodName.Text,
+                                Weight = double.Parse(txtQuantity.Text),
                             };
-                            mealRepository.Add(meal);
-                        }
+                            ValidationContext context = new ValidationContext(food);
+                            IList<ValidationResult> errors = new List<ValidationResult>();
+                            if (!Validator.TryValidateObject(food, context, errors))
+                            {
+                                foreach (ValidationResult result in errors)
+                                {
+                                    MessageBox.Show(result.ErrorMessage, "Can not be left blank");
+                                    return;
+                                }
+                            }
+                            foodRepository.InsertFood(food);
+                            Meal meals = mealRepository.GetMealByAnimalId(AnimalId);
+                            var meal = new Meal();
+                            if (meals == null)
+                            {
+                                meal = new Meal
+                                {
+                                    Name = "Meal",
+                                    AnimalId = AnimalId,
+                                };
+                                mealRepository.Add(meal);
+                            }
 
-                        var foodInMeal = new FoodInMeal
-                        {
-                            FoodId = food.Id,
-                            MealId = meals.Id,
-                        };
-                        foodInMealRepository.AddInMeal(foodInMeal);
+                            var foodInMeal = new FoodInMeal
+                            {
+                                FoodId = food.Id,
+                                MealId = meals.Id,
+                            };
+                            foodInMealRepository.AddInMeal(foodInMeal);
                         }
 
                     }

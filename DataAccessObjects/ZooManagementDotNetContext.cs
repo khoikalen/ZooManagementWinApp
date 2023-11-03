@@ -32,6 +32,7 @@ namespace DataAccessObjects
         public virtual DbSet<SoldTicket> SoldTickets { get; set; }
         public virtual DbSet<staff> staff { get; set; }
 
+
         private string GetConnectionString()
         {
             IConfiguration configuration = new ConfigurationBuilder()

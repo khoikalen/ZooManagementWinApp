@@ -42,7 +42,7 @@ namespace ZooManagementWinApp
                 }
                 else
                 {
-                    
+
                     txtPassword.Enabled = false;
                     txtPassword.PasswordChar = '*';
                     txtPassword.Text = AccountRepository.GetAccountPassWordByEmail(StaffInfo.Email);
@@ -86,7 +86,7 @@ namespace ZooManagementWinApp
                     };
                     ValidationContext context = new ValidationContext(staff);
                     List<ValidationResult> results = new List<ValidationResult>();
-                    if (!Validator.TryValidateObject(staff, context,results))
+                    if (!Validator.TryValidateObject(staff, context, results))
                     {
                         foreach (ValidationResult result in results)
                         {
@@ -133,7 +133,7 @@ namespace ZooManagementWinApp
                         Password = txtPassword.Text,
                         Role = "STAFF"
                     };
-                    
+
 
                     AccountRepository.UpdateAccount(account);
                     StaffRepository.UpdateStaff(staff);

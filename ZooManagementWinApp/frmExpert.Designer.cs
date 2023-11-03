@@ -74,6 +74,19 @@
             cbFilterFood = new System.Windows.Forms.ComboBox();
             dgvViewFoodStorage = new System.Windows.Forms.DataGridView();
             lbFoodStorage = new System.Windows.Forms.Label();
+            tabPage1 = new System.Windows.Forms.TabPage();
+            groupBox2 = new System.Windows.Forms.GroupBox();
+            btnUpdatePersonalInformation = new System.Windows.Forms.Button();
+            cboExpertGender = new System.Windows.Forms.ComboBox();
+            txtExpertID = new System.Windows.Forms.TextBox();
+            txtExpertPhonenumber = new System.Windows.Forms.TextBox();
+            label8 = new System.Windows.Forms.Label();
+            txtExpertEmail = new System.Windows.Forms.TextBox();
+            label9 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
+            txtExpertName = new System.Windows.Forms.TextBox();
+            label11 = new System.Windows.Forms.Label();
+            label12 = new System.Windows.Forms.Label();
             tabControl1.SuspendLayout();
             tabViewLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvViewLog).BeginInit();
@@ -82,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvAnimals).BeginInit();
             tabFoodStorage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvViewFoodStorage).BeginInit();
+            tabPage1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -89,6 +104,7 @@
             tabControl1.Controls.Add(tabViewLog);
             tabControl1.Controls.Add(tabCreateMeal);
             tabControl1.Controls.Add(tabFoodStorage);
+            tabControl1.Controls.Add(tabPage1);
             tabControl1.Location = new System.Drawing.Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -546,6 +562,147 @@
             lbFoodStorage.TabIndex = 0;
             lbFoodStorage.Text = "Food and Medicine Storage";
             // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(groupBox2);
+            tabPage1.Location = new System.Drawing.Point(4, 34);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            tabPage1.Size = new System.Drawing.Size(905, 642);
+            tabPage1.TabIndex = 3;
+            tabPage1.Text = "Information";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(btnUpdatePersonalInformation);
+            groupBox2.Controls.Add(cboExpertGender);
+            groupBox2.Controls.Add(txtExpertID);
+            groupBox2.Controls.Add(txtExpertPhonenumber);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(txtExpertEmail);
+            groupBox2.Controls.Add(label9);
+            groupBox2.Controls.Add(label10);
+            groupBox2.Controls.Add(txtExpertName);
+            groupBox2.Controls.Add(label11);
+            groupBox2.Controls.Add(label12);
+            groupBox2.Location = new System.Drawing.Point(86, 174);
+            groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            groupBox2.Size = new System.Drawing.Size(739, 316);
+            groupBox2.TabIndex = 15;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Expert information";
+            // 
+            // btnUpdatePersonalInformation
+            // 
+            btnUpdatePersonalInformation.Location = new System.Drawing.Point(261, 238);
+            btnUpdatePersonalInformation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnUpdatePersonalInformation.Name = "btnUpdatePersonalInformation";
+            btnUpdatePersonalInformation.Size = new System.Drawing.Size(286, 45);
+            btnUpdatePersonalInformation.TabIndex = 17;
+            btnUpdatePersonalInformation.Text = "Update personal information";
+            btnUpdatePersonalInformation.UseVisualStyleBackColor = true;
+            btnUpdatePersonalInformation.Click += btnUpdatePersonalInformation_Click;
+            // 
+            // cboExpertGender
+            // 
+            cboExpertGender.Enabled = false;
+            cboExpertGender.FormattingEnabled = true;
+            cboExpertGender.Items.AddRange(new object[] { "Male", "Female" });
+            cboExpertGender.Location = new System.Drawing.Point(81, 176);
+            cboExpertGender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            cboExpertGender.Name = "cboExpertGender";
+            cboExpertGender.Size = new System.Drawing.Size(135, 33);
+            cboExpertGender.TabIndex = 13;
+            // 
+            // txtExpertID
+            // 
+            txtExpertID.Location = new System.Drawing.Point(81, 49);
+            txtExpertID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtExpertID.Name = "txtExpertID";
+            txtExpertID.ReadOnly = true;
+            txtExpertID.Size = new System.Drawing.Size(135, 31);
+            txtExpertID.TabIndex = 7;
+            // 
+            // txtExpertPhonenumber
+            // 
+            txtExpertPhonenumber.Location = new System.Drawing.Point(453, 114);
+            txtExpertPhonenumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtExpertPhonenumber.Name = "txtExpertPhonenumber";
+            txtExpertPhonenumber.ReadOnly = true;
+            txtExpertPhonenumber.Size = new System.Drawing.Size(251, 31);
+            txtExpertPhonenumber.TabIndex = 12;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(311, 114);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(129, 25);
+            label8.TabIndex = 6;
+            label8.Text = "Phone number";
+            // 
+            // txtExpertEmail
+            // 
+            txtExpertEmail.Location = new System.Drawing.Point(453, 50);
+            txtExpertEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtExpertEmail.Name = "txtExpertEmail";
+            txtExpertEmail.ReadOnly = true;
+            txtExpertEmail.Size = new System.Drawing.Size(251, 31);
+            txtExpertEmail.TabIndex = 11;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(10, 52);
+            label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(71, 25);
+            label9.TabIndex = 0;
+            label9.Text = "Staff ID";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(311, 52);
+            label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(54, 25);
+            label10.TabIndex = 5;
+            label10.Text = "Email";
+            // 
+            // txtExpertName
+            // 
+            txtExpertName.Location = new System.Drawing.Point(81, 108);
+            txtExpertName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtExpertName.Name = "txtExpertName";
+            txtExpertName.ReadOnly = true;
+            txtExpertName.Size = new System.Drawing.Size(135, 31);
+            txtExpertName.TabIndex = 8;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(10, 114);
+            label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(59, 25);
+            label11.TabIndex = 1;
+            label11.Text = "Name";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(10, 179);
+            label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(69, 25);
+            label12.TabIndex = 3;
+            label12.Text = "Gender";
+            // 
             // frmExpert
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -567,6 +724,9 @@
             tabFoodStorage.ResumeLayout(false);
             tabFoodStorage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvViewFoodStorage).EndInit();
+            tabPage1.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -620,5 +780,18 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtAnimalStatus;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnUpdatePersonalInformation;
+        private System.Windows.Forms.ComboBox cboExpertGender;
+        private System.Windows.Forms.TextBox txtExpertID;
+        private System.Windows.Forms.TextBox txtExpertPhonenumber;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtExpertEmail;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtExpertName;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

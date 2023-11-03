@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ZooManagementWinApp
 {
@@ -75,7 +76,15 @@ namespace ZooManagementWinApp
             LoadData();
 
         }
-
+        private void UpdateCageQuantity()
+        {
+            var cageList = cageRepository.GetCages();
+            foreach (var cage in cageList)
+            {
+                cage.Quantity = animalRepository.AnimalQuantityInCage(cage.Id);
+                cageRepository.UpdateCage(cage);
+            }
+        }
         private void frmAnimal_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -94,6 +103,7 @@ namespace ZooManagementWinApp
                 if (confirm == DialogResult.Yes)
                 {
                     animalRepository.DeleteAnimal(GetAnimalObject());
+                    UpdateCageQuantity();
                 }
             }
             catch (Exception ex)
@@ -130,12 +140,27 @@ namespace ZooManagementWinApp
             frmCage frmCage = new frmCage()
             {
                 animalInformation = GetAnimalObject(),
-                staffInformation = staffInformation
+                staffInformation = staffInformation,
+                selectedCage = cageInformation,
             };
-            if(frmCage.ShowDialog() == DialogResult.OK)
+            if (frmCage.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
+                if (cageRepository.GetCageById(cageInformation.Id).Quantity == 0) this.Close();
             }
+        }
+
+        
+
+        private void btnViewMeal_Click(object sender, EventArgs e)
+        {
+            frmFoodInMeal frm = new frmFoodInMeal()
+            {
+                AnimalInfo = GetAnimalObject(),
+                staffOrExpert = true
+            };
+            frm.ShowDialog();
+
         }
     }
 }

@@ -21,7 +21,10 @@ namespace ZooManagementWinApp
         IFoodRepository foodRepository = new FoodRepository();
         IMealRepository mealRepository = new MealRepository();
         IFoodInMealRepository foodInMealRepository = new FoodInMealRepository();
+        public bool staffOrExpert{get;set;}
+        public bool viewCageOrAnimal { get;set;}
         public Animal AnimalInfo { get; set; }
+        public List<Food> foodViewByCage { get; set; }    
         BindingSource source;
 
         private void frmFoodInMeal_Load(object sender, EventArgs e)
@@ -33,11 +36,25 @@ namespace ZooManagementWinApp
 
         private void LoadFood()
         {
-            var meal = mealRepository.GetMealByAnimalId(AnimalInfo.Id);
-            var food = foodRepository.GetFoodByMealId(meal.Id);
+            List<Food> food = new List<Food>();
+            
+             if(viewCageOrAnimal)
+             {
+                
+                food = foodViewByCage;
+             }
+            else
+            {
+                var meal = mealRepository.GetMealByAnimalId(AnimalInfo.Id);
+                if (meal == null)
+                {
+                    MessageBox.Show("Meal has not been created");
+                    return;
+                }
+                food = foodRepository.GetFoodByMealId(meal.Id);
+            }
             try
             {
-                
                 source = new BindingSource();
                 source.DataSource = food;
 
@@ -51,7 +68,11 @@ namespace ZooManagementWinApp
 
                 dgvFood.DataSource = null;
                 dgvFood.DataSource = source;
-            
+                if(staffOrExpert)
+                {
+                    btnDelete.Visible = false;
+                    btnAddFood.Visible=false;
+                }
             }
             catch (Exception)
             {
