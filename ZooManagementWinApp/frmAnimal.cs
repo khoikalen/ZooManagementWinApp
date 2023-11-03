@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ZooManagementWinApp
 {
@@ -139,7 +140,8 @@ namespace ZooManagementWinApp
             frmCage frmCage = new frmCage()
             {
                 animalInformation = GetAnimalObject(),
-                staffInformation = staffInformation
+                staffInformation = staffInformation,
+                selectedCage = cageInformation,
             };
             if (frmCage.ShowDialog() == DialogResult.OK)
             {

@@ -26,7 +26,7 @@ namespace ZooManagementWinApp
 
         private void frmTradeCage_Load(object sender, EventArgs e)
         {
-            
+
             LoadCageList();
             LoadStaffList();
         }
@@ -39,11 +39,12 @@ namespace ZooManagementWinApp
                 if (TradeOrAssign == false)
                 {
                     cageList = (List<Cage>)cageRepository.GetCages();
-                } else
+                }
+                else
                 {
                     cageList = cageRepository.GetCagesByStaffEmail(staffDeleteEmail);
                 }
-                
+
 
                 cboCage.DataSource = cageList;
                 cboCage.ValueMember = "Id";
@@ -124,14 +125,14 @@ namespace ZooManagementWinApp
                     this.Hide();
                     frm.ShowDialog();
                 }
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Save assign cage");
             }
-            
-            
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e) => Close();

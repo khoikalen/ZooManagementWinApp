@@ -87,16 +87,25 @@ namespace ZooManagementWinApp
 
         private void btnViewCage_Click(object sender, EventArgs e)
         {
-            frmAnimal frmAnimal = new frmAnimal()
+            var selectedCage = cageRepository.GetCageById(int.Parse(txtCageID.Text));
+            if (selectedCage.Quantity > 0)
             {
-                cageInformation = cageRepository.GetCageById(int.Parse(txtCageID.Text)),
-                staffInformation = staffRepository.GetStaffByEmail(staffEmail),
-            };
-            this.Hide();
-            if (frmAnimal.ShowDialog() == DialogResult.Cancel)
+
+                frmAnimal frmAnimal = new frmAnimal()
+                {
+                    cageInformation = cageRepository.GetCageById(int.Parse(txtCageID.Text)),
+                    staffInformation = staffRepository.GetStaffByEmail(staffEmail),
+                };
+                this.Hide();
+                if (frmAnimal.ShowDialog() == DialogResult.Cancel)
+                {
+                    LoadData();
+                    this.Show();
+                }
+            }
+            else
             {
-                LoadData();
-                this.Show();
+                MessageBox.Show("There are no animals in this cage !");
             }
         }
 
