@@ -147,5 +147,18 @@ namespace ZooManagementWinApp
                 if (cageRepository.GetCageById(cageInformation.Id).Quantity == 0) this.Close();
             }
         }
+
+        
+
+        private void btnViewMeal_Click(object sender, EventArgs e)
+        {
+            frmFoodInMeal frm = new frmFoodInMeal()
+            {
+                AnimalInfo = GetAnimalObject(),
+                staffOrExpert = true
+            };
+            frm.ShowDialog();
+
+        }
     }
 }
