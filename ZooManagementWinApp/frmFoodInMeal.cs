@@ -37,7 +37,7 @@ namespace ZooManagementWinApp
             var food = foodRepository.GetFoodByMealId(meal.Id);
             try
             {
-                
+
                 source = new BindingSource();
                 source.DataSource = food;
 
@@ -51,7 +51,7 @@ namespace ZooManagementWinApp
 
                 dgvFood.DataSource = null;
                 dgvFood.DataSource = source;
-            
+
             }
             catch (Exception)
             {

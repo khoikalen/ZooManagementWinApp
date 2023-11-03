@@ -133,6 +133,7 @@
             // 
             // cboAreaId
             // 
+            cboAreaId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboAreaId.FormattingEnabled = true;
             cboAreaId.Location = new System.Drawing.Point(410, 65);
             cboAreaId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -142,6 +143,7 @@
             // 
             // cboStaffId
             // 
+            cboStaffId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboStaffId.FormattingEnabled = true;
             cboStaffId.Location = new System.Drawing.Point(410, 113);
             cboStaffId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -151,6 +153,7 @@
             // 
             // cboCageStatus
             // 
+            cboCageStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboCageStatus.FormattingEnabled = true;
             cboCageStatus.Items.AddRange(new object[] { "Owned", "Empty" });
             cboCageStatus.Location = new System.Drawing.Point(410, 21);

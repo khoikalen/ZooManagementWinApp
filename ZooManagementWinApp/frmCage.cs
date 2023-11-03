@@ -19,18 +19,27 @@ namespace ZooManagementWinApp
         IStaffRepository staffRepository = new StaffRepository();
         public Animal animalInformation { get; set; }
         public staff staffInformation { get; set; }
+        public Cage selectedCage { get; set; }
         BindingSource source;
 
         private void LoadData()
         {
             source = new BindingSource();
             var cageList = cageRepository.GetCagesByStaffEmail(staffInformation.Email);
+            List<Cage> cageList2 = new List<Cage>();
             foreach (var cage in cageList)
             {
                 cage.Quantity = animalRepository.AnimalQuantityInCage(cage.Id);
             }
-            source.DataSource = cageList;
-            source.DataSource = cageRepository.GetCagesByStaffEmail(staffInformation.Email);
+            foreach (var cage in cageList)
+            {
+                if (!cage.Id.Equals(selectedCage.Id))
+                {
+                    cageList2.Add(cage);
+                }
+            }
+            source.DataSource = null;
+            source.DataSource = cageList2;
 
             txtCagePrimaryID.DataBindings.Clear();
             txtCageName.DataBindings.Clear();
