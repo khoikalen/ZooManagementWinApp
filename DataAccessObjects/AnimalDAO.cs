@@ -10,7 +10,7 @@ namespace DataAccessObjects
     public class AnimalDAO
     {
         private static AnimalDAO instance = null;
-        private static readonly object instanceLock;
+        private static readonly object instanceLock = new object();
         private AnimalDAO() { }
         public static AnimalDAO Instance
         {
