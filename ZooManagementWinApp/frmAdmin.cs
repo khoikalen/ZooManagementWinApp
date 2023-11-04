@@ -180,11 +180,12 @@ namespace ZooManagementWinApp
                     LoadStaffsList();
                     source.Position = source.Count - 1;
                 }
-            } else
+            }
+            else
             {
                 MessageBox.Show("Can not update null value!");
             }
-            
+
         }
 
         private staff GetStaffObject()
@@ -322,11 +323,12 @@ namespace ZooManagementWinApp
                     LoadCagesList();
                     source.Position = source.Count - 1;
                 }
-            } else
+            }
+            else
             {
                 MessageBox.Show("Can not update null value!");
             }
-            
+
         }
 
         private void btnDeleteCage_Click(object sender, EventArgs e)
@@ -385,11 +387,12 @@ namespace ZooManagementWinApp
                     LoadExpertList();
                     source.Position = source.Count - 1;
                 }
-            } else
+            }
+            else
             {
                 MessageBox.Show("Can not update null value!");
             }
-            
+
         }
 
         private void btnDeleteExpert_Click(object sender, EventArgs e)
@@ -498,7 +501,7 @@ namespace ZooManagementWinApp
         private void btnRefreshExpert_Click(object sender, EventArgs e)
         {
             LoadExpertList();
-            txtSearchExpert.Text = ""; 
+            txtSearchExpert.Text = "";
         }
 
         private void btnSearchExpert_Click(object sender, EventArgs e)
