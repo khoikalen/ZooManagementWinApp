@@ -157,7 +157,7 @@ namespace ZooManagementWinApp
             frmFoodInMeal frm = new frmFoodInMeal()
             {
                 AnimalInfo = GetAnimalObject(),
-                staffOrExpert = true
+                StaffOrExpert = true
             };
             frm.ShowDialog();
 

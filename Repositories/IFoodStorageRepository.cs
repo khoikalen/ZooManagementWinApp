@@ -11,6 +11,8 @@ namespace Repositories
     {
         public IEnumerable<FoodStorage> GetFoodStorageByType(string type);
         public FoodStorage GetFoodInStorageById(int id);
+        public FoodStorage GetFoodInStorageByName(string name);
+
 
         public void InsertFood(FoodStorage food);
         public void UpdateFood(FoodStorage food);

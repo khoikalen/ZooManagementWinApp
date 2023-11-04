@@ -266,7 +266,8 @@ namespace ZooManagementWinApp
                             staffDeleteEmail = staff.Email,
                         };
                         frm.ShowDialog();
-                    } else
+                    }
+                    else
                     {
                         staffRepository.DeleteStaffs(staff.Id);
                         accountRepository.DeleteAccountByEmail(staff.Email);
@@ -394,6 +395,13 @@ namespace ZooManagementWinApp
                 LoadCagesList();
                 source.Position = source.Count - 1;
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
         }
     }
 }

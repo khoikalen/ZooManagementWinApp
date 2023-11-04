@@ -87,6 +87,7 @@
             txtExpertName = new System.Windows.Forms.TextBox();
             label11 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
+            btnLogout = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabViewLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvViewLog).BeginInit();
@@ -564,6 +565,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btnLogout);
             tabPage1.Controls.Add(groupBox2);
             tabPage1.Location = new System.Drawing.Point(4, 34);
             tabPage1.Name = "tabPage1";
@@ -586,7 +588,7 @@
             groupBox2.Controls.Add(txtExpertName);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(label12);
-            groupBox2.Location = new System.Drawing.Point(86, 174);
+            groupBox2.Location = new System.Drawing.Point(74, 104);
             groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -703,6 +705,16 @@
             label12.TabIndex = 3;
             label12.Text = "Gender";
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new System.Drawing.Point(692, 516);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new System.Drawing.Size(112, 34);
+            btnLogout.TabIndex = 16;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // frmExpert
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -793,5 +805,6 @@
         private System.Windows.Forms.TextBox txtExpertName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

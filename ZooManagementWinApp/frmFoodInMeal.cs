@@ -20,12 +20,14 @@ namespace ZooManagementWinApp
         }
         IFoodRepository foodRepository = new FoodRepository();
         IMealRepository mealRepository = new MealRepository();
+        IFoodStorageRepository foodStorageRepository = new FoodStorageRepository();
         IFoodInMealRepository foodInMealRepository = new FoodInMealRepository();
-        public bool staffOrExpert{get;set;}
-        public bool viewCageOrAnimal { get;set;}
+        public bool StaffOrExpert { get; set; }
+        public bool ViewCageOrAnimal { get; set; }
         public Animal AnimalInfo { get; set; }
-        public List<Food> foodViewByCage { get; set; }    
+        public List<Food> FoodViewByCage { get; set; }
         BindingSource source;
+        string dupli = "";
 
         private void frmFoodInMeal_Load(object sender, EventArgs e)
         {
@@ -37,14 +39,14 @@ namespace ZooManagementWinApp
         private void LoadFood()
         {
             List<Food> food = new List<Food>();
-            
-             if(viewCageOrAnimal)
-             {
-                
-                food = foodViewByCage;
-             }
+
+            if (ViewCageOrAnimal)
+            {
+                food = FoodViewByCage;
+            }
             else
             {
+
                 var meal = mealRepository.GetMealByAnimalId(AnimalInfo.Id);
                 if (meal == null)
                 {
@@ -52,6 +54,8 @@ namespace ZooManagementWinApp
                     return;
                 }
                 food = foodRepository.GetFoodByMealId(meal.Id);
+                btnConfirmMeal.Visible = false;
+
             }
             try
             {
@@ -68,10 +72,15 @@ namespace ZooManagementWinApp
 
                 dgvFood.DataSource = null;
                 dgvFood.DataSource = source;
-                if(staffOrExpert)
+
+                if (StaffOrExpert)
                 {
                     btnDelete.Visible = false;
-                    btnAddFood.Visible=false;
+                    btnAddFood.Visible = false;
+                }
+                else
+                {
+                    btnConfirmMeal.Visible = false;
                 }
             }
             catch (Exception)
@@ -83,7 +92,6 @@ namespace ZooManagementWinApp
         public Food GetFoodObject()
         {
             Food food = null;
-
             try
             {
                 food = new Food
@@ -151,6 +159,39 @@ namespace ZooManagementWinApp
         }
 
         private void btnClose_Click(object sender, EventArgs e) => Close();
+
+        private void btnConfirmMeal_Click(object sender, EventArgs e)
+        {
+            bool check = true;
+            List<FoodStorage> fs = new List<FoodStorage>();
+            var foodStorage = foodStorageRepository.GetAllFoodStorage();
+            foreach (var food in FoodViewByCage)
+            {
+                var available = foodStorage.Where(storage => storage.Name == food.Name);
+                double? result = available.Select(a => a.Available).SingleOrDefault();
+                if (food.Weight > result)
+                {
+                    check = false;
+                    dupli += food.Name;
+                }
+            }
+
+            if (check)
+            {
+                foreach (var food in FoodViewByCage)
+                {
+                    FoodStorage storage = foodStorageRepository.GetFoodInStorageByName(food.Name);
+                    storage.Available = storage.Available - food.Weight;
+                    foodStorageRepository.UpdateFood(storage);
+                }
+            }
+            else
+            {
+                MessageBox.Show(dupli + " does not have enough");
+            }
+
+        }
+
 
     }
 }

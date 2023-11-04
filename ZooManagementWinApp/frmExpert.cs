@@ -397,7 +397,7 @@ namespace ZooManagementWinApp
                 txtExpertEmail.Text = expert.Email;
                 txtExpertPhonenumber.Text = expert.PhoneNumber;
                 cboExpertGender.Text = expert.Gender;
-               
+
             }
             catch (Exception)
             {
@@ -422,6 +422,16 @@ namespace ZooManagementWinApp
             {
                 LoadExpertInformation();
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frm = new frmLogin()
+            {
+
+            };
+            frm.ShowDialog();
         }
     }
 }

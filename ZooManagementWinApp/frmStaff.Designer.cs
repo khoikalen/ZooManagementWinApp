@@ -54,6 +54,7 @@
             label8 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
+            btnLogout = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCageList).BeginInit();
             groupBox2.SuspendLayout();
@@ -341,11 +342,22 @@
             label3.TabIndex = 0;
             label3.Text = "Cage ID";
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new System.Drawing.Point(809, 532);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new System.Drawing.Size(112, 33);
+            btnLogout.TabIndex = 17;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // frmStaff
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(956, 875);
+            Controls.Add(btnLogout);
             Controls.Add(groupBox2);
             Controls.Add(dgvCageList);
             Controls.Add(groupBox1);
@@ -390,5 +402,6 @@
         private System.Windows.Forms.Button btnUpdatePersonalInformation;
         private System.Windows.Forms.Button btnViewCage;
         private System.Windows.Forms.Button btnViewCageMeal;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

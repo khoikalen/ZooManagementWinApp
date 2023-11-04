@@ -139,13 +139,21 @@ namespace ZooManagementWinApp
                 }).ToList();
             frmFoodInMeal frm = new frmFoodInMeal()
             {
-                viewCageOrAnimal = true,
-                staffOrExpert = true,
-                foodViewByCage = groupItems,
-
+                ViewCageOrAnimal = true,
+                StaffOrExpert = true,
+                FoodViewByCage = groupItems,
             };
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Confirm Successfully");
+            }
+        }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
         }
     }
 }

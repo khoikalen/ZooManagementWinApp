@@ -59,7 +59,21 @@ namespace DataAccessObjects
             }
             return food;
         }
+        public FoodStorage GetFoodInStorageByName(string name)
+        {
+            var food = new FoodStorage();
+            try
+            {
+                using var db = new ZooManagementDotNetContext();
+                food = db.FoodStorages.SingleOrDefault(a => a.Name == name);
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            return food;
+        }
 
         public void AddNewFood(FoodStorage food)
         {
