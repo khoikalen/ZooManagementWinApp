@@ -48,11 +48,12 @@ namespace ZooManagementWinApp
             {
 
                 var meal = mealRepository.GetMealByAnimalId(AnimalInfo.Id);
-                if (meal == null)
-                {
-                    MessageBox.Show("Meal has not been created");
-                    return;
-                }
+                /*                if (meal == null)
+                                {
+                                    MessageBox.Show("Meal has not been created");
+                                    this.Hide();
+                                    return;
+                                }*/
                 food = foodRepository.GetFoodByMealId(meal.Id);
                 btnConfirmMeal.Visible = false;
 
@@ -116,6 +117,7 @@ namespace ZooManagementWinApp
                 InsertOrUpdate = false,
                 AnimalId = AnimalInfo.Id,
             };
+
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadFood();

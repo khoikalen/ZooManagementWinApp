@@ -88,9 +88,7 @@ namespace ZooManagementWinApp
         private void btnViewCage_Click(object sender, EventArgs e)
         {
             var selectedCage = cageRepository.GetCageById(int.Parse(txtCageID.Text));
-            if (selectedCage.Quantity > 0)
-            {
-
+     
                 frmAnimal frmAnimal = new frmAnimal()
                 {
                     cageInformation = cageRepository.GetCageById(int.Parse(txtCageID.Text)),
@@ -101,12 +99,8 @@ namespace ZooManagementWinApp
                 {
                     LoadData();
                     this.Show();
-                }
             }
-            else
-            {
-                MessageBox.Show("There are no animals in this cage !");
-            }
+           
         }
 
         private void btnViewCageMeal_Click(object sender, EventArgs e)
@@ -116,6 +110,11 @@ namespace ZooManagementWinApp
             List<Food> foods = new List<Food>();
             int index = 0;
             animals = animalRepository.GetAnimalByCageID(int.Parse(txtCageID.Text));
+            if (animals.Count==0)
+            {
+                MessageBox.Show("There is no animal in this cage");
+                return;
+            }
             foreach (Animal animal in animals)
             {
                 var meal = mealRepository.GetMealByAnimalId(animal.Id);

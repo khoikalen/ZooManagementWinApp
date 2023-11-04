@@ -75,6 +75,7 @@
             dgvViewFoodStorage = new System.Windows.Forms.DataGridView();
             lbFoodStorage = new System.Windows.Forms.Label();
             tabPage1 = new System.Windows.Forms.TabPage();
+            btnLogout = new System.Windows.Forms.Button();
             groupBox2 = new System.Windows.Forms.GroupBox();
             btnUpdatePersonalInformation = new System.Windows.Forms.Button();
             cboExpertGender = new System.Windows.Forms.ComboBox();
@@ -87,7 +88,6 @@
             txtExpertName = new System.Windows.Forms.TextBox();
             label11 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
-            btnLogout = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabViewLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvViewLog).BeginInit();
@@ -224,9 +224,9 @@
             lbTitle.AutoSize = true;
             lbTitle.Location = new System.Drawing.Point(346, 15);
             lbTitle.Name = "lbTitle";
-            lbTitle.Size = new System.Drawing.Size(44, 25);
+            lbTitle.Size = new System.Drawing.Size(144, 25);
             lbTitle.TabIndex = 1;
-            lbTitle.Text = "Title";
+            lbTitle.Text = "View Log Animal";
             // 
             // dgvViewLog
             // 
@@ -575,6 +575,16 @@
             tabPage1.Text = "Information";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new System.Drawing.Point(692, 516);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new System.Drawing.Size(112, 34);
+            btnLogout.TabIndex = 16;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(btnUpdatePersonalInformation);
@@ -705,16 +715,6 @@
             label12.TabIndex = 3;
             label12.Text = "Gender";
             // 
-            // btnLogout
-            // 
-            btnLogout.Location = new System.Drawing.Point(692, 516);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new System.Drawing.Size(112, 34);
-            btnLogout.TabIndex = 16;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
-            // 
             // frmExpert
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -723,7 +723,7 @@
             Controls.Add(tabControl1);
             Name = "frmExpert";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "frmExpert";
+            Text = "Expert";
             Load += frmExpert_Load;
             tabControl1.ResumeLayout(false);
             tabViewLog.ResumeLayout(false);

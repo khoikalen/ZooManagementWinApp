@@ -75,6 +75,7 @@ namespace ZooManagementWinApp
         {
             frmCageDetailMovingAnimal frmCageDetailMovingAnimal = new frmCageDetailMovingAnimal()
             {
+                Text = "Update current cage form",
                 cageInformation = cageRepository.GetCageById(int.Parse(txtCagePrimaryID.Text)),
                 animalInformation = animalInformation,
             };

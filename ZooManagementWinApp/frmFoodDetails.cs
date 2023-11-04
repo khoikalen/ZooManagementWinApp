@@ -50,13 +50,28 @@ namespace ZooManagementWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
             try
             {
+                var food = new Food
+                {
+                    Name = cbFoodName.Text,
+                    Weight = double.Parse(txtQuantity.Text),
+                };
+                /*             ValidationContext context = new ValidationContext(food);
+                             IList<ValidationResult> errors = new List<ValidationResult>();
+                             if (!Validator.TryValidateObject(food, context, errors))
+                             {
+                                 foreach (ValidationResult result in errors)
+                                 {
+                                     MessageBox.Show(result.ErrorMessage, "Can not be left blank");
+                                     return;
+                                 }
+                             }*/
                 int id = 0;
                 double weight = 0;
                 var foodInStorage = foodStorageRepository.GetFoodInStorageById(int.Parse(cbFoodName.SelectedValue.ToString()));
-                double quantity = double.Parse(txtQuantity.Text);
-                if (quantity < foodInStorage.Available)
+                if (food.Weight < foodInStorage.Available)
                 {
                     if (InsertOrUpdate == false)
                     {
@@ -75,31 +90,17 @@ namespace ZooManagementWinApp
                         }
                         if (check == true)
                         {
-                            var food = new Food()
+                            var foodDupli = new Food()
                             {
                                 Id = id,
                                 Name = cbFoodName.Text,
                                 Weight = double.Parse(txtQuantity.Text) + weight,
                             };
-                            foodRepository.UpdateFood(food);
+                            foodRepository.UpdateFood(foodDupli);
                         }
                         else
                         {
-                            var food = new Food
-                            {
-                                Name = cbFoodName.Text,
-                                Weight = double.Parse(txtQuantity.Text),
-                            };
-                            ValidationContext context = new ValidationContext(food);
-                            IList<ValidationResult> errors = new List<ValidationResult>();
-                            if (!Validator.TryValidateObject(food, context, errors))
-                            {
-                                foreach (ValidationResult result in errors)
-                                {
-                                    MessageBox.Show(result.ErrorMessage, "Can not be left blank");
-                                    return;
-                                }
-                            }
+
                             foodRepository.InsertFood(food);
                             Meal meals = mealRepository.GetMealByAnimalId(AnimalId);
                             var meal = new Meal();
@@ -124,13 +125,13 @@ namespace ZooManagementWinApp
                     }
                     else
                     {
-                        var food = new Food
+                        var foodUpdate = new Food
                         {
                             Id = int.Parse(txtFoodID.Text),
                             Name = cbFoodName.Text,
                             Weight = double.Parse(txtQuantity.Text),
                         };
-                        foodRepository.UpdateFood(food);
+                        foodRepository.UpdateFood(foodUpdate);
                     }
                 }
                 else
@@ -138,10 +139,9 @@ namespace ZooManagementWinApp
                     MessageBox.Show("Not enough " + foodInStorage.Name);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add new food" : "Update a food");
             }
         }
 

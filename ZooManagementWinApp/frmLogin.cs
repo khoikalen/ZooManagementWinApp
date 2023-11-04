@@ -19,7 +19,14 @@ namespace ZooManagementWinApp
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e) => Close();
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("Are you sure want to exit ?", "Confirm exit", MessageBoxButtons.YesNo);
+            if (confirm == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -52,8 +59,11 @@ namespace ZooManagementWinApp
             }
             catch (Exception)
             {
-                MessageBox.Show("Your email is not existed");
-                frmLogin frmLogin = new frmLogin();
+                MessageBox.Show("There some mismatch !", "Warning");
+                frmLogin frmLogin = new frmLogin()
+                {
+                    Text = "Login",
+                };
                 frmLogin.ShowDialog();
             }
             this.Close();

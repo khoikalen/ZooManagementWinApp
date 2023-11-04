@@ -16,6 +16,7 @@ namespace ZooManagementWinApp
     public partial class frmAnimal : Form
     {
         IAnimalRepository animalRepository = new AnimalRepository();
+        IMealRepository mealRepository = new MealRepository();
         ICageRepository cageRepository = new CageRepository();
         public staff staffInformation { get; set; }
         public Cage cageInformation { get; set; }
@@ -28,6 +29,16 @@ namespace ZooManagementWinApp
         {
             try
             {
+                if (animalRepository.GetAnimalByCageID(cageInformation.Id).Count == 0)
+                {
+                    btnDelete.Enabled = false;
+                    btnMoveCage.Enabled = false;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                    btnMoveCage.Enabled = true;
+                }
                 source = new BindingSource();
                 source.DataSource = animalRepository.GetAnimalByCageID(cageInformation.Id);
 
@@ -69,12 +80,11 @@ namespace ZooManagementWinApp
             frmAnimalDetail frmAnimalDetail = new frmAnimalDetail()
             {
                 Text = "Add new Animal to the cage",
-                cageInformation = cageInformation,
+                cageInformation = cageRepository.GetCageById(cageInformation.Id),
                 InsertOrUpdate = true,
             };
             frmAnimalDetail.ShowDialog();
             LoadData();
-
         }
         private void UpdateCageQuantity()
         {
@@ -139,6 +149,7 @@ namespace ZooManagementWinApp
         {
             frmCage frmCage = new frmCage()
             {
+                Text = "List cage form",
                 animalInformation = GetAnimalObject(),
                 staffInformation = staffInformation,
                 selectedCage = cageInformation,
@@ -150,16 +161,25 @@ namespace ZooManagementWinApp
             }
         }
 
-        
+
 
         private void btnViewMeal_Click(object sender, EventArgs e)
         {
-            frmFoodInMeal frm = new frmFoodInMeal()
+            var meal = mealRepository.GetMealByAnimalId(int.Parse(txtAnimalID.Text));
+            if(meal == null)
+            {
+                MessageBox.Show("Meal has not been created");
+            }
+            else
+            {
+                frmFoodInMeal frm = new frmFoodInMeal()
             {
                 AnimalInfo = GetAnimalObject(),
                 StaffOrExpert = true
             };
-            frm.ShowDialog();
+                frm.ShowDialog();
+            }
+            
 
         }
     }

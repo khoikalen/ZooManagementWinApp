@@ -305,7 +305,7 @@
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "frmAnimal";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "frmAnimal";
+            Text = "Animal";
             Load += frmAnimal_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAnimalList).EndInit();
             groupBox1.ResumeLayout(false);
