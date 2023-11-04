@@ -135,7 +135,7 @@ namespace ZooManagementWinApp
             };
             if (!check)
             {
-                check=true;
+                check = true;
                 return;
             }
             if (frm.ShowDialog() == DialogResult.OK)
@@ -180,7 +180,7 @@ namespace ZooManagementWinApp
                 if (food.Weight > result)
                 {
                     check = false;
-                    dupli += food.Name;
+                    dupli += food.Name + " ";
                 }
             }
 
@@ -195,7 +195,7 @@ namespace ZooManagementWinApp
             }
             else
             {
-                MessageBox.Show(dupli + " does not have enough");
+                MessageBox.Show(dupli + "does not have enough");
             }
 
         }

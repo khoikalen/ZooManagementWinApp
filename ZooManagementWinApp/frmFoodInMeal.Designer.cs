@@ -56,9 +56,9 @@
             groupBox1.Controls.Add(txtFoodID);
             groupBox1.Controls.Add(lbAnimalID);
             groupBox1.Location = new System.Drawing.Point(8, 7);
-            groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            groupBox1.Margin = new System.Windows.Forms.Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            groupBox1.Padding = new System.Windows.Forms.Padding(2);
             groupBox1.Size = new System.Drawing.Size(356, 190);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
@@ -68,7 +68,7 @@
             // 
             btnConfirmMeal.DialogResult = System.Windows.Forms.DialogResult.OK;
             btnConfirmMeal.Location = new System.Drawing.Point(251, 153);
-            btnConfirmMeal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            btnConfirmMeal.Margin = new System.Windows.Forms.Padding(2);
             btnConfirmMeal.Name = "btnConfirmMeal";
             btnConfirmMeal.Size = new System.Drawing.Size(88, 33);
             btnConfirmMeal.TabIndex = 10;
@@ -79,7 +79,7 @@
             // btnDelete
             // 
             btnDelete.Location = new System.Drawing.Point(146, 153);
-            btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            btnDelete.Margin = new System.Windows.Forms.Padding(2);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new System.Drawing.Size(78, 33);
             btnDelete.TabIndex = 9;
@@ -90,7 +90,7 @@
             // txtFoodWeight
             // 
             txtFoodWeight.Location = new System.Drawing.Point(104, 109);
-            txtFoodWeight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            txtFoodWeight.Margin = new System.Windows.Forms.Padding(2);
             txtFoodWeight.Name = "txtFoodWeight";
             txtFoodWeight.ReadOnly = true;
             txtFoodWeight.Size = new System.Drawing.Size(106, 23);
@@ -100,7 +100,7 @@
             // 
             btnAddFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnAddFood.Location = new System.Drawing.Point(251, 153);
-            btnAddFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            btnAddFood.Margin = new System.Windows.Forms.Padding(2);
             btnAddFood.Name = "btnAddFood";
             btnAddFood.Size = new System.Drawing.Size(88, 33);
             btnAddFood.TabIndex = 8;
@@ -121,7 +121,7 @@
             // txtFoodName
             // 
             txtFoodName.Location = new System.Drawing.Point(104, 70);
-            txtFoodName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            txtFoodName.Margin = new System.Windows.Forms.Padding(2);
             txtFoodName.Name = "txtFoodName";
             txtFoodName.ReadOnly = true;
             txtFoodName.Size = new System.Drawing.Size(106, 23);
@@ -140,7 +140,7 @@
             // txtFoodID
             // 
             txtFoodID.Location = new System.Drawing.Point(104, 37);
-            txtFoodID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            txtFoodID.Margin = new System.Windows.Forms.Padding(2);
             txtFoodID.Name = "txtFoodID";
             txtFoodID.ReadOnly = true;
             txtFoodID.Size = new System.Drawing.Size(106, 23);
@@ -160,7 +160,7 @@
             // 
             dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFood.Location = new System.Drawing.Point(1, 242);
-            dgvFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dgvFood.Margin = new System.Windows.Forms.Padding(2);
             dgvFood.Name = "dgvFood";
             dgvFood.RowHeadersWidth = 62;
             dgvFood.RowTemplate.Height = 33;
@@ -172,7 +172,7 @@
             // btnClose
             // 
             btnClose.Location = new System.Drawing.Point(248, 212);
-            btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            btnClose.Margin = new System.Windows.Forms.Padding(2);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(78, 20);
             btnClose.TabIndex = 8;
@@ -188,10 +188,10 @@
             Controls.Add(btnClose);
             Controls.Add(groupBox1);
             Controls.Add(dgvFood);
-            Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            Margin = new System.Windows.Forms.Padding(2);
             Name = "frmFoodInMeal";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "FoodInMeal";
+            Text = "Food In Meal";
             Load += frmFoodInMeal_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

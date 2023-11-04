@@ -383,7 +383,7 @@
             tabExpertManagement.Controls.Add(groupBox3);
             tabExpertManagement.Location = new System.Drawing.Point(4, 24);
             tabExpertManagement.Name = "tabExpertManagement";
-            tabExpertManagement.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            tabExpertManagement.Padding = new System.Windows.Forms.Padding(3);
             tabExpertManagement.Size = new System.Drawing.Size(892, 393);
             tabExpertManagement.TabIndex = 1;
             tabExpertManagement.Text = "Expert Management";
@@ -650,7 +650,7 @@
             tabCageManagement.Controls.Add(groupBox2);
             tabCageManagement.Location = new System.Drawing.Point(4, 24);
             tabCageManagement.Name = "tabCageManagement";
-            tabCageManagement.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            tabCageManagement.Padding = new System.Windows.Forms.Padding(3);
             tabCageManagement.Size = new System.Drawing.Size(892, 393);
             tabCageManagement.TabIndex = 2;
             tabCageManagement.Text = "Cage Management";
@@ -661,7 +661,7 @@
             cboFilterArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboFilterArea.FormattingEnabled = true;
             cboFilterArea.Items.AddRange(new object[] { "Carnivore area", "Herbivore area", "Reptile area", "Bird area", "Primate and omnivore area" });
-            cboFilterArea.Location = new System.Drawing.Point(655, 223);
+            cboFilterArea.Location = new System.Drawing.Point(675, 224);
             cboFilterArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             cboFilterArea.Name = "cboFilterArea";
             cboFilterArea.Size = new System.Drawing.Size(215, 23);
