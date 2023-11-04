@@ -31,10 +31,12 @@ namespace ZooManagementWinApp
                 if (animalRepository.GetAnimalByCageID(cageInformation.Id).Count == 0)
                 {
                     btnDelete.Enabled = false;
+                    btnMoveCage.Enabled = false;
                 }
                 else
                 {
                     btnDelete.Enabled = true;
+                    btnMoveCage.Enabled = true;
                 }
                 source = new BindingSource();
                 source.DataSource = animalRepository.GetAnimalByCageID(cageInformation.Id);
@@ -146,6 +148,7 @@ namespace ZooManagementWinApp
         {
             frmCage frmCage = new frmCage()
             {
+                Text = "List cage form",
                 animalInformation = GetAnimalObject(),
                 staffInformation = staffInformation,
                 selectedCage = cageInformation,
