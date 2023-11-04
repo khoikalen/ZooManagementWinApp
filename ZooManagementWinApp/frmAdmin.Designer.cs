@@ -78,6 +78,7 @@
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             tabCageManagement = new System.Windows.Forms.TabPage();
+            cboFilterArea = new System.Windows.Forms.ComboBox();
             btnRefreshCage = new System.Windows.Forms.Button();
             txtSearchCage = new System.Windows.Forms.TextBox();
             btnSearchCage = new System.Windows.Forms.Button();
@@ -609,6 +610,7 @@
             // 
             // tabCageManagement
             // 
+            tabCageManagement.Controls.Add(cboFilterArea);
             tabCageManagement.Controls.Add(btnRefreshCage);
             tabCageManagement.Controls.Add(txtSearchCage);
             tabCageManagement.Controls.Add(btnSearchCage);
@@ -625,6 +627,17 @@
             tabCageManagement.TabIndex = 2;
             tabCageManagement.Text = "Cage Management";
             tabCageManagement.UseVisualStyleBackColor = true;
+            // 
+            // cboFilterArea
+            // 
+            cboFilterArea.FormattingEnabled = true;
+            cboFilterArea.Items.AddRange(new object[] { "Carnivore area", "Herbivore area", "Reptile area", "Bird area", "Primate and omnivore area" });
+            cboFilterArea.Location = new System.Drawing.Point(749, 297);
+            cboFilterArea.Name = "cboFilterArea";
+            cboFilterArea.Size = new System.Drawing.Size(245, 28);
+            cboFilterArea.TabIndex = 14;
+            cboFilterArea.Text = "--Filter Cage by Area--";
+            cboFilterArea.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // btnRefreshCage
             // 
@@ -688,14 +701,14 @@
             // 
             dgvCageManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgvCageManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCageManagement.Location = new System.Drawing.Point(0, 308);
+            dgvCageManagement.Location = new System.Drawing.Point(0, 332);
             dgvCageManagement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             dgvCageManagement.Name = "dgvCageManagement";
             dgvCageManagement.ReadOnly = true;
             dgvCageManagement.RowHeadersWidth = 51;
             dgvCageManagement.RowTemplate.Height = 29;
             dgvCageManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvCageManagement.Size = new System.Drawing.Size(1030, 224);
+            dgvCageManagement.Size = new System.Drawing.Size(1030, 200);
             dgvCageManagement.TabIndex = 1;
             dgvCageManagement.CellDoubleClick += dgvCageManagement_CellDoubleClick;
             // 
@@ -931,5 +944,6 @@
         private System.Windows.Forms.Button btnRefreshCage;
         private System.Windows.Forms.TextBox txtSearchCage;
         private System.Windows.Forms.Button btnSearchCage;
+        private System.Windows.Forms.ComboBox cboFilterArea;
     }
 }

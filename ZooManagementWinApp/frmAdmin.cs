@@ -463,11 +463,13 @@ namespace ZooManagementWinApp
         private void btnRefreshStaff_Click(object sender, EventArgs e)
         {
             LoadStaffsList();
+            txtSearchStaff.Text = "";
         }
 
         private void btnRefreshExpert_Click(object sender, EventArgs e)
         {
             LoadExpertList();
+            txtSearchExpert.Text = ""; 
         }
 
         private void btnSearchExpert_Click(object sender, EventArgs e)
@@ -520,6 +522,8 @@ namespace ZooManagementWinApp
         private void btnRefreshCage_Click(object sender, EventArgs e)
         {
             LoadCagesList();
+            cboFilterArea.Text = "--Filter Cage by Area--";
+            txtSearchCage.Text = "";
         }
 
         private void btnSearchCage_Click(object sender, EventArgs e)
@@ -532,6 +536,50 @@ namespace ZooManagementWinApp
                 foreach (Cage cage in cages)
                 {
                     if (cage.Name.ToLower().Trim().Contains(txtSearchCage.Text.ToLower().Trim()))
+                    {
+                        cageList.Add(cage);
+                    }
+                }
+                source.DataSource = cageList;
+                txtCagePrimaryID.DataBindings.Clear();
+                txtCageName.DataBindings.Clear();
+                txtCageQuantity.DataBindings.Clear();
+                txtCageStatus.DataBindings.Clear();
+                txtAreaForeignID.DataBindings.Clear();
+                txtStaffForeignID.DataBindings.Clear();
+
+                txtCagePrimaryID.DataBindings.Add("Text", source, "Id");
+                txtCageName.DataBindings.Add("Text", source, "Name");
+                txtCageQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
+                txtAreaForeignID.DataBindings.Add("Text", source, "AreaId");
+                txtStaffForeignID.DataBindings.Add("Text", source, "StaffId");
+
+
+                dgvCageManagement.DataSource = null;
+                dgvCageManagement.DataSource = source;
+
+                dgvCageManagement.Columns["CageType"].Visible = false;
+                dgvCageManagement.Columns["Area"].Visible = false;
+                dgvCageManagement.Columns["Staff"].Visible = false;
+                dgvCageManagement.Columns["Animals"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Search Cage");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cages = cageRepository.GetCages();
+            try
+            {
+                source = new BindingSource();
+                List<Cage> cageList = new List<Cage>();
+                foreach (Cage cage in cages)
+                {
+                    if (cage.AreaId.Equals(cboFilterArea.SelectedIndex + 1))
                     {
                         cageList.Add(cage);
                     }
