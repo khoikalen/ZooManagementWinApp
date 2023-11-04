@@ -27,6 +27,7 @@ namespace ZooManagementWinApp
         public Animal AnimalInfo { get; set; }
         public List<Food> FoodViewByCage { get; set; }
         BindingSource source;
+        bool check = true;
         string dupli = "";
 
         private void frmFoodInMeal_Load(object sender, EventArgs e)
@@ -104,8 +105,8 @@ namespace ZooManagementWinApp
             }
             catch (Exception)
             {
-
-                throw;
+                check = false;
+                MessageBox.Show("Can not update null value");
             }
             return food;
         }
@@ -132,6 +133,11 @@ namespace ZooManagementWinApp
                 InsertOrUpdate = true,
                 FoodInfo = GetFoodObject(),
             };
+            if (!check)
+            {
+                check=true;
+                return;
+            }
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadFood();
