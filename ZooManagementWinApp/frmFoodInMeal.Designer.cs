@@ -55,9 +55,11 @@
             groupBox1.Controls.Add(lbName);
             groupBox1.Controls.Add(txtFoodID);
             groupBox1.Controls.Add(lbAnimalID);
-            groupBox1.Location = new System.Drawing.Point(11, 12);
+            groupBox1.Location = new System.Drawing.Point(8, 7);
+            groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(509, 317);
+            groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            groupBox1.Size = new System.Drawing.Size(356, 190);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Food and Medicine";
@@ -65,9 +67,10 @@
             // btnConfirmMeal
             // 
             btnConfirmMeal.DialogResult = System.Windows.Forms.DialogResult.OK;
-            btnConfirmMeal.Location = new System.Drawing.Point(359, 255);
+            btnConfirmMeal.Location = new System.Drawing.Point(251, 153);
+            btnConfirmMeal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             btnConfirmMeal.Name = "btnConfirmMeal";
-            btnConfirmMeal.Size = new System.Drawing.Size(126, 55);
+            btnConfirmMeal.Size = new System.Drawing.Size(88, 33);
             btnConfirmMeal.TabIndex = 10;
             btnConfirmMeal.Text = "Confirm";
             btnConfirmMeal.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new System.Drawing.Point(209, 255);
+            btnDelete.Location = new System.Drawing.Point(146, 153);
+            btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new System.Drawing.Size(111, 55);
+            btnDelete.Size = new System.Drawing.Size(78, 33);
             btnDelete.TabIndex = 9;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -85,18 +89,20 @@
             // 
             // txtFoodWeight
             // 
-            txtFoodWeight.Location = new System.Drawing.Point(149, 182);
+            txtFoodWeight.Location = new System.Drawing.Point(104, 109);
+            txtFoodWeight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             txtFoodWeight.Name = "txtFoodWeight";
             txtFoodWeight.ReadOnly = true;
-            txtFoodWeight.Size = new System.Drawing.Size(150, 31);
+            txtFoodWeight.Size = new System.Drawing.Size(106, 23);
             txtFoodWeight.TabIndex = 5;
             // 
             // btnAddFood
             // 
             btnAddFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnAddFood.Location = new System.Drawing.Point(359, 255);
+            btnAddFood.Location = new System.Drawing.Point(251, 153);
+            btnAddFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             btnAddFood.Name = "btnAddFood";
-            btnAddFood.Size = new System.Drawing.Size(126, 55);
+            btnAddFood.Size = new System.Drawing.Size(88, 33);
             btnAddFood.TabIndex = 8;
             btnAddFood.Text = "Add Food";
             btnAddFood.UseVisualStyleBackColor = true;
@@ -105,63 +111,70 @@
             // lbQuantity
             // 
             lbQuantity.AutoSize = true;
-            lbQuantity.Location = new System.Drawing.Point(23, 188);
+            lbQuantity.Location = new System.Drawing.Point(16, 113);
+            lbQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lbQuantity.Name = "lbQuantity";
-            lbQuantity.Size = new System.Drawing.Size(80, 25);
+            lbQuantity.Size = new System.Drawing.Size(53, 15);
             lbQuantity.TabIndex = 4;
             lbQuantity.Text = "Quantity";
             // 
             // txtFoodName
             // 
-            txtFoodName.Location = new System.Drawing.Point(149, 117);
+            txtFoodName.Location = new System.Drawing.Point(104, 70);
+            txtFoodName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             txtFoodName.Name = "txtFoodName";
             txtFoodName.ReadOnly = true;
-            txtFoodName.Size = new System.Drawing.Size(150, 31);
+            txtFoodName.Size = new System.Drawing.Size(106, 23);
             txtFoodName.TabIndex = 3;
             // 
             // lbName
             // 
             lbName.AutoSize = true;
-            lbName.Location = new System.Drawing.Point(23, 123);
+            lbName.Location = new System.Drawing.Point(16, 74);
+            lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lbName.Name = "lbName";
-            lbName.Size = new System.Drawing.Size(59, 25);
+            lbName.Size = new System.Drawing.Size(39, 15);
             lbName.TabIndex = 2;
             lbName.Text = "Name";
             // 
             // txtFoodID
             // 
-            txtFoodID.Location = new System.Drawing.Point(149, 62);
+            txtFoodID.Location = new System.Drawing.Point(104, 37);
+            txtFoodID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             txtFoodID.Name = "txtFoodID";
             txtFoodID.ReadOnly = true;
-            txtFoodID.Size = new System.Drawing.Size(150, 31);
+            txtFoodID.Size = new System.Drawing.Size(106, 23);
             txtFoodID.TabIndex = 1;
             // 
             // lbAnimalID
             // 
             lbAnimalID.AutoSize = true;
-            lbAnimalID.Location = new System.Drawing.Point(23, 62);
+            lbAnimalID.Location = new System.Drawing.Point(16, 37);
+            lbAnimalID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lbAnimalID.Name = "lbAnimalID";
-            lbAnimalID.Size = new System.Drawing.Size(30, 25);
+            lbAnimalID.Size = new System.Drawing.Size(18, 15);
             lbAnimalID.TabIndex = 0;
             lbAnimalID.Text = "ID";
             // 
             // dgvFood
             // 
             dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvFood.Location = new System.Drawing.Point(1, 403);
+            dgvFood.Location = new System.Drawing.Point(1, 242);
+            dgvFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             dgvFood.Name = "dgvFood";
             dgvFood.RowHeadersWidth = 62;
             dgvFood.RowTemplate.Height = 33;
             dgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvFood.Size = new System.Drawing.Size(520, 238);
+            dgvFood.Size = new System.Drawing.Size(364, 143);
             dgvFood.TabIndex = 6;
             dgvFood.CellDoubleClick += dgvFood_CellDoubleClick;
             // 
             // btnClose
             // 
-            btnClose.Location = new System.Drawing.Point(354, 353);
+            btnClose.Location = new System.Drawing.Point(248, 212);
+            btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             btnClose.Name = "btnClose";
-            btnClose.Size = new System.Drawing.Size(111, 33);
+            btnClose.Size = new System.Drawing.Size(78, 20);
             btnClose.TabIndex = 8;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
@@ -169,12 +182,13 @@
             // 
             // frmFoodInMeal
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(521, 642);
+            ClientSize = new System.Drawing.Size(365, 385);
             Controls.Add(btnClose);
             Controls.Add(groupBox1);
             Controls.Add(dgvFood);
+            Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Name = "frmFoodInMeal";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "FoodInMeal";
