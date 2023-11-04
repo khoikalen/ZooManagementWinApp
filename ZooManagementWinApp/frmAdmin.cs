@@ -173,11 +173,18 @@ namespace ZooManagementWinApp
                 StaffRepository = staffRepository,
                 userRole = "ADMIN"
             };
-            if (f.ShowDialog() == DialogResult.OK)
+            if (txtStaffID != null && txtStaffID.Text != "0")
             {
-                LoadStaffsList();
-                source.Position = source.Count - 1;
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    LoadStaffsList();
+                    source.Position = source.Count - 1;
+                }
+            } else
+            {
+                MessageBox.Show("Can not update null value!");
             }
+            
         }
 
         private staff GetStaffObject()
@@ -301,18 +308,25 @@ namespace ZooManagementWinApp
 
         private void dgvCageManagement_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmCageDetail frmCageDetail = new frmCageDetail
+            frmCageDetail f = new frmCageDetail
             {
                 Text = "Update the cage",
                 InsertOrUpdate = true,
                 CageInfo = GetCageObject(),
                 CageRepository = cageRepository
             };
-            if (frmCageDetail.ShowDialog() == DialogResult.OK)
+            if (txtCagePrimaryID != null && txtCagePrimaryID.Text != "0")
             {
-                LoadCagesList();
-                source.Position = source.Count - 1;
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    LoadCagesList();
+                    source.Position = source.Count - 1;
+                }
+            } else
+            {
+                MessageBox.Show("Can not update null value!");
             }
+            
         }
 
         private void btnDeleteCage_Click(object sender, EventArgs e)
@@ -357,18 +371,25 @@ namespace ZooManagementWinApp
 
         private void dgvExpertManagement_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmExpertDetail frmExpertDetail = new frmExpertDetail
+            frmExpertDetail f = new frmExpertDetail
             {
                 Text = "Update the expert",
                 InsertOrUpdate = true,
                 ExpertInfo = GetExpertObject(),
                 expertRepository1 = expertRepository,
             };
-            if (frmExpertDetail.ShowDialog() == DialogResult.OK)
+            if (txtExpertID != null && txtExpertID.Text != "0")
             {
-                LoadExpertList();
-                source.Position = source.Count - 1;
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    LoadExpertList();
+                    source.Position = source.Count - 1;
+                }
+            } else
+            {
+                MessageBox.Show("Can not update null value!");
             }
+            
         }
 
         private void btnDeleteExpert_Click(object sender, EventArgs e)
@@ -424,7 +445,15 @@ namespace ZooManagementWinApp
             {
                 source = new BindingSource();
                 List<staff> staffList = new List<staff>();
+                List<staff> staffView = new List<staff>();
                 foreach (staff staff in staffs)
+                {
+                    if (staff.Id != 1)
+                    {
+                        staffView.Add(staff);
+                    }
+                }
+                foreach (staff staff in staffView)
                 {
                     if (staff.FirstName.ToLower().Trim().Contains(txtSearchStaff.Text.ToLower().Trim())
                         || staff.LastName.ToLower().Trim().Contains(txtSearchStaff.Text.ToLower().Trim()))
