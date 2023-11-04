@@ -264,7 +264,7 @@ namespace ZooManagementWinApp
             {
                 var staff = GetStaffObject();
                 var cageList = cageRepository.GetCagesByStaffEmail(staff.Email);
-                var confirm = MessageBox.Show("Are you sure to delete this staff?", "Confirm Delete!", MessageBoxButtons.YesNo);
+                var confirm = MessageBox.Show("Are you sure to delete this staff?", "Confirm Delete!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.Yes)
                 {
                     if (cageList.Count > 0)
@@ -338,7 +338,7 @@ namespace ZooManagementWinApp
                 var cage = GetCageObject();
                 if (cage.Quantity == 0)
                 {
-                    var confirm = MessageBox.Show("Are you sure to delete this cage?", "Confirm Delete!", MessageBoxButtons.YesNo);
+                    var confirm = MessageBox.Show("Are you sure to delete this cage?", "Confirm Delete!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (confirm == DialogResult.Yes)
                     {
                         cageRepository.DeleteCage(cage.Id);
@@ -400,7 +400,7 @@ namespace ZooManagementWinApp
             try
             {
                 var expert = GetExpertObject();
-                var confirm = MessageBox.Show("Are you sure to delete this expert?", "Confirm Delete!", MessageBoxButtons.YesNo);
+                var confirm = MessageBox.Show("Are you sure to delete this expert?", "Confirm Delete!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm == DialogResult.Yes)
                 {
                     expertRepository.DeleteExpert(expert.Id);
@@ -554,7 +554,6 @@ namespace ZooManagementWinApp
         private void btnRefreshCage_Click(object sender, EventArgs e)
         {
             LoadCagesList();
-            cboFilterArea.Text = "--Filter Cage by Area--";
             txtSearchCage.Text = "";
         }
 
