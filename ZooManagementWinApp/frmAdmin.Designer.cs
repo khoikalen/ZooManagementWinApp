@@ -30,6 +30,7 @@
         {
             tabControl1 = new System.Windows.Forms.TabControl();
             tabStaffMangement = new System.Windows.Forms.TabPage();
+            btnLogout = new System.Windows.Forms.Button();
             btnDeleteStaff = new System.Windows.Forms.Button();
             btnAddStaff = new System.Windows.Forms.Button();
             groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,6 +50,7 @@
             lbStaffID = new System.Windows.Forms.Label();
             dgvStaff = new System.Windows.Forms.DataGridView();
             tabExpertManagement = new System.Windows.Forms.TabPage();
+            btnAssignExpert = new System.Windows.Forms.Button();
             btnDeleteExpert = new System.Windows.Forms.Button();
             btnAddExpert = new System.Windows.Forms.Button();
             dgvExpertManagement = new System.Windows.Forms.DataGridView();
@@ -87,7 +89,6 @@
             lbCageQuantity = new System.Windows.Forms.Label();
             lbCageName = new System.Windows.Forms.Label();
             lbCageId = new System.Windows.Forms.Label();
-            btnLogout = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabStaffMangement.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -106,10 +107,9 @@
             tabControl1.Controls.Add(tabExpertManagement);
             tabControl1.Controls.Add(tabCageManagement);
             tabControl1.Location = new System.Drawing.Point(0, 1);
-            tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new System.Drawing.Size(1286, 701);
+            tabControl1.Size = new System.Drawing.Size(1029, 561);
             tabControl1.TabIndex = 0;
             // 
             // tabStaffMangement
@@ -119,21 +119,31 @@
             tabStaffMangement.Controls.Add(btnAddStaff);
             tabStaffMangement.Controls.Add(groupBox1);
             tabStaffMangement.Controls.Add(dgvStaff);
-            tabStaffMangement.Location = new System.Drawing.Point(4, 34);
-            tabStaffMangement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            tabStaffMangement.Location = new System.Drawing.Point(4, 29);
             tabStaffMangement.Name = "tabStaffMangement";
-            tabStaffMangement.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            tabStaffMangement.Size = new System.Drawing.Size(1278, 663);
+            tabStaffMangement.Padding = new System.Windows.Forms.Padding(3);
+            tabStaffMangement.Size = new System.Drawing.Size(1021, 528);
             tabStaffMangement.TabIndex = 0;
             tabStaffMangement.Text = "Staff Management";
             tabStaffMangement.UseVisualStyleBackColor = true;
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new System.Drawing.Point(711, 267);
+            btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new System.Drawing.Size(90, 27);
+            btnLogout.TabIndex = 4;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // btnDeleteStaff
             // 
-            btnDeleteStaff.Location = new System.Drawing.Point(281, 332);
-            btnDeleteStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnDeleteStaff.Location = new System.Drawing.Point(225, 266);
+            btnDeleteStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             btnDeleteStaff.Name = "btnDeleteStaff";
-            btnDeleteStaff.Size = new System.Drawing.Size(118, 36);
+            btnDeleteStaff.Size = new System.Drawing.Size(94, 29);
             btnDeleteStaff.TabIndex = 3;
             btnDeleteStaff.Text = "Delete";
             btnDeleteStaff.UseVisualStyleBackColor = true;
@@ -141,10 +151,9 @@
             // 
             // btnAddStaff
             // 
-            btnAddStaff.Location = new System.Drawing.Point(101, 332);
-            btnAddStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnAddStaff.Location = new System.Drawing.Point(81, 266);
             btnAddStaff.Name = "btnAddStaff";
-            btnAddStaff.Size = new System.Drawing.Size(118, 36);
+            btnAddStaff.Size = new System.Drawing.Size(94, 29);
             btnAddStaff.TabIndex = 2;
             btnAddStaff.Text = "Add";
             btnAddStaff.UseVisualStyleBackColor = true;
@@ -166,145 +175,129 @@
             groupBox1.Controls.Add(lbStaffLastName);
             groupBox1.Controls.Add(lbStaffFirstName);
             groupBox1.Controls.Add(lbStaffID);
-            groupBox1.Location = new System.Drawing.Point(58, 56);
-            groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            groupBox1.Location = new System.Drawing.Point(46, 45);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            groupBox1.Size = new System.Drawing.Size(1134, 251);
+            groupBox1.Size = new System.Drawing.Size(907, 201);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Staff Information";
             // 
             // txtStaffPhoneNumber
             // 
-            txtStaffPhoneNumber.Location = new System.Drawing.Point(860, 56);
-            txtStaffPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtStaffPhoneNumber.Location = new System.Drawing.Point(688, 45);
             txtStaffPhoneNumber.Name = "txtStaffPhoneNumber";
             txtStaffPhoneNumber.ReadOnly = true;
-            txtStaffPhoneNumber.Size = new System.Drawing.Size(155, 31);
+            txtStaffPhoneNumber.Size = new System.Drawing.Size(125, 27);
             txtStaffPhoneNumber.TabIndex = 13;
             // 
             // dtpStatDay
             // 
             dtpStatDay.Enabled = false;
-            dtpStatDay.Location = new System.Drawing.Point(452, 178);
-            dtpStatDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            dtpStatDay.Location = new System.Drawing.Point(362, 142);
             dtpStatDay.Name = "dtpStatDay";
-            dtpStatDay.Size = new System.Drawing.Size(312, 31);
+            dtpStatDay.Size = new System.Drawing.Size(250, 27);
             dtpStatDay.TabIndex = 12;
             // 
             // txtStaffEmail
             // 
-            txtStaffEmail.Location = new System.Drawing.Point(860, 120);
-            txtStaffEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtStaffEmail.Location = new System.Drawing.Point(688, 96);
             txtStaffEmail.Name = "txtStaffEmail";
             txtStaffEmail.ReadOnly = true;
-            txtStaffEmail.Size = new System.Drawing.Size(155, 31);
+            txtStaffEmail.Size = new System.Drawing.Size(125, 27);
             txtStaffEmail.TabIndex = 11;
             // 
             // txtGender
             // 
-            txtGender.Location = new System.Drawing.Point(466, 64);
-            txtGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtGender.Location = new System.Drawing.Point(373, 51);
             txtGender.Name = "txtGender";
             txtGender.ReadOnly = true;
-            txtGender.Size = new System.Drawing.Size(155, 31);
+            txtGender.Size = new System.Drawing.Size(125, 27);
             txtGender.TabIndex = 10;
             // 
             // txtStaffLastName
             // 
-            txtStaffLastName.Location = new System.Drawing.Point(466, 120);
-            txtStaffLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtStaffLastName.Location = new System.Drawing.Point(373, 96);
             txtStaffLastName.Name = "txtStaffLastName";
             txtStaffLastName.ReadOnly = true;
-            txtStaffLastName.Size = new System.Drawing.Size(155, 31);
+            txtStaffLastName.Size = new System.Drawing.Size(125, 27);
             txtStaffLastName.TabIndex = 9;
             // 
             // txtStaffFirstName
             // 
-            txtStaffFirstName.Location = new System.Drawing.Point(166, 119);
-            txtStaffFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtStaffFirstName.Location = new System.Drawing.Point(133, 95);
             txtStaffFirstName.Name = "txtStaffFirstName";
             txtStaffFirstName.ReadOnly = true;
-            txtStaffFirstName.Size = new System.Drawing.Size(155, 31);
+            txtStaffFirstName.Size = new System.Drawing.Size(125, 27);
             txtStaffFirstName.TabIndex = 8;
             // 
             // txtStaffID
             // 
-            txtStaffID.Location = new System.Drawing.Point(166, 64);
-            txtStaffID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtStaffID.Location = new System.Drawing.Point(133, 51);
             txtStaffID.Name = "txtStaffID";
             txtStaffID.ReadOnly = true;
-            txtStaffID.Size = new System.Drawing.Size(155, 31);
+            txtStaffID.Size = new System.Drawing.Size(125, 27);
             txtStaffID.TabIndex = 7;
             // 
             // lbPhoneNumber
             // 
             lbPhoneNumber.AutoSize = true;
-            lbPhoneNumber.Location = new System.Drawing.Point(688, 66);
-            lbPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbPhoneNumber.Location = new System.Drawing.Point(550, 53);
             lbPhoneNumber.Name = "lbPhoneNumber";
-            lbPhoneNumber.Size = new System.Drawing.Size(129, 25);
+            lbPhoneNumber.Size = new System.Drawing.Size(105, 20);
             lbPhoneNumber.TabIndex = 6;
             lbPhoneNumber.Text = "Phone number";
             // 
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Location = new System.Drawing.Point(688, 124);
-            lbEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbEmail.Location = new System.Drawing.Point(550, 99);
             lbEmail.Name = "lbEmail";
-            lbEmail.Size = new System.Drawing.Size(54, 25);
+            lbEmail.Size = new System.Drawing.Size(46, 20);
             lbEmail.TabIndex = 5;
             lbEmail.Text = "Email";
             // 
             // lbStartDay
             // 
             lbStartDay.AutoSize = true;
-            lbStartDay.Location = new System.Drawing.Point(340, 182);
-            lbStartDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbStartDay.Location = new System.Drawing.Point(272, 146);
             lbStartDay.Name = "lbStartDay";
-            lbStartDay.Size = new System.Drawing.Size(82, 25);
+            lbStartDay.Size = new System.Drawing.Size(68, 20);
             lbStartDay.TabIndex = 4;
             lbStartDay.Text = "Start day";
             // 
             // lbGender
             // 
             lbGender.AutoSize = true;
-            lbGender.Location = new System.Drawing.Point(354, 66);
-            lbGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbGender.Location = new System.Drawing.Point(283, 53);
             lbGender.Name = "lbGender";
-            lbGender.Size = new System.Drawing.Size(69, 25);
+            lbGender.Size = new System.Drawing.Size(57, 20);
             lbGender.TabIndex = 3;
             lbGender.Text = "Gender";
             // 
             // lbStaffLastName
             // 
             lbStaffLastName.AutoSize = true;
-            lbStaffLastName.Location = new System.Drawing.Point(354, 124);
-            lbStaffLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbStaffLastName.Location = new System.Drawing.Point(283, 99);
             lbStaffLastName.Name = "lbStaffLastName";
-            lbStaffLastName.Size = new System.Drawing.Size(92, 25);
+            lbStaffLastName.Size = new System.Drawing.Size(76, 20);
             lbStaffLastName.TabIndex = 2;
             lbStaffLastName.Text = "Last name";
             // 
             // lbStaffFirstName
             // 
             lbStaffFirstName.AutoSize = true;
-            lbStaffFirstName.Location = new System.Drawing.Point(44, 124);
-            lbStaffFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbStaffFirstName.Location = new System.Drawing.Point(35, 99);
             lbStaffFirstName.Name = "lbStaffFirstName";
-            lbStaffFirstName.Size = new System.Drawing.Size(94, 25);
+            lbStaffFirstName.Size = new System.Drawing.Size(77, 20);
             lbStaffFirstName.TabIndex = 1;
             lbStaffFirstName.Text = "First name";
             // 
             // lbStaffID
             // 
             lbStaffID.AutoSize = true;
-            lbStaffID.Location = new System.Drawing.Point(44, 66);
-            lbStaffID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbStaffID.Location = new System.Drawing.Point(35, 53);
             lbStaffID.Name = "lbStaffID";
-            lbStaffID.Size = new System.Drawing.Size(71, 25);
+            lbStaffID.Size = new System.Drawing.Size(59, 20);
             lbStaffID.TabIndex = 0;
             lbStaffID.Text = "Staff ID";
             // 
@@ -312,38 +305,48 @@
             // 
             dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStaff.Location = new System.Drawing.Point(0, 399);
-            dgvStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            dgvStaff.Location = new System.Drawing.Point(0, 319);
             dgvStaff.Name = "dgvStaff";
             dgvStaff.ReadOnly = true;
             dgvStaff.RowHeadersWidth = 51;
             dgvStaff.RowTemplate.Height = 29;
             dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvStaff.Size = new System.Drawing.Size(1281, 271);
+            dgvStaff.Size = new System.Drawing.Size(1025, 217);
             dgvStaff.TabIndex = 0;
             dgvStaff.CellDoubleClick += dgvStaff_CellDoubleClick;
             // 
             // tabExpertManagement
             // 
+            tabExpertManagement.Controls.Add(btnAssignExpert);
             tabExpertManagement.Controls.Add(btnDeleteExpert);
             tabExpertManagement.Controls.Add(btnAddExpert);
             tabExpertManagement.Controls.Add(dgvExpertManagement);
             tabExpertManagement.Controls.Add(groupBox3);
-            tabExpertManagement.Location = new System.Drawing.Point(4, 34);
-            tabExpertManagement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tabExpertManagement.Location = new System.Drawing.Point(4, 29);
+            tabExpertManagement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             tabExpertManagement.Name = "tabExpertManagement";
-            tabExpertManagement.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            tabExpertManagement.Size = new System.Drawing.Size(1278, 663);
+            tabExpertManagement.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tabExpertManagement.Size = new System.Drawing.Size(1021, 528);
             tabExpertManagement.TabIndex = 1;
             tabExpertManagement.Text = "Expert Management";
             tabExpertManagement.UseVisualStyleBackColor = true;
             // 
+            // btnAssignExpert
+            // 
+            btnAssignExpert.Location = new System.Drawing.Point(380, 243);
+            btnAssignExpert.Name = "btnAssignExpert";
+            btnAssignExpert.Size = new System.Drawing.Size(179, 29);
+            btnAssignExpert.TabIndex = 6;
+            btnAssignExpert.Text = "Assign Area for Expert";
+            btnAssignExpert.UseVisualStyleBackColor = true;
+            btnAssignExpert.Click += btnAssignExpert_Click;
+            // 
             // btnDeleteExpert
             // 
-            btnDeleteExpert.Location = new System.Drawing.Point(300, 304);
-            btnDeleteExpert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            btnDeleteExpert.Location = new System.Drawing.Point(240, 243);
+            btnDeleteExpert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             btnDeleteExpert.Name = "btnDeleteExpert";
-            btnDeleteExpert.Size = new System.Drawing.Size(118, 36);
+            btnDeleteExpert.Size = new System.Drawing.Size(94, 29);
             btnDeleteExpert.TabIndex = 5;
             btnDeleteExpert.Text = "Delete";
             btnDeleteExpert.UseVisualStyleBackColor = true;
@@ -351,10 +354,9 @@
             // 
             // btnAddExpert
             // 
-            btnAddExpert.Location = new System.Drawing.Point(120, 304);
-            btnAddExpert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnAddExpert.Location = new System.Drawing.Point(96, 243);
             btnAddExpert.Name = "btnAddExpert";
-            btnAddExpert.Size = new System.Drawing.Size(118, 36);
+            btnAddExpert.Size = new System.Drawing.Size(94, 29);
             btnAddExpert.TabIndex = 4;
             btnAddExpert.Text = "Add";
             btnAddExpert.UseVisualStyleBackColor = true;
@@ -363,14 +365,13 @@
             // dgvExpertManagement
             // 
             dgvExpertManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvExpertManagement.Location = new System.Drawing.Point(0, 362);
-            dgvExpertManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            dgvExpertManagement.Location = new System.Drawing.Point(0, 290);
             dgvExpertManagement.Name = "dgvExpertManagement";
             dgvExpertManagement.ReadOnly = true;
             dgvExpertManagement.RowHeadersWidth = 51;
             dgvExpertManagement.RowTemplate.Height = 29;
             dgvExpertManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvExpertManagement.Size = new System.Drawing.Size(1276, 294);
+            dgvExpertManagement.Size = new System.Drawing.Size(1021, 235);
             dgvExpertManagement.TabIndex = 3;
             dgvExpertManagement.CellDoubleClick += dgvExpertManagement_CellDoubleClick;
             // 
@@ -392,164 +393,146 @@
             groupBox3.Controls.Add(label5);
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(label7);
-            groupBox3.Location = new System.Drawing.Point(76, 32);
-            groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            groupBox3.Location = new System.Drawing.Point(61, 26);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            groupBox3.Size = new System.Drawing.Size(1134, 251);
+            groupBox3.Size = new System.Drawing.Size(907, 201);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Expert Information";
             // 
             // txtExpertAreaID
             // 
-            txtExpertAreaID.Location = new System.Drawing.Point(785, 185);
-            txtExpertAreaID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtExpertAreaID.Location = new System.Drawing.Point(628, 148);
             txtExpertAreaID.Name = "txtExpertAreaID";
             txtExpertAreaID.ReadOnly = true;
-            txtExpertAreaID.Size = new System.Drawing.Size(155, 31);
+            txtExpertAreaID.Size = new System.Drawing.Size(125, 27);
             txtExpertAreaID.TabIndex = 17;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(622, 190);
-            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label8.Location = new System.Drawing.Point(498, 152);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(117, 25);
+            label8.Size = new System.Drawing.Size(98, 20);
             label8.TabIndex = 16;
             label8.Text = "Area Manage";
             // 
             // txtExpertPhoneNumber
             // 
-            txtExpertPhoneNumber.Location = new System.Drawing.Point(860, 56);
-            txtExpertPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtExpertPhoneNumber.Location = new System.Drawing.Point(688, 45);
             txtExpertPhoneNumber.Name = "txtExpertPhoneNumber";
             txtExpertPhoneNumber.ReadOnly = true;
-            txtExpertPhoneNumber.Size = new System.Drawing.Size(155, 31);
+            txtExpertPhoneNumber.Size = new System.Drawing.Size(125, 27);
             txtExpertPhoneNumber.TabIndex = 13;
             // 
             // dtpExpertStartDay
             // 
             dtpExpertStartDay.Enabled = false;
-            dtpExpertStartDay.Location = new System.Drawing.Point(230, 185);
-            dtpExpertStartDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            dtpExpertStartDay.Location = new System.Drawing.Point(184, 148);
             dtpExpertStartDay.Name = "dtpExpertStartDay";
-            dtpExpertStartDay.Size = new System.Drawing.Size(312, 31);
+            dtpExpertStartDay.Size = new System.Drawing.Size(250, 27);
             dtpExpertStartDay.TabIndex = 12;
             // 
             // txtExpertEmail
             // 
-            txtExpertEmail.Location = new System.Drawing.Point(860, 120);
-            txtExpertEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtExpertEmail.Location = new System.Drawing.Point(688, 96);
             txtExpertEmail.Name = "txtExpertEmail";
             txtExpertEmail.ReadOnly = true;
-            txtExpertEmail.Size = new System.Drawing.Size(155, 31);
+            txtExpertEmail.Size = new System.Drawing.Size(125, 27);
             txtExpertEmail.TabIndex = 11;
             // 
             // txtGenderExpert
             // 
-            txtGenderExpert.Location = new System.Drawing.Point(466, 64);
-            txtGenderExpert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtGenderExpert.Location = new System.Drawing.Point(373, 51);
             txtGenderExpert.Name = "txtGenderExpert";
             txtGenderExpert.ReadOnly = true;
-            txtGenderExpert.Size = new System.Drawing.Size(155, 31);
+            txtGenderExpert.Size = new System.Drawing.Size(125, 27);
             txtGenderExpert.TabIndex = 10;
             // 
             // txtExpertLastName
             // 
-            txtExpertLastName.Location = new System.Drawing.Point(466, 120);
-            txtExpertLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtExpertLastName.Location = new System.Drawing.Point(373, 96);
             txtExpertLastName.Name = "txtExpertLastName";
             txtExpertLastName.ReadOnly = true;
-            txtExpertLastName.Size = new System.Drawing.Size(155, 31);
+            txtExpertLastName.Size = new System.Drawing.Size(125, 27);
             txtExpertLastName.TabIndex = 9;
             // 
             // txtExpertFirstName
             // 
-            txtExpertFirstName.Location = new System.Drawing.Point(166, 119);
-            txtExpertFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtExpertFirstName.Location = new System.Drawing.Point(133, 95);
             txtExpertFirstName.Name = "txtExpertFirstName";
             txtExpertFirstName.ReadOnly = true;
-            txtExpertFirstName.Size = new System.Drawing.Size(155, 31);
+            txtExpertFirstName.Size = new System.Drawing.Size(125, 27);
             txtExpertFirstName.TabIndex = 8;
             // 
             // txtExpertID
             // 
-            txtExpertID.Location = new System.Drawing.Point(166, 64);
-            txtExpertID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            txtExpertID.Location = new System.Drawing.Point(133, 51);
             txtExpertID.Name = "txtExpertID";
             txtExpertID.ReadOnly = true;
-            txtExpertID.Size = new System.Drawing.Size(155, 31);
+            txtExpertID.Size = new System.Drawing.Size(125, 27);
             txtExpertID.TabIndex = 7;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(688, 66);
-            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Location = new System.Drawing.Point(550, 53);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(129, 25);
+            label1.Size = new System.Drawing.Size(105, 20);
             label1.TabIndex = 6;
             label1.Text = "Phone number";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(688, 124);
-            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Location = new System.Drawing.Point(550, 99);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(54, 25);
+            label2.Size = new System.Drawing.Size(46, 20);
             label2.TabIndex = 5;
             label2.Text = "Email";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(118, 190);
-            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Location = new System.Drawing.Point(94, 152);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(82, 25);
+            label3.Size = new System.Drawing.Size(68, 20);
             label3.TabIndex = 4;
             label3.Text = "Start day";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(354, 66);
-            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Location = new System.Drawing.Point(283, 53);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(69, 25);
+            label4.Size = new System.Drawing.Size(57, 20);
             label4.TabIndex = 3;
             label4.Text = "Gender";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(354, 124);
-            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Location = new System.Drawing.Point(283, 99);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(92, 25);
+            label5.Size = new System.Drawing.Size(76, 20);
             label5.TabIndex = 2;
             label5.Text = "Last name";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(44, 124);
-            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Location = new System.Drawing.Point(35, 99);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(94, 25);
+            label6.Size = new System.Drawing.Size(77, 20);
             label6.TabIndex = 1;
             label6.Text = "First name";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(44, 66);
-            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label7.Location = new System.Drawing.Point(35, 53);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(84, 25);
+            label7.Size = new System.Drawing.Size(70, 20);
             label7.TabIndex = 0;
             label7.Text = "Expert ID";
             // 
@@ -560,21 +543,20 @@
             tabCageManagement.Controls.Add(btnAddCage);
             tabCageManagement.Controls.Add(dgvCageManagement);
             tabCageManagement.Controls.Add(groupBox2);
-            tabCageManagement.Location = new System.Drawing.Point(4, 34);
-            tabCageManagement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tabCageManagement.Location = new System.Drawing.Point(4, 29);
+            tabCageManagement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             tabCageManagement.Name = "tabCageManagement";
-            tabCageManagement.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            tabCageManagement.Size = new System.Drawing.Size(1278, 663);
+            tabCageManagement.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tabCageManagement.Size = new System.Drawing.Size(1021, 528);
             tabCageManagement.TabIndex = 2;
             tabCageManagement.Text = "Cage Management";
             tabCageManagement.UseVisualStyleBackColor = true;
             // 
             // btnAssign
             // 
-            btnAssign.Location = new System.Drawing.Point(419, 312);
-            btnAssign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnAssign.Location = new System.Drawing.Point(335, 250);
             btnAssign.Name = "btnAssign";
-            btnAssign.Size = new System.Drawing.Size(208, 36);
+            btnAssign.Size = new System.Drawing.Size(166, 29);
             btnAssign.TabIndex = 4;
             btnAssign.Text = "Assign Cage for Staff";
             btnAssign.UseVisualStyleBackColor = true;
@@ -582,10 +564,9 @@
             // 
             // btnDeleteCage
             // 
-            btnDeleteCage.Location = new System.Drawing.Point(255, 312);
-            btnDeleteCage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnDeleteCage.Location = new System.Drawing.Point(204, 250);
             btnDeleteCage.Name = "btnDeleteCage";
-            btnDeleteCage.Size = new System.Drawing.Size(118, 36);
+            btnDeleteCage.Size = new System.Drawing.Size(94, 29);
             btnDeleteCage.TabIndex = 3;
             btnDeleteCage.Text = "Delete";
             btnDeleteCage.UseVisualStyleBackColor = true;
@@ -593,10 +574,9 @@
             // 
             // btnAddCage
             // 
-            btnAddCage.Location = new System.Drawing.Point(71, 312);
-            btnAddCage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            btnAddCage.Location = new System.Drawing.Point(57, 250);
             btnAddCage.Name = "btnAddCage";
-            btnAddCage.Size = new System.Drawing.Size(118, 36);
+            btnAddCage.Size = new System.Drawing.Size(94, 29);
             btnAddCage.TabIndex = 2;
             btnAddCage.Text = "Add";
             btnAddCage.UseVisualStyleBackColor = true;
@@ -606,14 +586,14 @@
             // 
             dgvCageManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgvCageManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCageManagement.Location = new System.Drawing.Point(0, 385);
-            dgvCageManagement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            dgvCageManagement.Location = new System.Drawing.Point(0, 308);
+            dgvCageManagement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             dgvCageManagement.Name = "dgvCageManagement";
             dgvCageManagement.ReadOnly = true;
             dgvCageManagement.RowHeadersWidth = 51;
             dgvCageManagement.RowTemplate.Height = 29;
             dgvCageManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvCageManagement.Size = new System.Drawing.Size(1288, 280);
+            dgvCageManagement.Size = new System.Drawing.Size(1030, 224);
             dgvCageManagement.TabIndex = 1;
             dgvCageManagement.CellDoubleClick += dgvCageManagement_CellDoubleClick;
             // 
@@ -631,149 +611,132 @@
             groupBox2.Controls.Add(lbCageQuantity);
             groupBox2.Controls.Add(lbCageName);
             groupBox2.Controls.Add(lbCageId);
-            groupBox2.Location = new System.Drawing.Point(39, 35);
-            groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            groupBox2.Location = new System.Drawing.Point(31, 28);
+            groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            groupBox2.Size = new System.Drawing.Size(1186, 249);
+            groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            groupBox2.Size = new System.Drawing.Size(949, 199);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             groupBox2.Text = "Cage Management";
             // 
             // txtStaffForeignID
             // 
-            txtStaffForeignID.Location = new System.Drawing.Point(950, 71);
-            txtStaffForeignID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtStaffForeignID.Location = new System.Drawing.Point(760, 57);
+            txtStaffForeignID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtStaffForeignID.Name = "txtStaffForeignID";
             txtStaffForeignID.ReadOnly = true;
-            txtStaffForeignID.Size = new System.Drawing.Size(176, 31);
+            txtStaffForeignID.Size = new System.Drawing.Size(142, 27);
             txtStaffForeignID.TabIndex = 13;
             // 
             // txtAreaForeignID
             // 
-            txtAreaForeignID.Location = new System.Drawing.Point(950, 136);
-            txtAreaForeignID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtAreaForeignID.Location = new System.Drawing.Point(760, 109);
+            txtAreaForeignID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtAreaForeignID.Name = "txtAreaForeignID";
             txtAreaForeignID.ReadOnly = true;
-            txtAreaForeignID.Size = new System.Drawing.Size(176, 31);
+            txtAreaForeignID.Size = new System.Drawing.Size(142, 27);
             txtAreaForeignID.TabIndex = 12;
             // 
             // txtCageStatus
             // 
-            txtCageStatus.Location = new System.Drawing.Point(595, 71);
-            txtCageStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtCageStatus.Location = new System.Drawing.Point(476, 57);
+            txtCageStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtCageStatus.Name = "txtCageStatus";
             txtCageStatus.ReadOnly = true;
-            txtCageStatus.Size = new System.Drawing.Size(176, 31);
+            txtCageStatus.Size = new System.Drawing.Size(142, 27);
             txtCageStatus.TabIndex = 10;
             // 
             // txtCageQuantity
             // 
-            txtCageQuantity.Location = new System.Drawing.Point(595, 136);
-            txtCageQuantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtCageQuantity.Location = new System.Drawing.Point(476, 109);
+            txtCageQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtCageQuantity.Name = "txtCageQuantity";
             txtCageQuantity.ReadOnly = true;
-            txtCageQuantity.Size = new System.Drawing.Size(176, 31);
+            txtCageQuantity.Size = new System.Drawing.Size(142, 27);
             txtCageQuantity.TabIndex = 9;
             // 
             // txtCageName
             // 
-            txtCageName.Location = new System.Drawing.Point(216, 136);
-            txtCageName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtCageName.Location = new System.Drawing.Point(173, 109);
+            txtCageName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtCageName.Name = "txtCageName";
             txtCageName.ReadOnly = true;
-            txtCageName.Size = new System.Drawing.Size(176, 31);
+            txtCageName.Size = new System.Drawing.Size(142, 27);
             txtCageName.TabIndex = 8;
             // 
             // txtCagePrimaryID
             // 
-            txtCagePrimaryID.Location = new System.Drawing.Point(216, 71);
-            txtCagePrimaryID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            txtCagePrimaryID.Location = new System.Drawing.Point(173, 57);
+            txtCagePrimaryID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             txtCagePrimaryID.Name = "txtCagePrimaryID";
             txtCagePrimaryID.ReadOnly = true;
-            txtCagePrimaryID.Size = new System.Drawing.Size(176, 31);
+            txtCagePrimaryID.Size = new System.Drawing.Size(142, 27);
             txtCagePrimaryID.TabIndex = 7;
             // 
             // lbStaffForeignID
             // 
             lbStaffForeignID.AutoSize = true;
-            lbStaffForeignID.Location = new System.Drawing.Point(844, 75);
-            lbStaffForeignID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbStaffForeignID.Location = new System.Drawing.Point(675, 60);
             lbStaffForeignID.Name = "lbStaffForeignID";
-            lbStaffForeignID.Size = new System.Drawing.Size(66, 25);
+            lbStaffForeignID.Size = new System.Drawing.Size(55, 20);
             lbStaffForeignID.TabIndex = 6;
             lbStaffForeignID.Text = "StaffID";
             // 
             // lbAreaForeignID
             // 
             lbAreaForeignID.AutoSize = true;
-            lbAreaForeignID.Location = new System.Drawing.Point(844, 140);
-            lbAreaForeignID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbAreaForeignID.Location = new System.Drawing.Point(675, 112);
             lbAreaForeignID.Name = "lbAreaForeignID";
-            lbAreaForeignID.Size = new System.Drawing.Size(71, 25);
+            lbAreaForeignID.Size = new System.Drawing.Size(59, 20);
             lbAreaForeignID.TabIndex = 5;
             lbAreaForeignID.Text = "Area ID";
             // 
             // lbCageStatus
             // 
             lbCageStatus.AutoSize = true;
-            lbCageStatus.Location = new System.Drawing.Point(436, 75);
-            lbCageStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbCageStatus.Location = new System.Drawing.Point(349, 60);
             lbCageStatus.Name = "lbCageStatus";
-            lbCageStatus.Size = new System.Drawing.Size(105, 25);
+            lbCageStatus.Size = new System.Drawing.Size(87, 20);
             lbCageStatus.TabIndex = 3;
             lbCageStatus.Text = "Cage Status";
             // 
             // lbCageQuantity
             // 
             lbCageQuantity.AutoSize = true;
-            lbCageQuantity.Location = new System.Drawing.Point(436, 140);
-            lbCageQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbCageQuantity.Location = new System.Drawing.Point(349, 112);
             lbCageQuantity.Name = "lbCageQuantity";
-            lbCageQuantity.Size = new System.Drawing.Size(125, 25);
+            lbCageQuantity.Size = new System.Drawing.Size(103, 20);
             lbCageQuantity.TabIndex = 2;
             lbCageQuantity.Text = "Cage Quantity";
             // 
             // lbCageName
             // 
             lbCageName.AutoSize = true;
-            lbCageName.Location = new System.Drawing.Point(41, 140);
-            lbCageName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbCageName.Location = new System.Drawing.Point(33, 112);
             lbCageName.Name = "lbCageName";
-            lbCageName.Size = new System.Drawing.Size(104, 25);
+            lbCageName.Size = new System.Drawing.Size(87, 20);
             lbCageName.TabIndex = 1;
             lbCageName.Text = "Cage Name";
             // 
             // lbCageId
             // 
             lbCageId.AutoSize = true;
-            lbCageId.Location = new System.Drawing.Point(41, 75);
-            lbCageId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbCageId.Location = new System.Drawing.Point(33, 60);
             lbCageId.Name = "lbCageId";
-            lbCageId.Size = new System.Drawing.Size(75, 25);
+            lbCageId.Size = new System.Drawing.Size(62, 20);
             lbCageId.TabIndex = 0;
             lbCageId.Text = "Cage ID";
             // 
-            // btnLogout
-            // 
-            btnLogout.Location = new System.Drawing.Point(889, 334);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new System.Drawing.Size(112, 34);
-            btnLogout.TabIndex = 4;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
-            // 
             // frmAdmin
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1286, 704);
+            ClientSize = new System.Drawing.Size(1029, 563);
             Controls.Add(tabControl1);
-            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             Name = "frmAdmin";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "frmAdmin";
+            Text = "Form Admin";
             Load += frmAdmin_Load;
             tabControl1.ResumeLayout(false);
             tabStaffMangement.ResumeLayout(false);
@@ -853,5 +816,6 @@
         private System.Windows.Forms.Button btnAddExpert;
         private System.Windows.Forms.Button btnAssign;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnAssignExpert;
     }
 }

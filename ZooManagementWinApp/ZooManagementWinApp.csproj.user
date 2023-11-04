@@ -43,6 +43,9 @@
     <Compile Update="frmStaffDetail.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmTradeArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmTradeCage.cs">
       <SubType>Form</SubType>
     </Compile>

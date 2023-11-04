@@ -101,6 +101,8 @@ namespace ZooManagementWinApp
 
                 dgvExpertManagement.DataSource = null;
                 dgvExpertManagement.DataSource = source;
+
+                dgvExpertManagement.Columns["Area"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -402,6 +404,16 @@ namespace ZooManagementWinApp
             this.Hide();
             frmLogin frm = new frmLogin();
             frm.ShowDialog();
+        }
+
+        private void btnAssignExpert_Click(object sender, EventArgs e)
+        {
+            frmTradeArea frmTradeArea = new frmTradeArea();
+            if (frmTradeArea.ShowDialog() == DialogResult.OK)
+            {
+                LoadExpertList();
+                source.Position = source.Count - 1;
+            }
         }
     }
 }
