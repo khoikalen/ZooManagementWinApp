@@ -30,6 +30,7 @@ namespace ZooManagementWinApp
         public static int animalId;
         private int currentPage = 1;
         private int itemsPerPage = 8;
+        bool check = true;
         public frmExpert()
         {
             InitializeComponent();
@@ -129,6 +130,11 @@ namespace ZooManagementWinApp
                 FoodStorageRepository = foodStorageRepository,
 
             };
+            if (!check)
+            {
+                check = true;
+                return;
+            }
             if (frmFoodStorageDetails.ShowDialog() == DialogResult.OK)
             {
                 LoadFoodStorage();
@@ -166,10 +172,11 @@ namespace ZooManagementWinApp
                     Type = txtFoodType.Text,
                 };
             }
+
             catch (Exception)
             {
-
-                throw;
+                check = false;
+                MessageBox.Show("Can not update null value");
             }
 
             return foodStorage;

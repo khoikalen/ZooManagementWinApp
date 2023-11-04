@@ -125,7 +125,7 @@
             btnCancle.Name = "btnCancle";
             btnCancle.Size = new System.Drawing.Size(111, 33);
             btnCancle.TabIndex = 10;
-            btnCancle.Text = "Cancle";
+            btnCancle.Text = "Cancel";
             btnCancle.UseVisualStyleBackColor = true;
             btnCancle.Click += btnCancle_Click;
             // 
