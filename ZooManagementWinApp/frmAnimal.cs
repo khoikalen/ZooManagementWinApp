@@ -20,6 +20,7 @@ namespace ZooManagementWinApp
         ICageRepository cageRepository = new CageRepository();
         public staff staffInformation { get; set; }
         public Cage cageInformation { get; set; }
+        public Cage currentCage { get; set; }
         BindingSource source;
         public frmAnimal()
         {
@@ -33,11 +34,13 @@ namespace ZooManagementWinApp
                 {
                     btnDelete.Enabled = false;
                     btnMoveCage.Enabled = false;
+                    btnCreateLog.Enabled = false;
                 }
                 else
                 {
                     btnDelete.Enabled = true;
                     btnMoveCage.Enabled = true;
+                    btnCreateLog.Enabled = true;
                 }
                 source = new BindingSource();
                 source.DataSource = animalRepository.GetAnimalByCageID(cageInformation.Id);
@@ -153,6 +156,7 @@ namespace ZooManagementWinApp
                 animalInformation = GetAnimalObject(),
                 staffInformation = staffInformation,
                 selectedCage = cageInformation,
+                currentCage = currentCage,
             };
             if (frmCage.ShowDialog() == DialogResult.OK)
             {
@@ -166,21 +170,35 @@ namespace ZooManagementWinApp
         private void btnViewMeal_Click(object sender, EventArgs e)
         {
             var meal = mealRepository.GetMealByAnimalId(int.Parse(txtAnimalID.Text));
-            if(meal == null)
+            if (meal == null)
             {
                 MessageBox.Show("Meal has not been created");
             }
             else
             {
                 frmFoodInMeal frm = new frmFoodInMeal()
-            {
-                AnimalInfo = GetAnimalObject(),
-                StaffOrExpert = true
-            };
+                {
+                    AnimalInfo = GetAnimalObject(),
+                    StaffOrExpert = true
+                };
                 frm.ShowDialog();
             }
-            
 
+
+        }
+
+        private void btnCreateLog_Click(object sender, EventArgs e)
+        {
+            frmLogDetail frmLogDetail = new frmLogDetail()
+            {
+                Text = "Create log",
+                CreateOrMove = true,
+                animalInformation = animalRepository.SearchAnimalByID(int.Parse(txtAnimalID.Text)),
+            };
+            if (frmLogDetail.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Create successfully !", "Create log");
+            }
         }
     }
 }

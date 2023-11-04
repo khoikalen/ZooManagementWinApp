@@ -20,6 +20,7 @@ namespace ZooManagementWinApp
         public Animal animalInformation { get; set; }
         public staff staffInformation { get; set; }
         public Cage selectedCage { get; set; }
+        public Cage currentCage { get; set; }
         BindingSource source;
 
         private void LoadData()
@@ -78,6 +79,7 @@ namespace ZooManagementWinApp
                 Text = "Update current cage form",
                 cageInformation = cageRepository.GetCageById(int.Parse(txtCagePrimaryID.Text)),
                 animalInformation = animalInformation,
+                currentCage = currentCage,
             };
             if (frmCageDetailMovingAnimal.ShowDialog() == DialogResult.OK)
             {

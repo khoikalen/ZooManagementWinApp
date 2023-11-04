@@ -20,9 +20,10 @@ namespace ZooManagementWinApp
         ICageRepository cageRepository = new CageRepository();
         IStaffRepository staffRepository = new StaffRepository();
         IAreaRepository areaRepository = new AreaRepostitory();
+        ILogRepository logRepository = new LogRepository();
         public Animal animalInformation { get; set; }
         public Cage cageInformation { get; set; }
-
+        public Cage currentCage { get; set; }
         private void LoadData()
         {
             try
@@ -67,8 +68,9 @@ namespace ZooManagementWinApp
                 cageRepository.UpdateCage(cage);
             }
         }
-        private void btnSave_Click(object sender, EventArgs e)
+        public void MoveCage()
         {
+            frmLogDetail frmLogDetail = new frmLogDetail();
             var selectedCage = GetCageObject();
             if (selectedCage.Quantity == 0)
             {
@@ -85,6 +87,8 @@ namespace ZooManagementWinApp
                 UpdateAnimalCage(cage.Id);
                 cageRepository.UpdateCage(cage);
                 UpdateCageQuantity();
+                frmLogDetail = CreateAnimalMoveCageLog();
+                frmLogDetail.SaveAnimal();
                 MessageBox.Show("Move animal successfully!");
             }
             else if (selectedCage.Quantity != 0)
@@ -105,13 +109,32 @@ namespace ZooManagementWinApp
                     UpdateAnimalCage(cage.Id);
                     cageRepository.UpdateCage(cage);
                     UpdateCageQuantity();
+                    frmLogDetail = CreateAnimalMoveCageLog();
+                    frmLogDetail.SaveAnimal();
                     MessageBox.Show("Move animal successfully!");
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Cannot move this animal because of difference in species");
                 }
             }
+        }
 
+        private frmLogDetail CreateAnimalMoveCageLog()
+        {
+            frmLogDetail frmLogDetail = new frmLogDetail()
+            {
+                Text = "Move cage log",
+                animalInformation = animalInformation,
+                cageInformation = GetCageObject(),
+                currentCage = currentCage,
+                CreateOrMove = false,
+            };
+            return frmLogDetail;
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MoveCage();
         }
 
         private void frmCageDetailMovingAnimal_Load(object sender, EventArgs e)

@@ -91,8 +91,10 @@ namespace ZooManagementWinApp
      
                 frmAnimal frmAnimal = new frmAnimal()
                 {
+                    Text = txtCageName.Text,
                     cageInformation = cageRepository.GetCageById(int.Parse(txtCageID.Text)),
                     staffInformation = staffRepository.GetStaffByEmail(staffEmail),
+                    currentCage = cageRepository.GetCageById(int.Parse(txtCageID.Text))
                 };
                 this.Hide();
                 if (frmAnimal.ShowDialog() == DialogResult.Cancel)
