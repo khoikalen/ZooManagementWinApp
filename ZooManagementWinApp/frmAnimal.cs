@@ -28,6 +28,14 @@ namespace ZooManagementWinApp
         {
             try
             {
+                if (animalRepository.GetAnimalByCageID(cageInformation.Id).Count == 0)
+                {
+                    btnDelete.Enabled = false;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                }
                 source = new BindingSource();
                 source.DataSource = animalRepository.GetAnimalByCageID(cageInformation.Id);
 
@@ -69,12 +77,11 @@ namespace ZooManagementWinApp
             frmAnimalDetail frmAnimalDetail = new frmAnimalDetail()
             {
                 Text = "Add new Animal to the cage",
-                cageInformation = cageInformation,
+                cageInformation = cageRepository.GetCageById(cageInformation.Id),
                 InsertOrUpdate = true,
             };
             frmAnimalDetail.ShowDialog();
             LoadData();
-
         }
         private void UpdateCageQuantity()
         {

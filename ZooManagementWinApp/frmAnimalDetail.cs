@@ -33,7 +33,13 @@ namespace ZooManagementWinApp
             {
                 cboAnimalStatus.SelectedIndex = 0;
                 txtAnimalCage.Text = cageInformation.Name;
-                txtAnimalSpecie.Text = animalRepository.GetAnimalSpecie(cageInformation.Id);
+                if (cageInformation.Quantity > 0)
+                {
+                    txtAnimalSpecie.Text = animalRepository.GetAnimalSpecie(cageInformation.Id);
+                } else
+                {
+                    txtAnimalSpecie.ReadOnly = false;
+                }
             }
             else
             {
