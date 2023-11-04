@@ -135,10 +135,6 @@ namespace ZooManagementWinApp
                     };
 
 
-                    AccountRepository.UpdateAccount(account);
-                    StaffRepository.UpdateStaff(staff);
-                    staffPassword = account.Password;
-                    MessageBox.Show("Updated successfully");
                     ValidationContext context = new ValidationContext(staff);
                     List<ValidationResult> results = new List<ValidationResult>();
                     if (!Validator.TryValidateObject(staff, context, results))
