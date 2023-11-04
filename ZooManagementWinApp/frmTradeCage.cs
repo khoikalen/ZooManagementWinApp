@@ -54,10 +54,6 @@ namespace ZooManagementWinApp
                 source = new BindingSource();
                 source.DataSource = cageList;
 
-                cboCage.DataBindings.Clear();
-
-                cboCage.DataBindings.Add("Text", source, "Name");
-
                 dgvCage.DataSource = null;
                 dgvCage.DataSource = source;
 
