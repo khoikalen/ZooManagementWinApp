@@ -16,6 +16,7 @@ namespace ZooManagementWinApp
     public partial class frmAnimal : Form
     {
         IAnimalRepository animalRepository = new AnimalRepository();
+        IMealRepository mealRepository = new MealRepository();
         ICageRepository cageRepository = new CageRepository();
         public staff staffInformation { get; set; }
         public Cage cageInformation { get; set; }
@@ -150,16 +151,25 @@ namespace ZooManagementWinApp
             }
         }
 
-        
+
 
         private void btnViewMeal_Click(object sender, EventArgs e)
         {
-            frmFoodInMeal frm = new frmFoodInMeal()
+            var meal = mealRepository.GetMealByAnimalId(int.Parse(txtAnimalID.Text));
+            if(meal == null)
+            {
+                MessageBox.Show("Meal has not been created");
+            }
+            else
+            {
+                frmFoodInMeal frm = new frmFoodInMeal()
             {
                 AnimalInfo = GetAnimalObject(),
                 StaffOrExpert = true
             };
-            frm.ShowDialog();
+                frm.ShowDialog();
+            }
+            
 
         }
     }

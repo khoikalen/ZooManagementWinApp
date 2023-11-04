@@ -43,10 +43,9 @@
             // btnCancle
             // 
             btnCancle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            btnCancle.Location = new System.Drawing.Point(73, 190);
-            btnCancle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            btnCancle.Location = new System.Drawing.Point(104, 317);
             btnCancle.Name = "btnCancle";
-            btnCancle.Size = new System.Drawing.Size(78, 20);
+            btnCancle.Size = new System.Drawing.Size(111, 33);
             btnCancle.TabIndex = 0;
             btnCancle.Text = "Cancle";
             btnCancle.UseVisualStyleBackColor = true;
@@ -55,10 +54,9 @@
             // btnAdd
             // 
             btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
-            btnAdd.Location = new System.Drawing.Point(198, 190);
-            btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            btnAdd.Location = new System.Drawing.Point(283, 317);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new System.Drawing.Size(78, 20);
+            btnAdd.Size = new System.Drawing.Size(111, 33);
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Save";
             btnAdd.UseVisualStyleBackColor = true;
@@ -67,20 +65,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(10, 67);
-            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Location = new System.Drawing.Point(14, 112);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(39, 15);
+            label1.Size = new System.Drawing.Size(59, 25);
             label1.TabIndex = 3;
             label1.Text = "Name";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(10, 95);
-            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Location = new System.Drawing.Point(14, 158);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(53, 15);
+            label2.Size = new System.Drawing.Size(80, 25);
             label2.TabIndex = 4;
             label2.Text = "Quantity";
             // 
@@ -88,18 +84,16 @@
             // 
             cbFoodName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbFoodName.FormattingEnabled = true;
-            cbFoodName.Location = new System.Drawing.Point(110, 62);
-            cbFoodName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            cbFoodName.Location = new System.Drawing.Point(157, 103);
             cbFoodName.Name = "cbFoodName";
-            cbFoodName.Size = new System.Drawing.Size(106, 23);
+            cbFoodName.Size = new System.Drawing.Size(150, 33);
             cbFoodName.TabIndex = 5;
             // 
             // txtQuantity
             // 
-            txtQuantity.Location = new System.Drawing.Point(110, 91);
-            txtQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            txtQuantity.Location = new System.Drawing.Point(157, 152);
             txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new System.Drawing.Size(106, 23);
+            txtQuantity.Size = new System.Drawing.Size(150, 31);
             txtQuantity.TabIndex = 6;
             // 
             // gbTitle
@@ -110,43 +104,39 @@
             gbTitle.Controls.Add(txtQuantity);
             gbTitle.Controls.Add(label1);
             gbTitle.Controls.Add(label2);
-            gbTitle.Location = new System.Drawing.Point(8, 13);
-            gbTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            gbTitle.Location = new System.Drawing.Point(11, 22);
             gbTitle.Name = "gbTitle";
-            gbTitle.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            gbTitle.Size = new System.Drawing.Size(319, 160);
+            gbTitle.Size = new System.Drawing.Size(456, 267);
             gbTitle.TabIndex = 7;
             gbTitle.TabStop = false;
             gbTitle.Text = "Title";
             // 
             // txtFoodID
             // 
-            txtFoodID.Location = new System.Drawing.Point(110, 29);
-            txtFoodID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            txtFoodID.Location = new System.Drawing.Point(157, 48);
             txtFoodID.Name = "txtFoodID";
-            txtFoodID.Size = new System.Drawing.Size(34, 23);
+            txtFoodID.Size = new System.Drawing.Size(47, 31);
             txtFoodID.TabIndex = 8;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(10, 32);
-            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Location = new System.Drawing.Point(14, 53);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(18, 15);
+            label3.Size = new System.Drawing.Size(30, 25);
             label3.TabIndex = 7;
             label3.Text = "ID";
             // 
             // frmFoodDetails
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(336, 226);
+            ClientSize = new System.Drawing.Size(480, 377);
             Controls.Add(gbTitle);
             Controls.Add(btnCancle);
             Controls.Add(btnAdd);
-            Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Name = "frmFoodDetails";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "FoodDetails";
             Load += FoodDetails_Load;
             gbTitle.ResumeLayout(false);

@@ -176,7 +176,8 @@
             Controls.Add(groupBox1);
             Controls.Add(dgvFood);
             Name = "frmFoodInMeal";
-            Text = "frmFoodInMeal";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "FoodInMeal";
             Load += frmFoodInMeal_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

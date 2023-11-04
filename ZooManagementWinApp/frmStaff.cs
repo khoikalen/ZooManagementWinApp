@@ -116,6 +116,11 @@ namespace ZooManagementWinApp
             List<Food> foods = new List<Food>();
             int index = 0;
             animals = animalRepository.GetAnimalByCageID(int.Parse(txtCageID.Text));
+            if (animals.Count==0)
+            {
+                MessageBox.Show("There is no animal in this cage");
+                return;
+            }
             foreach (Animal animal in animals)
             {
                 var meal = mealRepository.GetMealByAnimalId(animal.Id);
