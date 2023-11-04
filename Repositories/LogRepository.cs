@@ -11,7 +11,8 @@ namespace Repositories
 {
     public class LogRepository : ILogRepository
     {
-        public List<HealthLogResponse> GetLog(string email) => LogDAO.Instance.GetHealLog(email);
-        
+        public List<HealthLogResponse> GetHealthLogs(string email) => LogDAO.Instance.GetHealLog(email);
+        public List<HealthLogResponse> GetHealthLogsBySpecies(string species,string email) => LogDAO.Instance.GetLogBySpecies(species,email);
+
     }
 }

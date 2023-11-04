@@ -30,6 +30,8 @@
         {
             tabControl1 = new System.Windows.Forms.TabControl();
             tabViewLog = new System.Windows.Forms.TabPage();
+            txtLogAnimalSpecies = new System.Windows.Forms.TextBox();
+            btnSearch = new System.Windows.Forms.Button();
             dtpDatetime = new System.Windows.Forms.DateTimePicker();
             lbDatetime = new System.Windows.Forms.Label();
             txtShortDescription = new System.Windows.Forms.TextBox();
@@ -88,6 +90,8 @@
             txtExpertName = new System.Windows.Forms.TextBox();
             label11 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
+            btnPrevious = new System.Windows.Forms.Button();
+            btnNext = new System.Windows.Forms.Button();
             tabControl1.SuspendLayout();
             tabViewLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvViewLog).BeginInit();
@@ -114,6 +118,10 @@
             // 
             // tabViewLog
             // 
+            tabViewLog.Controls.Add(btnNext);
+            tabViewLog.Controls.Add(btnPrevious);
+            tabViewLog.Controls.Add(txtLogAnimalSpecies);
+            tabViewLog.Controls.Add(btnSearch);
             tabViewLog.Controls.Add(dtpDatetime);
             tabViewLog.Controls.Add(lbDatetime);
             tabViewLog.Controls.Add(txtShortDescription);
@@ -133,6 +141,23 @@
             tabViewLog.TabIndex = 0;
             tabViewLog.Text = "View Log";
             tabViewLog.UseVisualStyleBackColor = true;
+            // 
+            // txtLogAnimalSpecies
+            // 
+            txtLogAnimalSpecies.Location = new System.Drawing.Point(669, 223);
+            txtLogAnimalSpecies.Name = "txtLogAnimalSpecies";
+            txtLogAnimalSpecies.Size = new System.Drawing.Size(136, 31);
+            txtLogAnimalSpecies.TabIndex = 13;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new System.Drawing.Point(811, 221);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new System.Drawing.Size(74, 34);
+            btnSearch.TabIndex = 12;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // dtpDatetime
             // 
@@ -156,7 +181,7 @@
             txtShortDescription.Location = new System.Drawing.Point(204, 218);
             txtShortDescription.Name = "txtShortDescription";
             txtShortDescription.ReadOnly = true;
-            txtShortDescription.Size = new System.Drawing.Size(358, 31);
+            txtShortDescription.Size = new System.Drawing.Size(297, 31);
             txtShortDescription.TabIndex = 9;
             // 
             // txtAnimalName
@@ -232,13 +257,13 @@
             // 
             dgvViewLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgvViewLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvViewLog.Location = new System.Drawing.Point(0, 266);
+            dgvViewLog.Location = new System.Drawing.Point(0, 319);
             dgvViewLog.Name = "dgvViewLog";
             dgvViewLog.ReadOnly = true;
             dgvViewLog.RowHeadersWidth = 62;
             dgvViewLog.RowTemplate.Height = 33;
             dgvViewLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvViewLog.Size = new System.Drawing.Size(902, 380);
+            dgvViewLog.Size = new System.Drawing.Size(902, 321);
             dgvViewLog.TabIndex = 0;
             // 
             // tabCreateMeal
@@ -715,6 +740,26 @@
             label12.TabIndex = 3;
             label12.Text = "Gender";
             // 
+            // btnPrevious
+            // 
+            btnPrevious.Location = new System.Drawing.Point(336, 283);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new System.Drawing.Size(112, 34);
+            btnPrevious.TabIndex = 14;
+            btnPrevious.Text = "Previous";
+            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += btnPrevious_Click;
+            // 
+            // btnNext
+            // 
+            btnNext.Location = new System.Drawing.Point(503, 283);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new System.Drawing.Size(112, 34);
+            btnNext.TabIndex = 15;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
+            // 
             // frmExpert
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -806,5 +851,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtLogAnimalSpecies;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPrevious;
     }
 }

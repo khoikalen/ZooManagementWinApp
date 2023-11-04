@@ -9,6 +9,9 @@ namespace Repositories
 {
     public interface ILogRepository
     {
-        List<HealthLogResponse> GetLog(String email);
+        List<HealthLogResponse> GetHealthLogs(String email);
+        List<HealthLogResponse> GetHealthLogsBySpecies(string species,string email);
+
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.Models;
+using Microsoft.VisualBasic.Logging;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,8 @@ namespace ZooManagementWinApp
         BindingSource source;
         public String email { get; set; }
         public static int animalId;
+        private int currentPage = 1;
+        private int itemsPerPage = 8;
         public frmExpert()
         {
             InitializeComponent();
@@ -42,11 +45,13 @@ namespace ZooManagementWinApp
 
         private void LoadHealLog()
         {
-            var log = logRepository.GetLog(email);
+            var log = logRepository.GetHealthLogs(email);
+            int startIndex = (currentPage - 1) * itemsPerPage;
+            int endIndex = Math.Min(startIndex + itemsPerPage, log.Count());
             try
             {
                 source = new BindingSource();
-                source.DataSource = log;
+                source.DataSource = log.Skip(startIndex).Take(endIndex - startIndex).ToList();
 
                 txtType.DataBindings.Clear();
                 txtShortDescription.DataBindings.Clear();
@@ -176,8 +181,10 @@ namespace ZooManagementWinApp
         {
             cbFilterFood.SelectedIndex = 0;
             var listFood = foodStorageRepository.GetFoodStorageByType(cbFilterFood.Text);
+
             try
             {
+
                 source = new BindingSource();
                 source.DataSource = listFood;
                 txtFoodName.DataBindings.Clear();
@@ -204,6 +211,7 @@ namespace ZooManagementWinApp
         {
             string type = cbFilterFood.Text;
             var listFood = foodStorageRepository.GetFoodStorageByType(type);
+
             try
             {
                 source = new BindingSource();
@@ -432,6 +440,58 @@ namespace ZooManagementWinApp
 
             };
             frm.ShowDialog();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var log = logRepository.GetHealthLogsBySpecies(txtLogAnimalSpecies.Text, email);
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = log;
+
+                txtType.DataBindings.Clear();
+                txtShortDescription.DataBindings.Clear();
+                txtAnimalName.DataBindings.Clear();
+                txtSpecies.DataBindings.Clear();
+                dtpDatetime.DataBindings.Clear();
+                dgvViewLog.DataBindings.Clear();
+
+                txtSpecies.DataBindings.Add("Text", source, "Species");
+                txtAnimalName.DataBindings.Add("Text", source, "AnimalName");
+                txtShortDescription.DataBindings.Add("Text", source, "ShortDescription");
+                txtType.DataBindings.Add("Text", source, "Type");
+                dtpDatetime.DataBindings.Add("Text", source, "DateTime");
+
+                dgvViewLog.DataSource = null;
+                dgvViewLog.DataSource = source;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadHealLog();
+            }
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            var log = logRepository.GetHealthLogs(email);
+            int maxPage = (int)Math.Ceiling((double)log.Count() / itemsPerPage);
+            if (currentPage < maxPage)
+            {
+                currentPage++;
+                LoadHealLog();
+            }
         }
     }
 }
