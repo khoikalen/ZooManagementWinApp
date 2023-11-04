@@ -30,6 +30,9 @@
         {
             tabControl1 = new System.Windows.Forms.TabControl();
             tabStaffMangement = new System.Windows.Forms.TabPage();
+            btnRefreshStaff = new System.Windows.Forms.Button();
+            txtSearchStaff = new System.Windows.Forms.TextBox();
+            btnSearchStaff = new System.Windows.Forms.Button();
             btnLogout = new System.Windows.Forms.Button();
             btnDeleteStaff = new System.Windows.Forms.Button();
             btnAddStaff = new System.Windows.Forms.Button();
@@ -50,6 +53,9 @@
             lbStaffID = new System.Windows.Forms.Label();
             dgvStaff = new System.Windows.Forms.DataGridView();
             tabExpertManagement = new System.Windows.Forms.TabPage();
+            btnRefreshExpert = new System.Windows.Forms.Button();
+            txtSearchExpert = new System.Windows.Forms.TextBox();
+            btnSearchExpert = new System.Windows.Forms.Button();
             btnAssignExpert = new System.Windows.Forms.Button();
             btnDeleteExpert = new System.Windows.Forms.Button();
             btnAddExpert = new System.Windows.Forms.Button();
@@ -72,6 +78,9 @@
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             tabCageManagement = new System.Windows.Forms.TabPage();
+            btnRefreshCage = new System.Windows.Forms.Button();
+            txtSearchCage = new System.Windows.Forms.TextBox();
+            btnSearchCage = new System.Windows.Forms.Button();
             btnAssign = new System.Windows.Forms.Button();
             btnDeleteCage = new System.Windows.Forms.Button();
             btnAddCage = new System.Windows.Forms.Button();
@@ -114,6 +123,9 @@
             // 
             // tabStaffMangement
             // 
+            tabStaffMangement.Controls.Add(btnRefreshStaff);
+            tabStaffMangement.Controls.Add(txtSearchStaff);
+            tabStaffMangement.Controls.Add(btnSearchStaff);
             tabStaffMangement.Controls.Add(btnLogout);
             tabStaffMangement.Controls.Add(btnDeleteStaff);
             tabStaffMangement.Controls.Add(btnAddStaff);
@@ -127,12 +139,40 @@
             tabStaffMangement.Text = "Staff Management";
             tabStaffMangement.UseVisualStyleBackColor = true;
             // 
+            // btnRefreshStaff
+            // 
+            btnRefreshStaff.Location = new System.Drawing.Point(437, 268);
+            btnRefreshStaff.Name = "btnRefreshStaff";
+            btnRefreshStaff.Size = new System.Drawing.Size(94, 29);
+            btnRefreshStaff.TabIndex = 7;
+            btnRefreshStaff.Text = "Refresh";
+            btnRefreshStaff.UseVisualStyleBackColor = true;
+            btnRefreshStaff.Click += btnRefreshStaff_Click;
+            // 
+            // txtSearchStaff
+            // 
+            txtSearchStaff.Location = new System.Drawing.Point(162, 268);
+            txtSearchStaff.Name = "txtSearchStaff";
+            txtSearchStaff.PlaceholderText = "Search by First Name or Last Name";
+            txtSearchStaff.Size = new System.Drawing.Size(253, 27);
+            txtSearchStaff.TabIndex = 6;
+            // 
+            // btnSearchStaff
+            // 
+            btnSearchStaff.Location = new System.Drawing.Point(46, 267);
+            btnSearchStaff.Name = "btnSearchStaff";
+            btnSearchStaff.Size = new System.Drawing.Size(94, 29);
+            btnSearchStaff.TabIndex = 5;
+            btnSearchStaff.Text = "Search";
+            btnSearchStaff.UseVisualStyleBackColor = true;
+            btnSearchStaff.Click += btnSearchStaff_Click;
+            // 
             // btnLogout
             // 
-            btnLogout.Location = new System.Drawing.Point(711, 267);
+            btnLogout.Location = new System.Drawing.Point(803, 267);
             btnLogout.Margin = new System.Windows.Forms.Padding(2);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new System.Drawing.Size(90, 27);
+            btnLogout.Size = new System.Drawing.Size(93, 30);
             btnLogout.TabIndex = 4;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
@@ -140,10 +180,10 @@
             // 
             // btnDeleteStaff
             // 
-            btnDeleteStaff.Location = new System.Drawing.Point(225, 266);
+            btnDeleteStaff.Location = new System.Drawing.Point(684, 267);
             btnDeleteStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             btnDeleteStaff.Name = "btnDeleteStaff";
-            btnDeleteStaff.Size = new System.Drawing.Size(94, 29);
+            btnDeleteStaff.Size = new System.Drawing.Size(99, 30);
             btnDeleteStaff.TabIndex = 3;
             btnDeleteStaff.Text = "Delete";
             btnDeleteStaff.UseVisualStyleBackColor = true;
@@ -151,7 +191,7 @@
             // 
             // btnAddStaff
             // 
-            btnAddStaff.Location = new System.Drawing.Point(81, 266);
+            btnAddStaff.Location = new System.Drawing.Point(564, 268);
             btnAddStaff.Name = "btnAddStaff";
             btnAddStaff.Size = new System.Drawing.Size(94, 29);
             btnAddStaff.TabIndex = 2;
@@ -317,6 +357,9 @@
             // 
             // tabExpertManagement
             // 
+            tabExpertManagement.Controls.Add(btnRefreshExpert);
+            tabExpertManagement.Controls.Add(txtSearchExpert);
+            tabExpertManagement.Controls.Add(btnSearchExpert);
             tabExpertManagement.Controls.Add(btnAssignExpert);
             tabExpertManagement.Controls.Add(btnDeleteExpert);
             tabExpertManagement.Controls.Add(btnAddExpert);
@@ -331,9 +374,37 @@
             tabExpertManagement.Text = "Expert Management";
             tabExpertManagement.UseVisualStyleBackColor = true;
             // 
+            // btnRefreshExpert
+            // 
+            btnRefreshExpert.Location = new System.Drawing.Point(441, 244);
+            btnRefreshExpert.Name = "btnRefreshExpert";
+            btnRefreshExpert.Size = new System.Drawing.Size(94, 29);
+            btnRefreshExpert.TabIndex = 10;
+            btnRefreshExpert.Text = "Refresh";
+            btnRefreshExpert.UseVisualStyleBackColor = true;
+            btnRefreshExpert.Click += btnRefreshExpert_Click;
+            // 
+            // txtSearchExpert
+            // 
+            txtSearchExpert.Location = new System.Drawing.Point(168, 244);
+            txtSearchExpert.Name = "txtSearchExpert";
+            txtSearchExpert.PlaceholderText = "Search by First Name or Last Name";
+            txtSearchExpert.Size = new System.Drawing.Size(253, 27);
+            txtSearchExpert.TabIndex = 9;
+            // 
+            // btnSearchExpert
+            // 
+            btnSearchExpert.Location = new System.Drawing.Point(52, 243);
+            btnSearchExpert.Name = "btnSearchExpert";
+            btnSearchExpert.Size = new System.Drawing.Size(94, 29);
+            btnSearchExpert.TabIndex = 8;
+            btnSearchExpert.Text = "Search";
+            btnSearchExpert.UseVisualStyleBackColor = true;
+            btnSearchExpert.Click += btnSearchExpert_Click;
+            // 
             // btnAssignExpert
             // 
-            btnAssignExpert.Location = new System.Drawing.Point(380, 243);
+            btnAssignExpert.Location = new System.Drawing.Point(796, 243);
             btnAssignExpert.Name = "btnAssignExpert";
             btnAssignExpert.Size = new System.Drawing.Size(179, 29);
             btnAssignExpert.TabIndex = 6;
@@ -343,7 +414,7 @@
             // 
             // btnDeleteExpert
             // 
-            btnDeleteExpert.Location = new System.Drawing.Point(240, 243);
+            btnDeleteExpert.Location = new System.Drawing.Point(684, 243);
             btnDeleteExpert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             btnDeleteExpert.Name = "btnDeleteExpert";
             btnDeleteExpert.Size = new System.Drawing.Size(94, 29);
@@ -354,7 +425,7 @@
             // 
             // btnAddExpert
             // 
-            btnAddExpert.Location = new System.Drawing.Point(96, 243);
+            btnAddExpert.Location = new System.Drawing.Point(566, 243);
             btnAddExpert.Name = "btnAddExpert";
             btnAddExpert.Size = new System.Drawing.Size(94, 29);
             btnAddExpert.TabIndex = 4;
@@ -538,6 +609,9 @@
             // 
             // tabCageManagement
             // 
+            tabCageManagement.Controls.Add(btnRefreshCage);
+            tabCageManagement.Controls.Add(txtSearchCage);
+            tabCageManagement.Controls.Add(btnSearchCage);
             tabCageManagement.Controls.Add(btnAssign);
             tabCageManagement.Controls.Add(btnDeleteCage);
             tabCageManagement.Controls.Add(btnAddCage);
@@ -552,9 +626,37 @@
             tabCageManagement.Text = "Cage Management";
             tabCageManagement.UseVisualStyleBackColor = true;
             // 
+            // btnRefreshCage
+            // 
+            btnRefreshCage.Location = new System.Drawing.Point(431, 249);
+            btnRefreshCage.Name = "btnRefreshCage";
+            btnRefreshCage.Size = new System.Drawing.Size(94, 29);
+            btnRefreshCage.TabIndex = 13;
+            btnRefreshCage.Text = "Refresh";
+            btnRefreshCage.UseVisualStyleBackColor = true;
+            btnRefreshCage.Click += btnRefreshCage_Click;
+            // 
+            // txtSearchCage
+            // 
+            txtSearchCage.Location = new System.Drawing.Point(148, 250);
+            txtSearchCage.Name = "txtSearchCage";
+            txtSearchCage.PlaceholderText = "Search by Cage Name";
+            txtSearchCage.Size = new System.Drawing.Size(253, 27);
+            txtSearchCage.TabIndex = 12;
+            // 
+            // btnSearchCage
+            // 
+            btnSearchCage.Location = new System.Drawing.Point(32, 249);
+            btnSearchCage.Name = "btnSearchCage";
+            btnSearchCage.Size = new System.Drawing.Size(94, 29);
+            btnSearchCage.TabIndex = 11;
+            btnSearchCage.Text = "Search";
+            btnSearchCage.UseVisualStyleBackColor = true;
+            btnSearchCage.Click += btnSearchCage_Click;
+            // 
             // btnAssign
             // 
-            btnAssign.Location = new System.Drawing.Point(335, 250);
+            btnAssign.Location = new System.Drawing.Point(828, 249);
             btnAssign.Name = "btnAssign";
             btnAssign.Size = new System.Drawing.Size(166, 29);
             btnAssign.TabIndex = 4;
@@ -564,7 +666,7 @@
             // 
             // btnDeleteCage
             // 
-            btnDeleteCage.Location = new System.Drawing.Point(204, 250);
+            btnDeleteCage.Location = new System.Drawing.Point(706, 249);
             btnDeleteCage.Name = "btnDeleteCage";
             btnDeleteCage.Size = new System.Drawing.Size(94, 29);
             btnDeleteCage.TabIndex = 3;
@@ -574,7 +676,7 @@
             // 
             // btnAddCage
             // 
-            btnAddCage.Location = new System.Drawing.Point(57, 250);
+            btnAddCage.Location = new System.Drawing.Point(567, 249);
             btnAddCage.Name = "btnAddCage";
             btnAddCage.Size = new System.Drawing.Size(94, 29);
             btnAddCage.TabIndex = 2;
@@ -740,14 +842,17 @@
             Load += frmAdmin_Load;
             tabControl1.ResumeLayout(false);
             tabStaffMangement.ResumeLayout(false);
+            tabStaffMangement.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStaff).EndInit();
             tabExpertManagement.ResumeLayout(false);
+            tabExpertManagement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvExpertManagement).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             tabCageManagement.ResumeLayout(false);
+            tabCageManagement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCageManagement).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
@@ -817,5 +922,14 @@
         private System.Windows.Forms.Button btnAssign;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnAssignExpert;
+        private System.Windows.Forms.Button btnSearchStaff;
+        private System.Windows.Forms.TextBox txtSearchStaff;
+        private System.Windows.Forms.Button btnRefreshStaff;
+        private System.Windows.Forms.Button btnRefreshExpert;
+        private System.Windows.Forms.TextBox txtSearchExpert;
+        private System.Windows.Forms.Button btnSearchExpert;
+        private System.Windows.Forms.Button btnRefreshCage;
+        private System.Windows.Forms.TextBox txtSearchCage;
+        private System.Windows.Forms.Button btnSearchCage;
     }
 }
