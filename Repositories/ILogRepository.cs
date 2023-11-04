@@ -12,5 +12,9 @@ namespace Repositories
     {
         List<HealthLogResponse> GetLog(String email);
         void CreateLog(AnimalLog log);
+        List<HealthLogResponse> GetHealthLogs(String email);
+        List<HealthLogResponse> GetHealthLogsBySpecies(string species,string email);
+
+
     }
 }

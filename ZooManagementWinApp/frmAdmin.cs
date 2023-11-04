@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ZooManagementWinApp
 {
@@ -413,6 +414,203 @@ namespace ZooManagementWinApp
             {
                 LoadExpertList();
                 source.Position = source.Count - 1;
+            }
+        }
+
+        private void btnSearchStaff_Click(object sender, EventArgs e)
+        {
+            var staffs = staffRepository.GetStaffs();
+            try
+            {
+                source = new BindingSource();
+                List<staff> staffList = new List<staff>();
+                foreach (staff staff in staffs)
+                {
+                    if (staff.FirstName.ToLower().Trim().Contains(txtSearchStaff.Text.ToLower().Trim())
+                        || staff.LastName.ToLower().Trim().Contains(txtSearchStaff.Text.ToLower().Trim()))
+                    {
+                        staffList.Add(staff);
+                    }
+                }
+                source.DataSource = staffList;
+
+                txtStaffID.DataBindings.Clear();
+                txtStaffFirstName.DataBindings.Clear();
+                txtStaffLastName.DataBindings.Clear();
+                txtGender.DataBindings.Clear();
+                dtpStatDay.DataBindings.Clear();
+                txtStaffEmail.DataBindings.Clear();
+                txtStaffPhoneNumber.DataBindings.Clear();
+
+                txtStaffID.DataBindings.Add("Text", source, "Id");
+                txtStaffFirstName.DataBindings.Add("Text", source, "FirstName");
+                txtStaffLastName.DataBindings.Add("Text", source, "LastName");
+                txtGender.DataBindings.Add("Text", source, "Gender");
+                dtpStatDay.DataBindings.Add("Text", source, "StartDay");
+                txtStaffEmail.DataBindings.Add("Text", source, "Email");
+                txtStaffPhoneNumber.DataBindings.Add("Text", source, "PhoneNumber");
+
+                dgvStaff.DataSource = null;
+                dgvStaff.DataSource = source;
+                dgvStaff.Columns["Cages"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Search staff");
+            }
+        }
+
+        private void btnRefreshStaff_Click(object sender, EventArgs e)
+        {
+            LoadStaffsList();
+            txtSearchStaff.Text = "";
+        }
+
+        private void btnRefreshExpert_Click(object sender, EventArgs e)
+        {
+            LoadExpertList();
+            txtSearchExpert.Text = ""; 
+        }
+
+        private void btnSearchExpert_Click(object sender, EventArgs e)
+        {
+            var experts = expertRepository.GetExperts();
+            try
+            {
+                source = new BindingSource();
+                List<Expert> expertList = new List<Expert>();
+                foreach (Expert expert in experts)
+                {
+                    if (expert.FirstName.ToLower().Trim().Contains(txtSearchExpert.Text.ToLower().Trim())
+                        || expert.LastName.ToLower().Trim().Contains(txtSearchExpert.Text.ToLower().Trim()))
+                    {
+                        expertList.Add(expert);
+                    }
+                }
+                source.DataSource = expertList;
+
+                txtExpertID.DataBindings.Clear();
+                txtExpertFirstName.DataBindings.Clear();
+                txtExpertLastName.DataBindings.Clear();
+                txtGenderExpert.DataBindings.Clear();
+                dtpExpertStartDay.DataBindings.Clear();
+                txtExpertEmail.DataBindings.Clear();
+                txtExpertPhoneNumber.DataBindings.Clear();
+                txtExpertAreaID.DataBindings.Clear();
+
+                txtExpertID.DataBindings.Add("Text", source, "Id");
+                txtExpertFirstName.DataBindings.Add("Text", source, "FirstName");
+                txtExpertLastName.DataBindings.Add("Text", source, "LastName");
+                txtGenderExpert.DataBindings.Add("Text", source, "Gender");
+                dtpExpertStartDay.DataBindings.Add("Text", source, "StartDay");
+                txtExpertEmail.DataBindings.Add("Text", source, "Email");
+                txtExpertPhoneNumber.DataBindings.Add("Text", source, "PhoneNumber");
+                txtExpertAreaID.DataBindings.Add("Text", source, "AreaId");
+
+                dgvExpertManagement.DataSource = null;
+                dgvExpertManagement.DataSource = source;
+
+                dgvExpertManagement.Columns["Area"].Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Search Expert");
+            }
+        }
+
+        private void btnRefreshCage_Click(object sender, EventArgs e)
+        {
+            LoadCagesList();
+            cboFilterArea.Text = "--Filter Cage by Area--";
+            txtSearchCage.Text = "";
+        }
+
+        private void btnSearchCage_Click(object sender, EventArgs e)
+        {
+            var cages = cageRepository.GetCages();
+            try
+            {
+                source = new BindingSource();
+                List<Cage> cageList = new List<Cage>();
+                foreach (Cage cage in cages)
+                {
+                    if (cage.Name.ToLower().Trim().Contains(txtSearchCage.Text.ToLower().Trim()))
+                    {
+                        cageList.Add(cage);
+                    }
+                }
+                source.DataSource = cageList;
+                txtCagePrimaryID.DataBindings.Clear();
+                txtCageName.DataBindings.Clear();
+                txtCageQuantity.DataBindings.Clear();
+                txtCageStatus.DataBindings.Clear();
+                txtAreaForeignID.DataBindings.Clear();
+                txtStaffForeignID.DataBindings.Clear();
+
+                txtCagePrimaryID.DataBindings.Add("Text", source, "Id");
+                txtCageName.DataBindings.Add("Text", source, "Name");
+                txtCageQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
+                txtAreaForeignID.DataBindings.Add("Text", source, "AreaId");
+                txtStaffForeignID.DataBindings.Add("Text", source, "StaffId");
+
+
+                dgvCageManagement.DataSource = null;
+                dgvCageManagement.DataSource = source;
+
+                dgvCageManagement.Columns["CageType"].Visible = false;
+                dgvCageManagement.Columns["Area"].Visible = false;
+                dgvCageManagement.Columns["Staff"].Visible = false;
+                dgvCageManagement.Columns["Animals"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Search Cage");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cages = cageRepository.GetCages();
+            try
+            {
+                source = new BindingSource();
+                List<Cage> cageList = new List<Cage>();
+                foreach (Cage cage in cages)
+                {
+                    if (cage.AreaId.Equals(cboFilterArea.SelectedIndex + 1))
+                    {
+                        cageList.Add(cage);
+                    }
+                }
+                source.DataSource = cageList;
+                txtCagePrimaryID.DataBindings.Clear();
+                txtCageName.DataBindings.Clear();
+                txtCageQuantity.DataBindings.Clear();
+                txtCageStatus.DataBindings.Clear();
+                txtAreaForeignID.DataBindings.Clear();
+                txtStaffForeignID.DataBindings.Clear();
+
+                txtCagePrimaryID.DataBindings.Add("Text", source, "Id");
+                txtCageName.DataBindings.Add("Text", source, "Name");
+                txtCageQuantity.DataBindings.Add("Text", source, "Quantity");
+                txtCageStatus.DataBindings.Add("Text", source, "CageStatus");
+                txtAreaForeignID.DataBindings.Add("Text", source, "AreaId");
+                txtStaffForeignID.DataBindings.Add("Text", source, "StaffId");
+
+
+                dgvCageManagement.DataSource = null;
+                dgvCageManagement.DataSource = source;
+
+                dgvCageManagement.Columns["CageType"].Visible = false;
+                dgvCageManagement.Columns["Area"].Visible = false;
+                dgvCageManagement.Columns["Staff"].Visible = false;
+                dgvCageManagement.Columns["Animals"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Search Cage");
             }
         }
     }

@@ -3,6 +3,7 @@ using Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -78,6 +79,16 @@ namespace ZooManagementWinApp
                         Status = cboAnimalStatus.Text,
                         CageId = cageInformation.Id,
                     };
+                    ValidationContext context = new ValidationContext(animal);
+                    List<ValidationResult> results = new List<ValidationResult>();
+                    if (!Validator.TryValidateObject(animal, context, results))
+                    {
+                        foreach (ValidationResult result in results)
+                        {
+                            MessageBox.Show(result.ErrorMessage, "Message");
+                            return;
+                        }
+                    }
                     animalRepository.CreateNewAnimal(animal);
                     UpdateCageQuantity();
                 }

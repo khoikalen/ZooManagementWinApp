@@ -71,6 +71,20 @@ namespace DataAccessObjects
         }
 
 
+        public List<HealthLogResponse> GetLogBySpecies(string species, String email)
+        {
+            
+            var list = GetHealLog(email);
+            if(species == "")
+            {
+                return list;
+            }
+            else
+            {
+                return list.Where(a => a.Species.Trim().ToLower().Contains( species.Trim().ToLower())).OrderByDescending(a => a.DateTime).ToList();
+            }
+
+        }
         public void CreateLog(AnimalLog log )
         {
             try

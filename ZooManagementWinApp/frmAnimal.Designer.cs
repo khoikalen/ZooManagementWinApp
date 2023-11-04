@@ -232,7 +232,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new System.Drawing.Point(214, 253);
+            btnAdd.Location = new System.Drawing.Point(219, 252);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new System.Drawing.Size(75, 23);
             btnAdd.TabIndex = 18;
@@ -262,7 +262,7 @@
             // 
             // btnViewMeal
             // 
-            btnViewMeal.Location = new System.Drawing.Point(60, 256);
+            btnViewMeal.Location = new System.Drawing.Point(61, 253);
             btnViewMeal.Margin = new System.Windows.Forms.Padding(2);
             btnViewMeal.Name = "btnViewMeal";
             btnViewMeal.Size = new System.Drawing.Size(78, 20);

@@ -15,5 +15,8 @@ namespace Repositories
         public void CreateLog(AnimalLog log) => LogDAO.Instance.CreateLog(log);
         public List<HealthLogResponse> GetLog(string email) => LogDAO.Instance.GetHealLog(email);
         
+        public List<HealthLogResponse> GetHealthLogs(string email) => LogDAO.Instance.GetHealLog(email);
+        public List<HealthLogResponse> GetHealthLogsBySpecies(string species,string email) => LogDAO.Instance.GetLogBySpecies(species,email);
+
     }
 }
